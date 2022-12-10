@@ -1,0 +1,46 @@
+{
+  "name": "my-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
+    "@next/eslint-plugin-next": "^13.0.6",
+    "@paypal/react-paypal-js": "^7.8.2",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "axios": "^1.2.0",
+    "bcryptjs": "^2.4.3",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
+    "framer-motion": "^7.6.7",
+    "js-cookie": "^3.0.1",
+    "mongoose": "^6.7.4",
+    "next": "13.0.4",
+    "next-auth": "^4.17.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.5",
+    "react-icons": "^4.7.1",
+    "react-loading": "^2.0.3",
+    "react-simple-typewriter": "^5.0.1",
+    "react-social-icons": "^5.15.0",
+    "react-toastify": "^9.1.1",
+    "typescript": "4.9.3"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/js-cookie": "^3.0.2",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "tailwind-scrollbar": "^2.0.1",
+    "tailwindcss": "^3.2.4"
+  }
+}
