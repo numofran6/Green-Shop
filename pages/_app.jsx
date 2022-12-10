@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import type { AppProps } from 'next/app';
 import { StoreProvider } from '../utils/Store';
 import OrderProvider from '../utils/Order';
 import { SessionProvider } from 'next-auth/react';
@@ -9,7 +8,7 @@ import Head from 'next/head';
 export default function App({
 	Component,
 	pageProps: { session, ...pageProps },
-}: AppProps) {
+}) {
 	<Head>
 		<link rel="icon" href="/favicon.ico" />
 	</Head>;
