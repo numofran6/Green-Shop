@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 export default function Shipping() {
 	return (
 		<>
-			<Layout title={'shipping'}>
+			<Layout title={'Shipping'}>
 				<CheckoutWizard activeStep={1} />
 				<AddressForm />
 			</Layout>

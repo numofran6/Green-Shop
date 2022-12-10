@@ -52,7 +52,7 @@ export const OrderSummary = () => {
 			Router.push(`/order/${data._id}`);
 		} catch (err) {
 			setLoading(false);
-			toast.error(errorHandler(err));
+			toast.error('Something went wrong');
 		}
 	};
 
