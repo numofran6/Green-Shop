@@ -42,7 +42,7 @@ body {
 
 input,
 textarea {
-	@apply p-2 text-black font-bold outline-none bg-green-100 placeholder:text-green-800 ring-green-700 placeholder:uppercase transition ease-out duration-150 rounded-sm border-2 focus:bg-green-400;
+	@apply p-2 text-black font-bold placeholder:font-normal outline-none bg-green-100 placeholder:text-green-800 ring-green-700 placeholder:uppercase transition ease-out duration-150 rounded-sm border-2 focus:bg-green-400;
 }
 
 select {
