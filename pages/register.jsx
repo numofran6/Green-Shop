@@ -9,8 +9,11 @@ import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
+import { useState } from 'react';
+import ReactLoading from 'react-loading';
 
 export default function LoginScreen() {
+	const [loading, setLoading] = useState(false);
 	const { data: session } = useSession();
 	const { push, query } = useRouter();
 	const { redirect } = query;
@@ -30,6 +33,7 @@ export default function LoginScreen() {
 
 	const submitHandler = async ({ name, email, password }) => {
 		try {
+			setLoading(true);
 			await axios.post('/api/auth/signup', {
 				name,
 				email,
@@ -40,10 +44,13 @@ export default function LoginScreen() {
 				email,
 				password,
 			});
+			setLoading(false);
 			if (result.error) {
+				setLoading(false);
 				toast.error(result.error);
 			}
 		} catch (err) {
+			setLoading(false);
 			toast.error(errorHandler(err));
 		}
 	};
@@ -145,7 +152,19 @@ export default function LoginScreen() {
 				</div>
 
 				<div className="space-y-4 flex flex-col items-center">
-					<button className="primary-button">Register</button>
+					{loading ? (
+						<div className="flex justify-center">
+							<ReactLoading
+								type="spin"
+								color="#7abc7fee"
+								height={50}
+								width={25}
+								className="flex flex-col items-center"
+							/>
+						</div>
+					) : (
+						<button className="primary-button shadow-none">Register</button>
+					)}
 
 					<h1>
 						Already have an account?{' '}

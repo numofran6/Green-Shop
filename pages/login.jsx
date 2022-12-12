@@ -2,15 +2,15 @@ import Link from 'next/link';
 import React from 'react';
 import Layout from '../components/Layout';
 import { useForm } from 'react-hook-form';
-import { getSession, signIn, useSession } from 'next-auth/react';
+import { getSession, signIn } from 'next-auth/react';
 import { toast } from 'react-toastify';
-import { errorHandler } from '../utils/errorHandler';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { GiShoppingCart } from 'react-icons/gi';
+import { useState } from 'react';
+import ReactLoading from 'react-loading';
 
 export default function LoginScreen() {
-	const { data: session } = useSession();
+	const [loading, setLoading] = useState(false);
 	const { push, query } = useRouter();
 	const { redirect } = query;
 
@@ -21,11 +21,13 @@ export default function LoginScreen() {
 	} = useForm();
 
 	const submitHandler = async ({ email, password }) => {
+		setLoading(true);
 		const result = await signIn('credentials', {
 			redirect: false,
 			email,
 			password,
 		});
+		setLoading(false);
 		if (result.error) {
 			toast.error(result.error);
 		} else {
@@ -89,7 +91,19 @@ export default function LoginScreen() {
 							</div>
 
 							<div className="text-center">
-								<button className="primary-button shadow-none">Log In</button>
+								{loading ? (
+									<div className="flex justify-center">
+										<ReactLoading
+											type="spin"
+											color="#7abc7fee"
+											height={50}
+											width={25}
+											className="flex flex-col items-center"
+										/>
+									</div>
+								) : (
+									<button className="primary-button shadow-none">Log In</button>
+								)}
 							</div>
 						</form>
 
