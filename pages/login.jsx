@@ -61,7 +61,9 @@ export default function LoginScreen() {
 									className="w-[300px] sm:w-[400px]"
 								/>
 								{errors.email && (
-									<div className="text-red-500">{errors.email.message} </div>
+									<div>
+										<em>* {errors.email.message}</em>{' '}
+									</div>
 								)}
 							</div>
 
@@ -80,7 +82,9 @@ export default function LoginScreen() {
 									className="w-[300px] sm:w-[400px]"
 								/>
 								{errors.password && (
-									<div className="text-red-500">{errors.password.message} </div>
+									<div>
+										<em>* {errors.password.message}</em>
+									</div>
 								)}
 							</div>
 

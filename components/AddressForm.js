@@ -51,7 +51,9 @@ export const AddressForm = () => {
 					placeholder="Full Name"
 				/>
 				{errors.fullName && (
-					<div className="text-red-500">{errors.fullName.message} </div>
+					<div>
+						<em>* {errors.fullName.message}</em>
+					</div>
 				)}
 			</div>
 
@@ -67,7 +69,9 @@ export const AddressForm = () => {
 					placeholder="Address"
 				/>
 				{errors.address && (
-					<div className="text-red-500">{errors.address.message} </div>
+					<div>
+						<em>* {errors.address.message}</em>
+					</div>
 				)}
 			</div>
 
@@ -82,7 +86,9 @@ export const AddressForm = () => {
 					placeholder="City"
 				/>
 				{errors.city && (
-					<div className="text-red-500">{errors.city.message} </div>
+					<div>
+						<em>* {errors.city.message}</em>
+					</div>
 				)}
 			</div>
 
@@ -97,7 +103,9 @@ export const AddressForm = () => {
 					className="w-full"
 				/>
 				{errors.postalCode && (
-					<div className="text-red-500">{errors.postalCode.message} </div>
+					<div>
+						<em>* {errors.postalCode.message}</em>
+					</div>
 				)}
 			</div>
 
@@ -112,7 +120,9 @@ export const AddressForm = () => {
 					className="w-full"
 				/>
 				{errors.country && (
-					<div className="text-red-500">{errors.country.message} </div>
+					<div>
+						<em>* {errors.country.message}</em>
+					</div>
 				)}
 			</div>
 

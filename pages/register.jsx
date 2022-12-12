@@ -61,14 +61,16 @@ export default function LoginScreen() {
 					<label htmlFor="name">Name</label>
 					<input
 						{...register('name', {
-							required: 'Please enter name',
+							required: 'Please enter your name',
 						})}
 						type="text"
 						className="w-full"
 						id="name"
 					/>
 					{errors.name && (
-						<div className="text-red-500">{errors.name.message} </div>
+						<div className="text-green-200">
+							<em>* {errors.name.message}</em>
+						</div>
 					)}
 				</div>
 
@@ -87,7 +89,9 @@ export default function LoginScreen() {
 						id="email"
 					/>
 					{errors.email && (
-						<div className="text-red-500">{errors.email.message} </div>
+						<div className="text-green-200">
+							<em>* {errors.email.message} </em>
+						</div>
 					)}
 				</div>
 
@@ -106,7 +110,9 @@ export default function LoginScreen() {
 						id="password"
 					/>
 					{errors.password && (
-						<div className="text-red-500">{errors.password.message} </div>
+						<div className="text-green-200">
+							<em>* {errors.password.message}</em>
+						</div>
 					)}
 				</div>
 
@@ -126,11 +132,15 @@ export default function LoginScreen() {
 						id="confirmPassword"
 					/>
 					{errors.confirmPassword && (
-						<div className="text-red-500">{errors.confirmPassword.message}</div>
+						<div className="text-green-200">
+							<em>* {errors.confirmPassword.message}</em>
+						</div>
 					)}
 					{errors.confirmPassword &&
 						errors.confirmPassword.type === 'validate' && (
-							<div className="text-red-500">Passwords do not match</div>
+							<div className="text-green-200">
+								<em>* Passwords do not match</em>
+							</div>
 						)}
 				</div>
 
