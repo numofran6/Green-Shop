@@ -192,7 +192,7 @@ export default function OrderTracking({ orderId }) {
 							</div>
 						</div>
 
-						<div className="card p-5 mt-5 h-fit lg:mt-0 border-2 border-green-300 rounded-none">
+						<div className="card p-5 mt-5 h-fit lg:mt-0 border-2 border-emerald-700 rounded-none">
 							<h2 className="mb-2 text-3xl uppercase font-semibold text-center">
 								Order Summary
 							</h2>

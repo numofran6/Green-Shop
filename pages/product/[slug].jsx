@@ -23,16 +23,18 @@ export default function ProductScreen({ product }) {
 	return (
 		<>
 			<Layout title={product.name}>
-				<Link href={'/'} className="font-semibold flex items-center mb-2">
-					<BsFillArrowLeftCircleFill className="inline mr-2 lg:ml-10 w-5 h-5" />{' '}
-					Back to Products
-				</Link>
+				<div className="mb-2 flex">
+					<Link href={'/'} className="font-semibold flex items-center">
+						<BsFillArrowLeftCircleFill className="inline mr-2 lg:ml-10 w-5 h-5" />{' '}
+						Back to Products
+					</Link>
+				</div>
 
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5 }}
-					className="flex justify-center"
+					className="flex justify-center mt-2"
 				>
 					<div className="sm:flex sm:space-x-5">
 						<Image
@@ -50,14 +52,15 @@ export default function ProductScreen({ product }) {
 									{product.name}
 								</li>
 								<li>
-									<span className="font-bold">Category:</span>{' '}
+									<span className="font-bold text-lg">Category:</span>{' '}
 									{product.category}
 								</li>
 								<li>
-									<span className="font-bold">Brand:</span> {product.brand}
+									<span className="font-bold text-lg">Brand:</span>{' '}
+									{product.brand}
 								</li>
 								<li>
-									<span className="font-bold">Description:</span>{' '}
+									<span className="font-bold text-lg">Description:</span>{' '}
 									{product.description}
 								</li>
 							</ul>

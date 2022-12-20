@@ -63,6 +63,7 @@ function CartScreen() {
 								</h1>
 								<p className="italic">happy shopping</p>
 							</div>
+
 							<table className="min-w-full">
 								<thead className="border-b uppercase">
 									<tr className="text-center">
@@ -119,14 +120,7 @@ function CartScreen() {
 								))}
 							</table>
 
-							<div className="my-10">
-								<Link href={'/'} className="flex items-center space-x-2">
-									<BsArrowLeft />
-									<span>Continue Shopping</span>
-								</Link>
-							</div>
-
-							<div className=" space-y-5 text-center">
+							<div className="mt-20 space-y-5 text-center">
 								<h1 className="sm:text-3xl text-xl font-bold uppercase">
 									Total
 								</h1>
@@ -146,6 +140,13 @@ function CartScreen() {
 								>
 									Check Out
 								</button>
+							</div>
+
+							<div className="mt-10 flex">
+								<Link href={'/'} className="flex items-center space-x-2">
+									<BsArrowLeft />
+									<span>Continue Shopping</span>
+								</Link>
 							</div>
 						</>
 					)}

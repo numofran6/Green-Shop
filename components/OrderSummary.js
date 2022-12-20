@@ -177,7 +177,7 @@ export const OrderSummary = () => {
 						</div>
 					</div>
 
-					<div className="card p-5 flex flex-col justify-between h-fit border-2 border-green-300 rounded-none">
+					<div className="card p-5 flex flex-col justify-between h-fit border-2 border-emerald-700 rounded-none">
 						<h2 className="mb-2 text-3xl font-semibold text-center uppercase">
 							Order Summary
 						</h2>
