@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
+import { BsArrowLeft } from 'react-icons/bs';
 
 function CartScreen() {
 	const { push } = useRouter();
@@ -118,7 +119,14 @@ function CartScreen() {
 								))}
 							</table>
 
-							<div className="mt-20 space-y-5 text-center">
+							<div className="my-10">
+								<Link href={'/'} className="flex items-center space-x-2">
+									<BsArrowLeft />
+									<span>Continue Shopping</span>
+								</Link>
+							</div>
+
+							<div className=" space-y-5 text-center">
 								<h1 className="sm:text-3xl text-xl font-bold uppercase">
 									Total
 								</h1>

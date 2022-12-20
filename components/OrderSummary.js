@@ -88,8 +88,8 @@ export const OrderSummary = () => {
 				</div>
 			) : (
 				<div className="grid lg:grid-cols-4 gap-5">
-					<div className="overflow-x-auto lg:col-span-3 space-y-5">
-						<div className="card p-5 bg-[#363636]/50">
+					<div className="overflow-x-auto lg:col-span-3 space-y-5 bg-[#363636]/50">
+						<div className="card p-5 rounded-none">
 							<h2 className="mb-2 text-xl uppercase font-bold">
 								Shipping Address
 							</h2>
@@ -110,7 +110,7 @@ export const OrderSummary = () => {
 							</div>
 						</div>
 
-						<div className="card p-5 bg-[#363636]/50">
+						<div className="card p-5 rounded-none">
 							<h2 className="mb-2 text-xl uppercase font-bold">
 								Payment Method
 							</h2>
@@ -127,7 +127,7 @@ export const OrderSummary = () => {
 							</div>
 						</div>
 
-						<div className="card overflow-x-auto p-5 bg-[#363636]/50">
+						<div className="card overflow-x-auto p-5">
 							<h2 className="mb-2 text-xl uppercase font-bold">Your Items</h2>
 							<table className="min-w-full text-emerald-200">
 								<thead className="border-b">
@@ -177,7 +177,7 @@ export const OrderSummary = () => {
 						</div>
 					</div>
 
-					<div className="card p-5 flex flex-col justify-between h-fit border-2 border-green-300">
+					<div className="card p-5 flex flex-col justify-between h-fit border-2 border-green-300 rounded-none">
 						<h2 className="mb-2 text-3xl font-semibold text-center uppercase">
 							Order Summary
 						</h2>

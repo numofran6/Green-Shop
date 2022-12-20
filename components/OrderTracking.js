@@ -115,8 +115,8 @@ export default function OrderTracking({ orderId }) {
 					<div className="alert-error">{error}</div>
 				) : (
 					<div className="grid lg:grid-cols-4 lg:gap-5">
-						<div className="overflow-x-auto space-y-5 lg:col-span-3">
-							<div className="card p-5 bg-[#363636]/50">
+						<div className="overflow-x-auto space-y-5 lg:col-span-3 bg-[#363636]/50">
+							<div className="card p-5 rounded-none">
 								<h2 className="mb-2 text-xl uppercase font-bold">
 									Shipping Address
 								</h2>
@@ -134,7 +134,7 @@ export default function OrderTracking({ orderId }) {
 								)}
 							</div>
 
-							<div className="card p-5  bg-[#363636]/50">
+							<div className="card p-5 rounded-none">
 								<h2 className="mb-2 text-xl uppercase font-bold">
 									Payment Method
 								</h2>
@@ -146,7 +146,7 @@ export default function OrderTracking({ orderId }) {
 								)}
 							</div>
 
-							<div className="card p-5 overflow-x-auto  bg-[#363636]/50">
+							<div className="card p-5 overflow-x-auto">
 								<h2 className="mb-2 text-xl uppercase font-bold">
 									Order Items
 								</h2>
@@ -192,7 +192,7 @@ export default function OrderTracking({ orderId }) {
 							</div>
 						</div>
 
-						<div className="card p-5 mt-5 h-fit lg:mt-0 border-2 border-green-300">
+						<div className="card p-5 mt-5 h-fit lg:mt-0 border-2 border-green-300 rounded-none">
 							<h2 className="mb-2 text-3xl uppercase font-semibold text-center">
 								Order Summary
 							</h2>
