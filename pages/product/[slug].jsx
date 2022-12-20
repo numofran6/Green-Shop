@@ -44,7 +44,7 @@ export default function ProductScreen({ product }) {
 							className="w-[350px] sm:w-[280px] md:w-[350px] lg:w-[400px] h-[450px] sm:h-[550px] object-cover rounded-md shadow-md border-2 border-emerald-700"
 						/>
 
-						<div className="flex flex-col space-y-5 sm:space-y-0 justify-between sm:w-[320px] md:w-[350px] lg:w-[500px] col-span-2">
+						<div className="flex flex-col space-y-5 sm:space-y-0 justify-between sm:w-[320px] md:w-[350px] lg:w-[500px] col-span-2 text-emerald-200">
 							<ul className="space-y-2 text-md my-5 md:my-0 text-left md:text-left">
 								<li className="text-4xl text-green-200 font-semibold mb-5">
 									{product.name}
@@ -62,7 +62,7 @@ export default function ProductScreen({ product }) {
 								</li>
 							</ul>
 
-							<div className="sm:card p-5 uppercase h-fit text-xl bg-emerald-800">
+							<div className="sm:card p-5 uppercase h-fit text-xl text-yellow-400 bg-emerald-800">
 								<div className="mb-2 flex justify-between items-center">
 									<p>Price:</p>
 									<p className="font-bold">$ {product.price}</p>

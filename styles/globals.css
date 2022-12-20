@@ -8,7 +8,7 @@
 	}
 
 	.primary-button {
-		@apply bg-green-100 rounded py-2 px-3 shadow text-sm outline-none hover:bg-green-300 active:bg-green-100 uppercase text-emerald-900 font-bold;
+		@apply bg-green-100 rounded py-2 px-4 shadow outline-none hover:bg-green-300 active:bg-green-100 uppercase text-black;
 	}
 
 	.default-button {
@@ -40,9 +40,12 @@ body {
 	@apply bg-emerald-900 scrollbar-thin scrollbar-track-[#363636] scrollbar-thumb-emerald-700 hover:scrollbar-thumb-emerald-800 active:scrollbar-thumb-emerald-700 text-yellow-300 transition-all ease-out duration-100;
 }
 
-input,
-textarea {
-	@apply p-2 text-black font-bold placeholder:font-normal outline-none bg-green-100 placeholder:text-green-800 ring-green-700 placeholder:uppercase transition ease-out duration-150 rounded-sm border-2 focus:bg-green-400;
+input {
+	@apply p-2 bg-inherit placeholder:text-green-100/50 border-b-2 border-green-100/20 focus:border-green-400 focus:bg-[#363636]/50 text-green-200 min-w-[300px] placeholder:uppercase outline-none rounded-sm;
+}
+
+input[type='radio'] {
+	@apply min-w-0;
 }
 
 select {

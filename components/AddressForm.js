@@ -37,7 +37,7 @@ export const AddressForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(submitHandler)}
-			className="mx-auto max-w-screen-md mt-16"
+			className="mx-auto max-w-screen-lg bg-[#363636]/50 sm:px-16 py-5 mt-16 flex flex-col items-center"
 		>
 			<h1 className="my-5 text-3xl text-green-200 uppercase tracking-wide text-center font-bold">
 				Shipping Address
@@ -47,7 +47,6 @@ export const AddressForm = () => {
 					{...register('fullName', { required: 'Please enter your full name' })}
 					type="text"
 					id="fullName"
-					className="w-full"
 					placeholder="Full Name"
 				/>
 				{errors.fullName && (
@@ -65,7 +64,6 @@ export const AddressForm = () => {
 					})}
 					type="text"
 					id="address"
-					className="w-full"
 					placeholder="Address"
 				/>
 				{errors.address && (
@@ -82,7 +80,6 @@ export const AddressForm = () => {
 					})}
 					type="text"
 					id="city"
-					className="w-full"
 					placeholder="City"
 				/>
 				{errors.city && (
@@ -100,7 +97,6 @@ export const AddressForm = () => {
 					type="text"
 					id="postalCode"
 					placeholder="Postal Code"
-					className="w-full"
 				/>
 				{errors.postalCode && (
 					<div>
@@ -117,7 +113,6 @@ export const AddressForm = () => {
 					type="text"
 					id="country"
 					placeholder="Country"
-					className="w-full"
 				/>
 				{errors.country && (
 					<div>
@@ -126,9 +121,9 @@ export const AddressForm = () => {
 				)}
 			</div>
 
-			<div className="mb-4 flex justify-end">
-				<button className="primary-button">Next</button>
-			</div>
+			<button className="primary-button mt-4 flex items-end justify-end">
+				Next
+			</button>
 		</form>
 	);
 };

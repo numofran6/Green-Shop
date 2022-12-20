@@ -94,7 +94,7 @@ export const OrderSummary = () => {
 								Shipping Address
 							</h2>
 							<div>
-								<div>
+								<div className="text-emerald-200">
 									{shippingAddress.fullName}, {shippingAddress.address},{' '}
 									{shippingAddress.city}, {shippingAddress.postalCode},{' '}
 									{shippingAddress.country},
@@ -116,7 +116,7 @@ export const OrderSummary = () => {
 							</h2>
 
 							<div>
-								<div>{paymentMethod}</div>
+								<div className="text-emerald-200">{paymentMethod}</div>
 								<Link
 									href={'/payment'}
 									className="flex items-center text-md uppercase text-green-400"
@@ -129,7 +129,7 @@ export const OrderSummary = () => {
 
 						<div className="card overflow-x-auto p-5 bg-[#363636]/50">
 							<h2 className="mb-2 text-xl uppercase font-bold">Your Items</h2>
-							<table className="min-w-full">
+							<table className="min-w-full text-emerald-200">
 								<thead className="border-b">
 									<tr>
 										<th className="px-5 text-left">Item</th>
@@ -178,11 +178,11 @@ export const OrderSummary = () => {
 					</div>
 
 					<div className="card p-5 flex flex-col justify-between h-fit border-2 border-green-300">
-						<h2 className="mb-2 text-3xl  text-blue-600 font-semibold text-center uppercase">
+						<h2 className="mb-2 text-3xl font-semibold text-center uppercase">
 							Order Summary
 						</h2>
 
-						<ul className="my-10 font-semibold">
+						<ul className="my-10 font-semibold text-emerald-200">
 							<li>
 								<div className="mb-2 flex justify-between">
 									<div>Items</div>
@@ -202,7 +202,7 @@ export const OrderSummary = () => {
 								</div>
 							</li>
 							<li className="uppercase text-xl font-bold">
-								<div className="mb-2 flex justify-between">
+								<div className="mb-2 flex justify-between text-yellow-300">
 									<div>Total</div>
 									<div>$ {totalPrice}</div>
 								</div>

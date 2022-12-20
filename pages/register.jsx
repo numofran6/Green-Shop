@@ -59,96 +59,99 @@ export default function LoginScreen() {
 		<Layout title={'Create Account'}>
 			<form
 				onSubmit={handleSubmit(submitHandler)}
-				className="mx-auto max-w-screen-md"
+				className="max-w-screen-lg bg-[#363636]/50 sm:px-16 py-10 mt-10 flex flex-col items-center mx-auto"
 			>
-				<h1 className="mt-10 mb-4 text-3xl text-center font-semibold uppercase text-green-200">
+				<h1 className="mb-4 text-3xl text-center font-semibold uppercase text-green-200">
 					Create Account
 				</h1>
-				<div className="mb-4">
-					<label htmlFor="name">Name</label>
-					<input
-						{...register('name', {
-							required: 'Please enter your name',
-						})}
-						type="text"
-						className="w-full"
-						id="name"
-					/>
-					{errors.name && (
-						<div className="text-green-200">
-							<em>* {errors.name.message}</em>
-						</div>
-					)}
-				</div>
 
-				<div className="mb-4">
-					<label htmlFor="email">Email</label>
-					<input
-						{...register('email', {
-							required: 'Please enter email',
-							pattern: {
-								value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-								message: 'Invalid email format',
-							},
-						})}
-						type="email"
-						className="w-full"
-						id="email"
-					/>
-					{errors.email && (
-						<div className="text-green-200">
-							<em>* {errors.email.message} </em>
-						</div>
-					)}
-				</div>
-
-				<div className="mb-4">
-					<label htmlFor="password">Password</label>
-					<input
-						{...register('password', {
-							required: 'Please enter password',
-							minLength: {
-								value: 6,
-								message: 'password must be at least 6 chars',
-							},
-						})}
-						type="password"
-						className="w-full"
-						id="password"
-					/>
-					{errors.password && (
-						<div className="text-green-200">
-							<em>* {errors.password.message}</em>
-						</div>
-					)}
-				</div>
-
-				<div className="mb-4">
-					<label htmlFor="confirmPassword">Confirm Password</label>
-					<input
-						{...register('confirmPassword', {
-							required: 'Please confirm your password',
-							validate: (value) => value === getValues('password'),
-							minLength: {
-								value: 6,
-								message: 'password must be at least 6 chars',
-							},
-						})}
-						type="password"
-						className="w-full"
-						id="confirmPassword"
-					/>
-					{errors.confirmPassword && (
-						<div className="text-green-200">
-							<em>* {errors.confirmPassword.message}</em>
-						</div>
-					)}
-					{errors.confirmPassword &&
-						errors.confirmPassword.type === 'validate' && (
+				<div className="mt-5">
+					<div className="mb-7">
+						<input
+							{...register('name', {
+								required: 'Please enter your name',
+							})}
+							type="text"
+							className="w-full"
+							id="name"
+							placeholder="Name"
+						/>
+						{errors.name && (
 							<div className="text-green-200">
-								<em>* Passwords do not match</em>
+								<em>* {errors.name.message}</em>
 							</div>
 						)}
+					</div>
+
+					<div className="mb-7">
+						<input
+							{...register('email', {
+								required: 'Please enter email',
+								pattern: {
+									value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+									message: 'Invalid email format',
+								},
+							})}
+							type="email"
+							className="w-full"
+							id="email"
+							placeholder="Email"
+						/>
+						{errors.email && (
+							<div className="text-green-200">
+								<em>* {errors.email.message} </em>
+							</div>
+						)}
+					</div>
+
+					<div className="mb-7">
+						<input
+							{...register('password', {
+								required: 'Please enter password',
+								minLength: {
+									value: 6,
+									message: 'password must be at least 6 chars',
+								},
+							})}
+							type="password"
+							className="w-full"
+							id="password"
+							placeholder="Password"
+						/>
+						{errors.password && (
+							<div className="text-green-200">
+								<em>* {errors.password.message}</em>
+							</div>
+						)}
+					</div>
+
+					<div className="mb-7">
+						<input
+							{...register('confirmPassword', {
+								required: 'Please confirm your password',
+								validate: (value) => value === getValues('password'),
+								minLength: {
+									value: 6,
+									message: 'password must be at least 6 chars',
+								},
+							})}
+							type="password"
+							className="w-full"
+							id="confirmPassword"
+							placeholder="Confirm Password"
+						/>
+						{errors.confirmPassword && (
+							<div className="text-green-200">
+								<em>* {errors.confirmPassword.message}</em>
+							</div>
+						)}
+						{errors.confirmPassword &&
+							errors.confirmPassword.type === 'validate' && (
+								<div className="text-green-200">
+									<em>* Passwords do not match</em>
+								</div>
+							)}
+					</div>
 				</div>
 
 				<div className="space-y-4 flex flex-col items-center">
@@ -163,7 +166,9 @@ export default function LoginScreen() {
 							/>
 						</div>
 					) : (
-						<button className="primary-button shadow-none">Register</button>
+						<button className="primary-button shadow-none tracking-wide">
+							Register
+						</button>
 					)}
 
 					<h1>

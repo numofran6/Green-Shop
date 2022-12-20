@@ -120,7 +120,7 @@ export default function OrderTracking({ orderId }) {
 								<h2 className="mb-2 text-xl uppercase font-bold">
 									Shipping Address
 								</h2>
-								<div>
+								<div className="text-emerald-200">
 									{shippingAddress.fullName}, {shippingAddress.address},{' '}
 									{shippingAddress.city}, {shippingAddress.postalCode},{' '}
 									{shippingAddress.country},
@@ -138,7 +138,7 @@ export default function OrderTracking({ orderId }) {
 								<h2 className="mb-2 text-xl uppercase font-bold">
 									Payment Method
 								</h2>
-								<div>{paymentMethod} </div>
+								<div className="text-emerald-200">{paymentMethod} </div>
 								{isPaid ? (
 									<div className="alert-success">Paid at {paidAt} </div>
 								) : (
@@ -150,7 +150,7 @@ export default function OrderTracking({ orderId }) {
 								<h2 className="mb-2 text-xl uppercase font-bold">
 									Order Items
 								</h2>
-								<table className="min-w-full">
+								<table className="min-w-full text-emerald-200">
 									<thead className="border-b">
 										<tr>
 											<th className="px-5 text-left">Item</th>
@@ -193,11 +193,11 @@ export default function OrderTracking({ orderId }) {
 						</div>
 
 						<div className="card p-5 mt-5 h-fit lg:mt-0 border-2 border-green-300">
-							<h2 className="mb-2 text-3xl text-blue-400 uppercase font-semibold text-center">
+							<h2 className="mb-2 text-3xl uppercase font-semibold text-center">
 								Order Summary
 							</h2>
 
-							<ul className="font-semibold mt-10">
+							<ul className="font-semibold mt-10 text-emerald-200">
 								<li>
 									<div className="mb-2 flex justify-between">
 										<div>Items</div>
@@ -217,7 +217,7 @@ export default function OrderTracking({ orderId }) {
 									</div>
 								</li>
 								<li className="uppercase text-xl font-bold mb-10">
-									<div className="mb-2 flex justify-between">
+									<div className="mb-2 flex justify-between text-yellow-300">
 										<div>Total</div>
 										<div>$ {totalPrice}</div>
 									</div>

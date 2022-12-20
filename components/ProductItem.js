@@ -23,7 +23,7 @@ function ProductItem({ product }) {
 			<div className="flex flex-col items-center text-center p-5 absolute bottom-0 bg-slate-500 text-white bg-opacity-40 left-[50%] translate-x-[-50%] w-full">
 				<Link
 					href={`/product/${product.slug}`}
-					className="text-xl font-bold text-yellow-300 hover:text-yellow-400 active:text-yellow-300"
+					className="text-xl font-bold text-emerald-100 hover:text-emerald-300 active:text-emerald-100"
 				>
 					{product.name}
 				</Link>

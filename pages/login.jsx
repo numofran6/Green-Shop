@@ -39,55 +39,58 @@ export default function LoginScreen() {
 		<>
 			<Layout title={'Login'}>
 				<div className="flex justify-center mt-20">
-					<div className="flex flex-col items-center justify-center w-fit bg-[#363636]/50 p-8">
+					<div className="flex flex-col items-center justify-center w-fit bg-[#363636]/50 p-8 sm:px-14">
 						<div className="flex flex-col items-center justify-center mb-5">
 							<GiShoppingCart className="w-20 h-20 text-[#fafcdced]" />
 						</div>
 
 						<form
 							onSubmit={handleSubmit(submitHandler)}
-							className="space-y-4 mb-4"
+							className="space-y-8 mb-4"
 						>
-							<div>
-								<input
-									{...register('email', {
-										required: 'Please enter email',
-										pattern: {
-											value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-											message: 'Invalid email format',
-										},
-									})}
-									type="email"
-									id="email"
-									placeholder="Email"
-									className="w-[300px] sm:w-[400px]"
-								/>
-								{errors.email && (
-									<div>
-										<em>* {errors.email.message}</em>{' '}
-									</div>
-								)}
-							</div>
+							<div className="space-y-4">
+								<div>
+									<input
+										{...register('email', {
+											required: 'Please enter email',
+											pattern: {
+												value:
+													/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+												message: 'Invalid email format',
+											},
+										})}
+										type="email"
+										id="email"
+										placeholder="Email"
+										className="w-[300px]"
+									/>
+									{errors.email && (
+										<div>
+											<em>* {errors.email.message}</em>{' '}
+										</div>
+									)}
+								</div>
 
-							<div>
-								<input
-									{...register('password', {
-										required: 'Please enter password',
-										minLength: {
-											value: 6,
-											message: 'password must be at least 6 characters',
-										},
-									})}
-									type="password"
-									id="password"
-									placeholder="Password"
-									className="w-[300px] sm:w-[400px]"
-								/>
-								{errors.password && (
-									<div>
-										<em>* {errors.password.message}</em>
-									</div>
-								)}
+								<div>
+									<input
+										{...register('password', {
+											required: 'Please enter password',
+											minLength: {
+												value: 6,
+												message: 'password must be at least 6 characters',
+											},
+										})}
+										type="password"
+										id="password"
+										placeholder="Password"
+										className="w-[300px]"
+									/>
+									{errors.password && (
+										<div>
+											<em>* {errors.password.message}</em>
+										</div>
+									)}
+								</div>
 							</div>
 
 							<div className="text-center">
@@ -102,7 +105,9 @@ export default function LoginScreen() {
 										/>
 									</div>
 								) : (
-									<button className="primary-button shadow-none">Log In</button>
+									<button className="primary-button tracking-widest shadow-none">
+										Log In
+									</button>
 								)}
 							</div>
 						</form>

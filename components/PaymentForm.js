@@ -37,13 +37,13 @@ export const PaymentForm = () => {
 	}, [paymentMethod, shippingAddress.address]);
 
 	return (
-		<>
-			<h1 className="my-5 text-3xl text-green-200 uppercase tracking-wide text-center font-semibold mt-16">
+		<div className="bg-[#363636]/50 sm:px-16 py-10 mt-16 max-w-screen-lg flex flex-col items-center justify-center mx-auto">
+			<h1 className="my-5 text-xl sm:text-3xl text-green-200 uppercase tracking-wide text-center font-semibold">
 				Choose a payment method
 			</h1>
 			<form
 				onSubmit={submitHandler}
-				className="mx-auto w-[300px] sm:w-[400px] bg-[#363636]/50 space-y-4"
+				className="mx-auto w-[300px] sm:w-[400px] space-y-4"
 			>
 				{paymentOptions.map((payment) => (
 					<div key={payment} className="p-2 flex items-center">
@@ -61,7 +61,7 @@ export const PaymentForm = () => {
 					</div>
 				))}
 
-				<div className="flex justify-between bg-emerald-900">
+				<div className="flex justify-between">
 					<button
 						type="button"
 						onClick={() => push('/shipping')}
@@ -72,6 +72,6 @@ export const PaymentForm = () => {
 					<button className="primary-button mt-5">Next</button>
 				</div>
 			</form>
-		</>
+		</div>
 	);
 };

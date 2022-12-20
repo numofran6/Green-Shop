@@ -56,26 +56,28 @@ function CartScreen() {
 						</h1>
 					) : (
 						<>
-							<div className="text-center mb-10">
-								<h1 className="uppercase text-6xl font-bold mt-5">Your Cart</h1>
+							<div className="text-center mb-10 text-emerald-200">
+								<h1 className="uppercase text-3xl sm:text-6xl font-bold mt-5">
+									Your Cart
+								</h1>
 								<p className="italic">happy shopping</p>
 							</div>
 							<table className="min-w-full">
 								<thead className="border-b uppercase">
 									<tr className="text-center">
 										<th className="px-10 text-left">Item</th>
-										<th>Quantity</th>
+										<th>Qty</th>
 										<th>Price</th>
 										<th className="hidden sm:inline-table">Remove</th>
 									</tr>
 								</thead>
 								{cartItems.map((item) => (
-									<tbody key={item.slug} className="">
+									<tbody key={item.slug} className="text-emerald-200">
 										<tr className="text-center border-b bg-[#363636]/50">
 											<td className="text-left">
 												<Link
 													href={`/product/${item.slug}`}
-													className="flex items-center "
+													className="flex items-center text-emerald-200 "
 												>
 													<Image
 														src={item.image}
@@ -117,7 +119,9 @@ function CartScreen() {
 							</table>
 
 							<div className="mt-20 space-y-5 text-center">
-								<h1 className="text-3xl font-bold uppercase">Total</h1>
+								<h1 className="sm:text-3xl text-xl font-bold uppercase">
+									Total
+								</h1>
 								<div className="flex justify-center border-b border-gray-400/80 space-x-16 text-lg mb-5">
 									<h2>
 										Quantity: {cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}

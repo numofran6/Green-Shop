@@ -11,13 +11,6 @@ function OrderHistory() {
 	} = useContext(Order);
 	const [check, setCheck] = useState(true);
 
-	// useEffect(() => {
-	// 	if (!order && check) {
-	// 		setCheck(false);
-	// 		Router.reload();
-	// 	}
-	// }, [check]);
-
 	return (
 		<>
 			<Layout title={'Order History'}>
@@ -27,7 +20,7 @@ function OrderHistory() {
 
 				{order ? (
 					<div className="overflow-x-auto">
-						<table className="min-w-full">
+						<table className="min-w-full text-emerald-200">
 							<thead>
 								<tr className="text-emerald-500 text-left">
 									<th className="px-5">ITEM</th>
