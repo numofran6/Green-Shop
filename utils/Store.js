@@ -21,7 +21,9 @@ const reducer = (state, action) => {
 						item.name === existItem.name ? newItem : item
 				  )
 				: [...state.cart.cartItems, newItem];
-			Cookies.set('cart', { ...state.cart, cartItems }, { sameSite: 'Lax' });
+			Cookies.set('cart', JSON.stringify({ ...state.cart, cartItems }), {
+				sameSite: 'Lax',
+			});
 			return { ...state, cart: { ...state.cart, cartItems } };
 		}
 		case 'CART_REMOVE_ITEM': {
@@ -29,7 +31,9 @@ const reducer = (state, action) => {
 				(item) => item.slug !== action.payload.slug
 			);
 
-			Cookies.set('cart', { ...state.cart, cartItems }, { sameSite: 'Lax' });
+			Cookies.set('cart', JSON.stringify({ ...state.cart, cartItems }), {
+				sameSite: 'Lax',
+			});
 			return { ...state, cart: { ...state.cart, cartItems } };
 		}
 		case 'CART_RESET': {
