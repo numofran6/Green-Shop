@@ -8,7 +8,7 @@
 	}
 
 	.primary-button {
-		@apply bg-green-100 rounded py-2 px-4 shadow outline-none hover:bg-green-300 active:bg-green-100 uppercase text-black;
+		@apply bg-green-100 rounded py-2 px-4 shadow outline-none hover:bg-green-300 active:bg-green-100 uppercase text-black text-sm;
 	}
 
 	.default-button {

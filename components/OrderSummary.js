@@ -102,7 +102,7 @@ export const OrderSummary = () => {
 
 								<Link
 									href={'/shipping'}
-									className="flex items-center text-md uppercase text-green-400"
+									className="flex items-center text-md uppercase text-green-400 hover:text-green-200 active:text-green-400"
 								>
 									<AiFillEdit />
 									<div>Edit</div>
@@ -119,7 +119,7 @@ export const OrderSummary = () => {
 								<div className="text-emerald-200">{paymentMethod}</div>
 								<Link
 									href={'/payment'}
-									className="flex items-center text-md uppercase text-green-400"
+									className="flex items-center text-md uppercase text-green-400 hover:text-green-200 active:text-green-400"
 								>
 									<AiFillEdit />
 									<div>Edit</div>
@@ -169,7 +169,7 @@ export const OrderSummary = () => {
 							</table>
 							<Link
 								href={'/cart'}
-								className="flex items-center text-md uppercase shadow-md text-green-400"
+								className="flex items-center text-md uppercase shadow-md text-green-400 hover:text-green-200 active:text-green-400"
 							>
 								<AiFillEdit />
 								<div>Edit</div>

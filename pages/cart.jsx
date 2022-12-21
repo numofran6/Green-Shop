@@ -58,7 +58,7 @@ function CartScreen() {
 					) : (
 						<>
 							<div className="text-center mb-10 text-emerald-200">
-								<h1 className="uppercase text-3xl sm:text-6xl font-bold mt-5">
+								<h1 className="uppercase text-4xl sm:text-6xl font-bold mt-5">
 									Your Cart
 								</h1>
 								<p className="italic">happy shopping</p>
@@ -120,19 +120,21 @@ function CartScreen() {
 								))}
 							</table>
 
-							<div className="mt-20 space-y-5 text-center">
-								<h1 className="sm:text-3xl text-xl font-bold uppercase">
-									Total
-								</h1>
-								<div className="flex justify-center border-b border-gray-400/80 space-x-16 text-lg mb-5">
-									<h2>
-										Quantity: {cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
-									</h2>
+							<div className="mt-12 text-emerald-200">
+								<div className="flex justify-end border-b sm:text-3xl text-2xl border-green-400/20 space-x-16 mb-5 items-center sm:mr-6">
+									<h1 className=" font-bold uppercase">Total</h1>
 
-									<h3 className="font-semibold">
+									<h3 className="font-bold sm:text-2xl">
 										$ {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
 									</h3>
 								</div>
+							</div>
+
+							<div className="mt-5 sm:px-16 flex items-center justify-between">
+								<Link href={'/'} className="flex items-center space-x-2">
+									<BsArrowLeft />
+									<span>Continue Shopping</span>
+								</Link>
 
 								<button
 									onClick={() => push('/login?redirect=/shipping')}
@@ -140,13 +142,6 @@ function CartScreen() {
 								>
 									Check Out
 								</button>
-							</div>
-
-							<div className="mt-10 flex">
-								<Link href={'/'} className="flex items-center space-x-2">
-									<BsArrowLeft />
-									<span>Continue Shopping</span>
-								</Link>
 							</div>
 						</>
 					)}

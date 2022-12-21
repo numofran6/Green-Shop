@@ -36,7 +36,7 @@ export default function ProductScreen({ product }) {
 					transition={{ duration: 0.5 }}
 					className="flex justify-center mt-2"
 				>
-					<div className="sm:flex sm:space-x-5">
+					<div className="ml-2 sm:ml-0 sm:flex sm:space-x-5">
 						<Image
 							src={product.image}
 							alt={product.name}

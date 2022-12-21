@@ -77,7 +77,9 @@ function Layout({ children, title }) {
 					</nav>
 				</header>
 
-				<main className="container m-auto mt-4 py-2 px-8">{children}</main>
+				<main className="container m-auto mt-4 py-2 px-4 sm:px-8">
+					{children}
+				</main>
 
 				<footer className="text-xs sm:text-sm flex flex-col justify-center h-16 shadow-inner text-center sm:mt-3 font-semibold bg-[#363636] text-[#eff1d4ee]">
 					<p>
