@@ -87,6 +87,7 @@ function Layout({ children, title }) {
 						</Link>
 
 						<div className="space-x-4 flex uppercase font-semibold text-md">
+							<Link href="/">Home</Link>
 							<div className="relative">
 								<Link href="/cart">Cart</Link>
 
@@ -113,14 +114,48 @@ function Layout({ children, title }) {
 					{children}
 				</main>
 
-				<footer className="text-xs sm:text-sm flex flex-col justify-center h-16 shadow-inner text-center sm:mt-3 font-semibold bg-[#363636] text-[#eff1d4ee]">
-					<p>
-						Build inspired by SUBWAE STUDIOS.&nbsp;
-						<span>
-							Photo credit:&nbsp; <GrInstagram className="inline" />{' '}
-							subwaestudios
-						</span>
-					</p>
+				<footer className="text-xs md:text-sm bg-neutral-900">
+					<div className="flex p-16 justify-around space-x-10 md:space-x-0">
+						<div className="space-y-7">
+							<h1 className="uppercase font-bold tracking-widest">
+								Information
+							</h1>
+
+							<ul className="space-y-1">
+								<li>About Shop</li>
+								<li>Our Location</li>
+								<li>Delivery Information</li>
+								<li>Terms & Conditions</li>
+							</ul>
+						</div>
+
+						<div className="space-y-7">
+							<h1 className="uppercase font-bold tracking-widest">Contact</h1>
+
+							<ul className="space-y-1">
+								<li>
+									Lebanon Zone 2 2300 The Young Shall Grow Street Ashaiman, AS
+									76051
+								</li>
+								<li>info@greenshopping.com</li>
+							</ul>
+						</div>
+
+						<div className="space-y-7">
+							<h1 className="uppercase font-bold tracking-widest">
+								My Account
+							</h1>
+
+							<ul className="space-y-1">
+								<li>Profile</li>
+								<li>Order History</li>
+							</ul>
+						</div>
+					</div>
+
+					<h1 className="text-center bg-black p-3 text-xs md:text-sm">
+						This project is not complete. Watch out for more added features
+					</h1>
 				</footer>
 			</div>
 		</>

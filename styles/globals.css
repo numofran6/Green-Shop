@@ -37,7 +37,7 @@
 }
 
 body {
-	@apply bg-emerald-900 scrollbar-thin scrollbar-track-[#363636] scrollbar-thumb-emerald-700 hover:scrollbar-thumb-emerald-800 active:scrollbar-thumb-emerald-700 text-yellow-300 transition-all ease-out duration-100;
+	@apply bg-emerald-900 text-green-50 transition-all ease-out duration-300;
 }
 
 input {
@@ -53,5 +53,5 @@ select {
 }
 
 a {
-	@apply text-yellow-400 hover:text-yellow-500 active:text-yellow-400;
+	@apply text-green-100 hover:text-green-400 active:text-green-100 transition duration-300 ease-in-out;
 }

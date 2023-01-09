@@ -1,36 +1,257 @@
-import Layout from '../components/Layout';
-import ProductItem from '../components/ProductItem';
-import db from '../utils/db';
-import Product from '../models/Product';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { GiShoppingBag } from 'react-icons/gi';
+import { GoodiesCard } from '../components/GoodiesCard';
+import free from '../public/images/free.png';
+import payment from '../public/images/payment.png';
+import returnimg from '../public/images/return.png';
+import support from '../public/images/support.png';
+import model from '../public/images/model.png';
+import necklace from '../public/images/necklace.jpg';
+import watch from '../public/images/watch.jpg';
+import { useState } from 'react';
+import { RiMenu4Line } from 'react-icons/ri';
+import { TfiClose } from 'react-icons/tfi';
 
-export default function Home({ products }) {
+function Home() {
+	const [active, setActive] = useState(false);
+
 	return (
-		<>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5 }}
-			>
-				<Layout>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:px-16 px-5 sm:px-0">
-						{products.map((product) => (
-							<ProductItem product={product} key={product.slug} />
-						))}
+		<div className="">
+			<header className="h-[70vh] relative bg-emerald-900">
+				<Image
+					src={'/images/bgleaf.jpg'}
+					alt="bg_leaf"
+					width={4765}
+					height={3177}
+					priority
+					className="h-full w-full object-cover"
+				/>
+
+				<nav className="absolute top-0 w-full flex justify-end md:justify-between items-center px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50">
+					<Link
+						href={'/'}
+						className="hidden md:flex font-bold text-2xl uppercase"
+					>
+						<GiShoppingBag className="w-11 h-11 mr-2" />
+					</Link>
+
+					<div className="hidden space-x-5 md:space-x-7 md:flex uppercase font-semibold text-md">
+						<Link href="/">Home</Link>
+						<Link href="/about">About</Link>
+						<Link href="/contact">Contact</Link>
+						<Link href="/shop">Shop</Link>
 					</div>
-				</Layout>
-			</motion.div>
-		</>
+
+					<div className="md:hidden">
+						{!active && (
+							<RiMenu4Line
+								onClick={() => setActive(!active)}
+								className="w-8 h-8"
+							/>
+						)}
+						{active && (
+							<TfiClose
+								onClick={() => setActive(!active)}
+								className="w-8 h-8"
+							/>
+						)}
+					</div>
+				</nav>
+
+				{active && (
+					<div className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 space-y-10 py-[8.5rem] text-center z-10">
+						<Link href={'/'} className="font-bold text-2xl uppercase">
+							<GiShoppingBag className="w-11 h-11 mr-2" />
+						</Link>
+
+						<div className="space-y-3 flex flex-col uppercase font-semibold text-md">
+							<Link href="/" onClick={() => setActive(!active)}>
+								Home
+							</Link>
+							<Link href="/about" onClick={() => setActive(!active)}>
+								About
+							</Link>
+							<Link href="/contact" onClick={() => setActive(!active)}>
+								Contact
+							</Link>
+							<Link href="/shop" onClick={() => setActive(!active)}>
+								Shop
+							</Link>
+						</div>
+					</div>
+				)}
+
+				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-10 md:ml-60 space-y-4">
+					<h1 className="font-bold text-lg uppercase">Green Shop</h1>
+
+					<h2 className="text-6xl md:text-8xl font-semibold">
+						Wear eco-friendly
+					</h2>
+
+					<h3 className="text-sm text-gray-300">
+						This project is still under developement. I am continously working
+						on ways to make it better.
+					</h3>
+
+					<Link
+						href={'/shop'}
+						className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 hover:text-emerald-600"
+					>
+						Shop Now
+					</Link>
+				</div>
+			</header>
+
+			<div className="bg-white flex justify-around items-center py-12 px-2 md:p-12">
+				<GoodiesCard
+					img={free}
+					heading={'Free Shipping'}
+					text={'Delivered to your door'}
+				/>
+				<GoodiesCard
+					img={payment}
+					heading={'Securety Payments'}
+					text={'Up to 12 months installments'}
+				/>
+				<GoodiesCard
+					img={returnimg}
+					heading={'14-Day Returns'}
+					text={'Shop with confidence'}
+				/>
+				<GoodiesCard
+					img={support}
+					heading={'24/7 Dedicated Support'}
+					text={'Leave us a message'}
+				/>
+			</div>
+
+			<div className="md:flex justify-center py-16 px-5 md:p-16 md:space-x-5 bg-stone-300 items-center space-y-5 md:space-y-0">
+				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-stone-100 md:px-16 pl-5 relative">
+					<div className="h-[65vh] md:h-[70vh] flex justify-end">
+						<Image
+							src={model}
+							alt="model"
+							width={1469}
+							height={4135}
+							className="h-full w-fit"
+						/>
+					</div>
+
+					<div className="h-full absolute top-0 flex flex-col justify-center text-black space-y-5">
+						<h1 className="text-gray-400 text-sm font-bold">
+							Spring Collection
+						</h1>
+						<div className="bg-gray-400 h-1 w-[30%]"></div>
+
+						<div>
+							<h2 className="uppercase text-3xl font-bold">New </h2>
+							<h2 className="uppercase text-3xl font-bold">Arrivals</h2>
+						</div>
+
+						<Link
+							href={'/shop'}
+							className="bg-black p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black"
+						>
+							View More
+						</Link>
+					</div>
+				</div>
+
+				<div className="grid grid-cols-2 h-[50vh] w-[90vw] md:h-[70vh] md:w-[40vw]">
+					<Image
+						src={necklace}
+						alt="Necklace"
+						width={3888}
+						height={4860}
+						className="h-[25vh] md:h-[35vh] object-cover"
+					/>
+
+					<div className="h-[25vh] md:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 md:space-y-5">
+						<h1 className="text-gray-400 text-xs md:text-sm font-bold">
+							The Accessories Collection
+						</h1>
+						<div className="bg-gray-400 h-1 w-[20%]"></div>
+
+						<h2 className="uppercase text-lg md:text-3xl font-bold text-center text-black">
+							Women's Accessories{' '}
+						</h2>
+
+						<Link
+							href={'/shop'}
+							className="bg-blue-300 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-blue-300"
+						>
+							View More
+						</Link>
+					</div>
+
+					<div className="h-[25vh] md:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 md:space-y-5">
+						<h1 className="text-gray-400 text-sm font-bold">Best Offer</h1>
+						<div className="bg-gray-400 h-1 w-[20%]"></div>
+
+						<h2 className="uppercase text-lg md:text-3xl font-bold text-center text-black">
+							Men Watches
+						</h2>
+
+						<Link
+							href={'/shop'}
+							className="bg-blue-300 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-blue-300"
+						>
+							View More
+						</Link>
+					</div>
+
+					<Image
+						src={watch}
+						alt="Necklace"
+						width={3442}
+						height={5073}
+						className="h-[25vh] md:h-[35vh] object-cover"
+					/>
+				</div>
+			</div>
+
+			<footer className="text-xs md:text-sm">
+				<div className="flex p-16 justify-around space-x-10 md:space-x-0">
+					<div className="space-y-7">
+						<h1 className="uppercase font-bold tracking-widest">Information</h1>
+
+						<ul className="space-y-1">
+							<li>About Shop</li>
+							<li>Our Location</li>
+							<li>Delivery Information</li>
+							<li>Terms & Conditions</li>
+						</ul>
+					</div>
+
+					<div className="space-y-7">
+						<h1 className="uppercase font-bold tracking-widest">Contact</h1>
+
+						<ul className="space-y-1">
+							<li>
+								Lebanon Zone 2 2300 The Young Shall Grow Street Ashaiman, AS
+								76051
+							</li>
+							<li>info@greenshopping.com</li>
+						</ul>
+					</div>
+
+					<div className="space-y-7">
+						<h1 className="uppercase font-bold tracking-widest">My Account</h1>
+
+						<ul className="space-y-1">
+							<li>Profile</li>
+							<li>Order History</li>
+						</ul>
+					</div>
+				</div>
+
+				<h1 className="text-center bg-black p-3 text-xs md:text-sm">
+					This project is not complete. Watch out for more added features
+				</h1>
+			</footer>
+		</div>
 	);
 }
 
-export async function getServerSideProps() {
-	await db.connect();
-	const products = await Product.find().lean();
-
-	return {
-		props: {
-			products: products.map(db.convertDocToObj),
-		},
-	};
-}
+export default Home;
