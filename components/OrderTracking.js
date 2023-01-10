@@ -99,166 +99,175 @@ export default function OrderTracking({ orderId }) {
 	return (
 		<>
 			<Layout title={'Order'}>
-				<h1 className="tracking-wide my-5 text-3xl text-green-200 uppercase text-center font-bold mt-8 mb-8">
-					Order Tracking
-				</h1>
-				{loading ? (
-					<div className="flex justify-center mt-16">
-						<ReactLoading
-							type="spin"
-							color="#7abc7fee"
-							height={100}
-							width={50}
-						/>
-					</div>
-				) : error ? (
-					<div className="alert-error">{error}</div>
-				) : (
-					<div className="grid lg:grid-cols-4 lg:gap-5">
-						<div className="overflow-x-auto space-y-5 lg:col-span-3 bg-[#363636]/50">
-							<div className="card p-5 rounded-none">
-								<h2 className="mb-2 text-xl uppercase font-bold">
-									Shipping Address
-								</h2>
-								<div className="text-emerald-200">
-									{shippingAddress.fullName}, {shippingAddress.address},{' '}
-									{shippingAddress.city}, {shippingAddress.postalCode},{' '}
-									{shippingAddress.country},
+				<div className="p-5">
+					<h1 className="tracking-wide text-3xl text-emerald-900 uppercase text-center font-bold mt-14 mb-14">
+						Order Tracking
+					</h1>
+					{loading ? (
+						<div className="flex items-center justify-center">
+							<ReactLoading
+								type="spin"
+								color="#7abc7fee"
+								height={100}
+								width={50}
+							/>
+						</div>
+					) : error ? (
+						<div className="alert-error">{error}</div>
+					) : (
+						<div className="grid lg:grid-cols-4 lg:gap-5">
+							<div className="overflow-x-auto border lg:col-span-3 space-y-5">
+								<div className=" p-5 rounded-none">
+									<h2 className="mb-2 text-xl text-gray-800 uppercase font-bold border-b">
+										Shipping Address
+									</h2>
+									<div className="text-emerald-900">
+										{shippingAddress.fullName}, {shippingAddress.address},{' '}
+										{shippingAddress.city}, {shippingAddress.postalCode},{' '}
+										{shippingAddress.country},
+									</div>
+									{isDelivered ? (
+										<div className="alert-success">
+											Delivered at {deliveredAt}{' '}
+										</div>
+									) : (
+										<div className="alert-error uppercase text-sm">
+											Not delivered
+										</div>
+									)}
 								</div>
-								{isDelivered ? (
-									<div className="alert-success">
-										Delivered at {deliveredAt}{' '}
-									</div>
-								) : (
-									<div className="alert-error">Not delivered</div>
-								)}
-							</div>
 
-							<div className="card p-5 rounded-none">
-								<h2 className="mb-2 text-xl uppercase font-bold">
-									Payment Method
-								</h2>
-								<div className="text-emerald-200">{paymentMethod} </div>
-								{isPaid ? (
-									<div className="alert-success">Paid at {paidAt} </div>
-								) : (
-									<div className="alert-error">Not paid</div>
-								)}
-							</div>
+								<div className=" p-5 rounded-none">
+									<h2 className="mb-2 text-gray-800 text-xl uppercase font-bold border-b">
+										Payment Method
+									</h2>
+									<div className="text-emerald-900">{paymentMethod} </div>
+									{isPaid ? (
+										<div className="alert-success">Paid at {paidAt} </div>
+									) : (
+										<div className="alert-error uppercase text-sm">
+											Not paid
+										</div>
+									)}
+								</div>
 
-							<div className="card p-5 overflow-x-auto">
-								<h2 className="mb-2 text-xl uppercase font-bold">
-									Order Items
-								</h2>
-								<table className="min-w-full text-emerald-200">
-									<thead className="border-b">
-										<tr>
-											<th className="px-5 text-left">Item</th>
-											<th className="p-5 text-right">Quantity</th>
-											<th className="p-5 text-right">Price</th>
-											<th className="p-5 text-right">Subtotal</th>
-										</tr>
-									</thead>
-
-									<tbody>
-										{orderItems.map((item) => (
-											<tr key={item._id} className="border-b bg-[#363636]">
-												<td>
-													<Link
-														href={`/product/${item.slug}`}
-														className="flex items-center"
-													>
-														<Image
-															src={item.image}
-															alt={item.name}
-															width={40}
-															height={40}
-															className="w-auto h-auto"
-														/>
-														&nbsp;
-														{item.name}
-													</Link>
-												</td>
-
-												<td className="p-5 text-right">{item.quantity} </td>
-												<td className="p-5 text-right">{item.price} </td>
-												<td className="p-5 text-right">
-													${item.price * item.quantity}{' '}
-												</td>
+								<div className=" p-5 overflow-x-auto">
+									<h2 className="mb-2 text-gray-800 text-xl uppercase font-bold border-b">
+										Order Items
+									</h2>
+									<table className="min-w-full text-emerald-900">
+										<thead className="border-b">
+											<tr>
+												<th className="px-5 text-left">Item</th>
+												<th className="p-5 text-right">Quantity</th>
+												<th className="p-5 text-right">Price</th>
+												<th className="p-5 text-right">Subtotal</th>
 											</tr>
-										))}
-									</tbody>
-								</table>
+										</thead>
+
+										<tbody>
+											{orderItems.map((item) => (
+												<tr
+													key={item._id}
+													className=" text-emerald-900 border-b bg-stone-100"
+												>
+													<td>
+														<Link
+															href={`/product/${item.slug}`}
+															className="flex items-center text-emerald-900"
+														>
+															<Image
+																src={item.image}
+																alt={item.name}
+																width={40}
+																height={40}
+																className="w-auto h-auto"
+															/>
+															&nbsp;
+															{item.name}
+														</Link>
+													</td>
+
+													<td className="p-5 text-right">{item.quantity} </td>
+													<td className="p-5 text-right">{item.price} </td>
+													<td className="p-5 text-right">
+														${item.price * item.quantity}{' '}
+													</td>
+												</tr>
+											))}
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div className=" py-5 flex flex-col justify-between h-fit border-2 border-emerald-900 rounded-none bg-emerald-900 text-green-50">
+								<h2 className="mb-2 border-b-2 border-emerald-50 text-2xl font-semibold text-center uppercase">
+									Order Summary
+								</h2>
+
+								<ul className="my-10 font-semibold text-emerald-200 px-10">
+									<li>
+										<div className="mb-2 flex justify-between">
+											<div>Items</div>
+											<div>$ {itemsPrice}</div>
+										</div>
+									</li>
+									<li>
+										<div className="mb-2 flex justify-between">
+											<div>Tax</div>
+											<div>$ {taxPrice}</div>
+										</div>
+									</li>
+									<li className="border-b border-green-50">
+										<div className="mb-2 flex justify-between">
+											<div>Shipping</div>
+											<div>$ {shippingPrice}</div>
+										</div>
+									</li>
+									<li className="uppercase text-xl font-bold mb-10">
+										<div className="mb-2 flex justify-between text-white">
+											<div>Total</div>
+											<div>$ {totalPrice}</div>
+										</div>
+									</li>
+
+									{!isPaid && (
+										<li className="z-0 flex justify-center">
+											{isPending ? (
+												<div>
+													<ReactLoading
+														type="spin"
+														color="#7abc7fee"
+														height={100}
+														width={50}
+													/>
+												</div>
+											) : (
+												<div className="w-full">
+													<PayPalButtons
+														createOrder={createOrder}
+														onApprove={onApprove}
+														onError={onError}
+													></PayPalButtons>
+												</div>
+											)}
+											{loadingPay && (
+												<div>
+													<ReactLoading
+														type="spin"
+														color="#7abc7fee"
+														height={100}
+														width={50}
+													/>
+												</div>
+											)}
+										</li>
+									)}
+								</ul>
 							</div>
 						</div>
-
-						<div className="card p-5 mt-5 h-fit lg:mt-0 border-2 border-emerald-700 rounded-none">
-							<h2 className="mb-2 text-3xl uppercase font-semibold text-center">
-								Order Summary
-							</h2>
-
-							<ul className="font-semibold mt-10 text-emerald-200">
-								<li>
-									<div className="mb-2 flex justify-between">
-										<div>Items</div>
-										<div>$ {itemsPrice}</div>
-									</div>
-								</li>
-								<li>
-									<div className="mb-2 flex justify-between">
-										<div>Tax</div>
-										<div>$ {taxPrice}</div>
-									</div>
-								</li>
-								<li className="border-b border-gray-400">
-									<div className="mb-2 flex justify-between">
-										<div>Shipping</div>
-										<div>$ {shippingPrice}</div>
-									</div>
-								</li>
-								<li className="uppercase text-xl font-bold mb-10">
-									<div className="mb-2 flex justify-between text-yellow-300">
-										<div>Total</div>
-										<div>$ {totalPrice}</div>
-									</div>
-								</li>
-
-								{!isPaid && (
-									<li>
-										{isPending ? (
-											<div>
-												<ReactLoading
-													type="spin"
-													color="#7abc7fee"
-													height={100}
-													width={50}
-												/>
-											</div>
-										) : (
-											<div className="w-full">
-												<PayPalButtons
-													createOrder={createOrder}
-													onApprove={onApprove}
-													onError={onError}
-												></PayPalButtons>
-											</div>
-										)}
-										{loadingPay && (
-											<div>
-												<ReactLoading
-													type="spin"
-													color="#7abc7fee"
-													height={100}
-													width={50}
-												/>
-											</div>
-										)}
-									</li>
-								)}
-							</ul>
-						</div>
-					</div>
-				)}
+					)}
+				</div>
 			</Layout>
 		</>
 	);

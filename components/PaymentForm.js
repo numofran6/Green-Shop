@@ -37,8 +37,8 @@ export const PaymentForm = () => {
 	}, [paymentMethod, shippingAddress.address]);
 
 	return (
-		<div className="bg-[#363636]/50 sm:px-16 py-10 mt-16 max-w-screen-lg flex flex-col items-center justify-center mx-auto">
-			<h1 className="my-5 text-xl sm:text-3xl text-green-200 uppercase tracking-wide text-center font-semibold">
+		<div className="bg-stone-200 sm:px-16 py-10 mt-16 max-w-screen-lg flex flex-col items-center justify-center mx-auto">
+			<h1 className="my-5 text-xl sm:text-3xl text-emrald-900 uppercase tracking-wide text-center font-semibold">
 				Choose a payment method
 			</h1>
 			<form

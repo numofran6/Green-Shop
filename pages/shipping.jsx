@@ -6,8 +6,10 @@ export default function Shipping() {
 	return (
 		<>
 			<Layout title={'Shipping'}>
-				<CheckoutWizard activeStep={1} />
-				<AddressForm />
+				<div className="my-14">
+					<CheckoutWizard activeStep={1} />
+					<AddressForm />
+				</div>
 			</Layout>
 		</>
 	);

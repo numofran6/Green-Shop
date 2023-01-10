@@ -10,6 +10,7 @@ import { errorHandler } from '../utils/errorHandler';
 import axios from 'axios';
 import { AiFillEdit } from 'react-icons/ai';
 import ReactLoading from 'react-loading';
+import { TbShoppingCartX } from 'react-icons/tb';
 
 export const OrderSummary = () => {
 	const {
@@ -57,14 +58,14 @@ export const OrderSummary = () => {
 	};
 
 	return (
-		<>
-			<h1 className="tracking-wide my-5 text-3xl text-green-200 uppercase text-center font-bold mt-10">
+		<div className="px-5">
+			<h1 className="tracking-wide my-5 text-3xl text-emerald-900 uppercase text-center font-bold mt-10">
 				Review Order
 			</h1>
 			{cartItems.length === 0 ? (
 				<div>
 					{loading ? (
-						<div className="flex flex-col space-y-3 justify-center items-center font-bold text-lg mt-16">
+						<div className="flex flex-col space-y-3 justify-center items-center font-bold text-sm">
 							<ReactLoading
 								type="spin"
 								color="#7abc7fee"
@@ -75,26 +76,30 @@ export const OrderSummary = () => {
 							<h1>Redirecting you to Order Tracking...</h1>
 						</div>
 					) : (
-						<div className="flex justify-center font-bold text-lg mt-16">
-							No items in Cart.{' '}
-							<Link
-								href={'/'}
-								className="ml-2 text-green-400 hover:text-green-500 active:text-green-400"
-							>
-								Go Shopping
-							</Link>
+						<div className="flex flex-col justify-center items-center">
+							<h1 className="flex items-center text-lg">
+								No items in Cart <TbShoppingCartX className="ml-2 w-6 h-6" />{' '}
+							</h1>
+							<div>
+								<Link
+									href={'/'}
+									className="text-green-500 text-sm hover:text-green-300 active:text-green-500"
+								>
+									Go Shopping
+								</Link>
+							</div>
 						</div>
 					)}
 				</div>
 			) : (
 				<div className="grid lg:grid-cols-4 gap-5">
-					<div className="overflow-x-auto lg:col-span-3 space-y-5 bg-[#363636]/50">
-						<div className="card p-5 rounded-none">
-							<h2 className="mb-2 text-xl uppercase font-bold">
+					<div className="overflow-x-auto border lg:col-span-3 space-y-5">
+						<div className="p-5 rounded-none">
+							<h2 className="mb-2 text-gray-800 text-xl uppercase font-bold border-b">
 								Shipping Address
 							</h2>
 							<div>
-								<div className="text-emerald-200">
+								<div className="text-emerald-900">
 									{shippingAddress.fullName}, {shippingAddress.address},{' '}
 									{shippingAddress.city}, {shippingAddress.postalCode},{' '}
 									{shippingAddress.country},
@@ -102,7 +107,7 @@ export const OrderSummary = () => {
 
 								<Link
 									href={'/shipping'}
-									className="flex items-center text-md uppercase text-green-400 hover:text-green-200 active:text-green-400"
+									className="flex items-center text-md uppercase text-green-600 hover:text-green-400 active:text-green-600"
 								>
 									<AiFillEdit />
 									<div>Edit</div>
@@ -110,16 +115,16 @@ export const OrderSummary = () => {
 							</div>
 						</div>
 
-						<div className="card p-5 rounded-none">
-							<h2 className="mb-2 text-xl uppercase font-bold">
+						<div className=" p-5 rounded-none">
+							<h2 className="mb-2 text-gray-800 text-xl uppercase font-bold border-b">
 								Payment Method
 							</h2>
 
 							<div>
-								<div className="text-emerald-200">{paymentMethod}</div>
+								<div className="text-emerald-900">{paymentMethod}</div>
 								<Link
 									href={'/payment'}
-									className="flex items-center text-md uppercase text-green-400 hover:text-green-200 active:text-green-400"
+									className="flex items-center text-md uppercase text-green-600 hover:text-green-400 active:text-green-600"
 								>
 									<AiFillEdit />
 									<div>Edit</div>
@@ -127,9 +132,11 @@ export const OrderSummary = () => {
 							</div>
 						</div>
 
-						<div className="card overflow-x-auto p-5">
-							<h2 className="mb-2 text-xl uppercase font-bold">Your Items</h2>
-							<table className="min-w-full text-emerald-200">
+						<div className=" overflow-x-auto p-5 ">
+							<h2 className="mb-2 text-gray-800 text-xl uppercase border-b font-bold">
+								Your Items
+							</h2>
+							<table className="min-w-full text-emerald-900">
 								<thead className="border-b">
 									<tr>
 										<th className="px-5 text-left">Item</th>
@@ -141,11 +148,11 @@ export const OrderSummary = () => {
 
 								<tbody>
 									{cartItems.map((item) => (
-										<tr key={item._id} className="border-b bg-[#363636]">
+										<tr key={item._id} className="border-b bg-stone-100">
 											<td>
 												<Link
 													href={`/product/${item.slug}`}
-													className="flex items-center"
+													className="flex items-center text-emerald-900"
 												>
 													<Image
 														src={item.image}
@@ -169,7 +176,7 @@ export const OrderSummary = () => {
 							</table>
 							<Link
 								href={'/cart'}
-								className="flex items-center text-md uppercase shadow-md text-green-400 hover:text-green-200 active:text-green-400"
+								className="flex items-center text-md uppercase text-green-600 hover:text-green-400 active:text-green-600"
 							>
 								<AiFillEdit />
 								<div>Edit</div>
@@ -177,12 +184,12 @@ export const OrderSummary = () => {
 						</div>
 					</div>
 
-					<div className="card p-5 flex flex-col justify-between h-fit border-2 border-emerald-700 rounded-none">
-						<h2 className="mb-2 text-3xl font-semibold text-center uppercase">
-							Order Summary
+					<div className=" py-5 flex flex-col justify-between h-fit border-2 border-emerald-900 rounded-none bg-emerald-900 text-green-50">
+						<h2 className="mb-2 border-b-2 border-emerald-50 text-2xl font-semibold text-center uppercase">
+							Summary
 						</h2>
 
-						<ul className="my-10 font-semibold text-emerald-200">
+						<ul className="my-10 font-semibold text-emerald-200 px-10">
 							<li>
 								<div className="mb-2 flex justify-between">
 									<div>Items</div>
@@ -195,25 +202,25 @@ export const OrderSummary = () => {
 									<div>$ {taxPrice}</div>
 								</div>
 							</li>
-							<li className="border-b border-gray-400">
+							<li className="border-b border-green-50">
 								<div className="mb-2 flex justify-between">
 									<div>Shipping</div>
 									<div>$ {shippingPrice}</div>
 								</div>
 							</li>
 							<li className="uppercase text-xl font-bold">
-								<div className="mb-2 flex justify-between text-yellow-300">
+								<div className="mb-2 flex justify-between text-white">
 									<div>Total</div>
 									<div>$ {totalPrice}</div>
 								</div>
 							</li>
 						</ul>
 
-						<div>
+						<div className="flex justify-center px-5">
 							<button
 								disabled={loading}
 								onClick={placeOrderHandler}
-								className="primary-button w-full"
+								className="newprimarybtn rounded-none py-3 w-full"
 							>
 								{loading ? 'Loading...' : 'Place Order'}
 							</button>
@@ -221,6 +228,6 @@ export const OrderSummary = () => {
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };

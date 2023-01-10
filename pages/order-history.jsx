@@ -4,6 +4,7 @@ import { useContext, useEffect } from 'react';
 import { Order } from '../utils/Order';
 import Router from 'next/router';
 import { useState } from 'react';
+import Image from 'next/image';
 
 function OrderHistory() {
 	const {
@@ -14,15 +15,15 @@ function OrderHistory() {
 	return (
 		<>
 			<Layout title={'Order History'}>
-				<h1 className="my-5 text-3xl text-green-200 uppercase tracking-wide text-center font-bold mt-14 mb-10">
+				<h1 className="text-3xl text-green-900 uppercase tracking-wide text-center font-bold mt-14 mb-14">
 					Order History
 				</h1>
 
 				{order ? (
-					<div className="overflow-x-auto">
-						<table className="min-w-full text-emerald-200">
+					<div className="overflow-x-auto px-5 mb-14">
+						<table className="min-w-full text-emerald-900 border">
 							<thead>
-								<tr className="text-emerald-500 text-left">
+								<tr className="text-gray-700 text-left border-b">
 									<th className="px-5">ITEM</th>
 									<th className="p-5">ORDER DATE</th>
 									<th className="p-5">PRICE ($)</th>
@@ -34,11 +35,17 @@ function OrderHistory() {
 
 							<tbody>
 								{order.orderItems?.map((item) => (
-									<tr
-										className="border-b bg-[#363636]/60 text-left"
-										key={item._id}
-									>
-										<td className="p-5">{item.name} </td>
+									<tr className="border-b text-left" key={item._id}>
+										<td className="p-5">
+											<Image
+												src={item.image}
+												alt={item.name}
+												width={150}
+												height={150}
+												className="px-5 hidden sm:inline-flex"
+											/>
+											{item.name}
+										</td>
 										<td className="p-5">{order.createdAt.substring(0, 10)} </td>
 										<td className="p-5">{item.price * item.quantity} </td>
 										<td className="p-5">

@@ -163,7 +163,7 @@ function CartScreen() {
 										<input
 											type="text"
 											placeholder="Enter coupon here"
-											className="inputBox w-full"
+											className="p-2 bg-stone-100 placeholder:text-gray-300 border-b-2 border-green-100/20 focus:border-green-400 focus:bg-stone-200 text-black outline-none w-full"
 										/>
 
 										<button

@@ -134,7 +134,7 @@ export default function LoginScreen() {
 						<h1 className="text-center text-sm">
 							Don't have an account?{' '}
 							<Link
-								href={`/register?redirect=${redirect || '/'}`}
+								href={`/register?redirect=${redirect || '/shop'}`}
 								className="text-green-400 hover:text-green-500 active:text-green-400 uppercase font-semibold"
 							>
 								Register

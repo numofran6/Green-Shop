@@ -7,10 +7,10 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 		<Menu as="div" className={'relative inline-block z-10'}>
 			<Menu.Button
 				className={
-					'flex items-center text-yellow-500 hover:text-yellow-600 active:text-yellow-500'
+					'flex items-center text-green-100 hover:text-green-400 active:text-green-100'
 				}
 			>
-				<CgProfile className="w-6 h-6 mr-0.5" /> {name}
+				<CgProfile className="w-6 h-6 mr-1" /> {name}
 			</Menu.Button>
 
 			<Menu.Items

@@ -7,8 +7,10 @@ export default function Payment() {
 	return (
 		<>
 			<Layout title={'Payment'}>
-				<CheckoutWizard activeStep={2} />
-				<PaymentForm />
+				<div className="my-14">
+					<CheckoutWizard activeStep={2} />
+					<PaymentForm />
+				</div>
 			</Layout>
 		</>
 	);
