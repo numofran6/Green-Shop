@@ -20,7 +20,7 @@ function Home() {
 	return (
 		<div className="">
 			<Head>
-				<meta charset="utf-8" />
+				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="theme-color" content="#000000" />
 				<meta
@@ -80,7 +80,7 @@ function Home() {
 						<Link href="/shop">Shop</Link>
 					</div>
 
-					<div className="md:hidden">
+					<div className="md:hidden text-green-50">
 						{!active && (
 							<RiMenu4Line
 								onClick={() => setActive(!active)}
@@ -119,7 +119,7 @@ function Home() {
 					</div>
 				)}
 
-				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-10 md:ml-60 space-y-4">
+				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-10 md:ml-60 space-y-4 text-green-50">
 					<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
 					<h2 className="text-6xl md:text-8xl font-semibold">
@@ -248,7 +248,7 @@ function Home() {
 				</div>
 			</div>
 
-			<footer className="text-xs md:text-sm">
+			<footer className="text-xs md:text-sm bg-emerald-900 text-green-50">
 				<div className="flex p-16 justify-around space-x-10 md:space-x-0">
 					<div className="space-y-7">
 						<h1 className="uppercase font-bold tracking-widest">Information</h1>
@@ -283,7 +283,7 @@ function Home() {
 					</div>
 				</div>
 
-				<h1 className="text-center bg-black p-3 text-xs md:text-sm">
+				<h1 className="text-center bg-black text-white p-3 text-xs md:text-sm">
 					This project is not complete. Watch out for more added features
 				</h1>
 			</footer>

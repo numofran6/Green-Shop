@@ -11,6 +11,10 @@
 		@apply bg-green-100 rounded py-2 px-4 shadow outline-none hover:bg-green-300 active:bg-green-100 uppercase text-black text-sm;
 	}
 
+	.newprimarybtn {
+		@apply bg-green-600 p-2 px-3 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 hover:text-emerald-600;
+	}
+
 	.default-button {
 		@apply rounded bg-white text-black py-2 px-4 shadow outline-none hover:bg-gray-200 active:bg-gray-100 uppercase;
 	}
@@ -37,15 +41,19 @@
 }
 
 body {
-	@apply bg-emerald-900 text-green-50 transition-all ease-out duration-300;
+	@apply bg-white text-black transition-all ease-out duration-300;
 }
 
-input {
+input[type='text'] {
 	@apply p-2 bg-inherit placeholder:text-green-100/50 border-b-2 border-green-100/20 focus:border-green-400 focus:bg-[#363636]/50 text-green-200 min-w-[300px] placeholder:uppercase outline-none rounded-sm;
 }
 
 input[type='radio'] {
 	@apply min-w-0;
+}
+
+input[type='checkbox'] {
+	@apply w-6 h-6;
 }
 
 select {
