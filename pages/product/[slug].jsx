@@ -9,8 +9,9 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { addToCart } from '../../utils/addToCart';
 import { motion } from 'framer-motion';
 import { BsSuitHeart, BsShare } from 'react-icons/bs';
+import FeaturedItem from '../../components/FeaturedItem';
 
-export default function ProductScreen({ product }) {
+export default function ProductScreen({ product, products }) {
 	const { state, dispatch } = useContext(Store);
 
 	if (!product) {
@@ -26,7 +27,7 @@ export default function ProductScreen({ product }) {
 	return (
 		<>
 			<Layout title={product.name}>
-				<div className="my-12 flex ml-5 md:ml-0">
+				<div className="mt-12 mb-7 flex ml-5 md:ml-0">
 					<Link
 						href={'/shop'}
 						className="font-semibold flex items-center text-green-800"
@@ -40,7 +41,7 @@ export default function ProductScreen({ product }) {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5 }}
-					className="flex justify-center mb-24"
+					className="flex justify-center mb-10"
 				>
 					<div className="flex flex-col md:flex-row items-center md:space-x-10">
 						<div className="">
@@ -98,6 +99,15 @@ export default function ProductScreen({ product }) {
 						</div>
 					</div>
 				</motion.div>
+
+				<div className="py-10 px-5 border-t">
+					<h1 className="font-bold text-3xl mb-5">Related Items</h1>
+					<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
+						{products?.slice(0, 4).map((product) => (
+							<FeaturedItem product={product} key={product.slug} />
+						))}
+					</div>
+				</div>
 			</Layout>
 		</>
 	);
@@ -107,11 +117,13 @@ export async function getServerSideProps(context) {
 	const { slug } = context.params;
 
 	await db.connect();
+	const products = await Product.find().lean();
 	const product = await Product.findOne({ slug }).lean();
 
 	return {
 		props: {
 			product: product ? db.convertDocToObj(product) : null,
+			products: products.map(db.convertDocToObj),
 		},
 	};
 }

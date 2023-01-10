@@ -14,8 +14,10 @@ import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
 import Head from 'next/head';
 import db from '../utils/db';
+import Product from '../models/Product';
+import FeaturedItem from '../components/FeaturedItem';
 
-function Home() {
+function Home({ products }) {
 	const [active, setActive] = useState(false);
 
 	return (
@@ -164,7 +166,7 @@ function Home() {
 				/>
 			</div>
 
-			<div className="md:flex justify-center py-16 px-5 md:p-16 md:space-x-5 bg-stone-300 items-center space-y-5 md:space-y-0">
+			<div className="md:flex justify-center py-16 px-5 md:p-16 md:space-x-5 bg-stone-200 items-center space-y-5 md:space-y-0">
 				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-stone-100 md:px-16 sm:px-28 pl-5 relative">
 					<div className="h-[65vh] md:h-[70vh] flex justify-end">
 						<Image
@@ -249,6 +251,15 @@ function Home() {
 				</div>
 			</div>
 
+			<div className="py-10 px-5">
+				<h1 className="font-bold text-3xl mb-5">Latest Items</h1>
+				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
+					{products.slice(0, 4).map((product) => (
+						<FeaturedItem product={product} key={product.slug} />
+					))}
+				</div>
+			</div>
+
 			<footer className="text-xs md:text-sm bg-emerald-900 text-green-50">
 				<div className="flex p-16 justify-around space-x-10 md:space-x-0">
 					<div className="space-y-7">
@@ -296,8 +307,11 @@ export default Home;
 
 export async function getServerSideProps() {
 	await db.connect();
+	const products = await Product.find().lean();
 
 	return {
-		props: {},
+		props: {
+			products: products.map(db.convertDocToObj),
+		},
 	};
 }

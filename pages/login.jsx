@@ -51,7 +51,7 @@ export default function LoginScreen() {
 							alt="WELCOME"
 							width={7000}
 							height={9852}
-							className="h-[450px] w-[350px] hidden md:flex"
+							className="h-[450px] w-[350px] hidden md:flex bg-black"
 						/>
 					</div>
 
