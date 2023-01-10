@@ -50,7 +50,7 @@ function CartScreen() {
 							</h1>
 							<div>
 								<Link
-									href={'/'}
+									href={'/shop'}
 									className="text-green-500 text-sm hover:text-green-300 active:text-green-500"
 								>
 									Go Shopping
