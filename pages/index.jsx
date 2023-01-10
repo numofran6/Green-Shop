@@ -292,3 +292,11 @@ function Home() {
 }
 
 export default Home;
+
+export async function getServerSideProps() {
+	await db.connect();
+
+	return {
+		props: {},
+	};
+}
