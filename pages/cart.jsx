@@ -82,10 +82,7 @@ function CartScreen() {
 											<tbody key={item.slug} className="">
 												<tr className="text-center border text-sm md:text-lg">
 													<td className="text-left">
-														<Link
-															href={`/product/${item.slug}`}
-															className="flex items-center text-emerald-600 p-5 "
-														>
+														<div className="flex items-center text-emerald-600 p-5 ">
 															<button
 																type="button"
 																onClick={() => removeItemHandler(item)}
@@ -94,16 +91,21 @@ function CartScreen() {
 																<AiOutlineClose className="h-5 w-5"></AiOutlineClose>
 															</button>
 
-															<Image
-																src={item.image}
-																alt={item.name}
-																width={150}
-																height={150}
-																className="px-5 hidden sm:inline-flex"
-															/>
+															<Link
+																href={`/product/${item.slug}`}
+																className="flex items-center text-emerald-600 p-5 "
+															>
+																<Image
+																	src={item.image}
+																	alt={item.name}
+																	width={150}
+																	height={150}
+																	className="px-5 hidden sm:inline-flex"
+																/>
 
-															{item.name}
-														</Link>
+																{item.name}
+															</Link>
+														</div>
 													</td>
 													<td>
 														<select
