@@ -24,7 +24,7 @@ export default function Home({ products }) {
 					</div>
 
 					<div className="md:grid md:grid-cols-5 text-black bg-white py-9 px-5">
-						<div className="pr-5">
+						<div className="pr-5 pb-5 md:pb-0">
 							<form className="space-y-8">
 								<div className="space-y-5 border-b-[1px] border-gray-300 pb-8">
 									<h2 className="font-bold text-xl">Price</h2>
