@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
 import Head from 'next/head';
+import db from '../utils/db';
 
 function Home() {
 	const [active, setActive] = useState(false);
