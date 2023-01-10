@@ -165,7 +165,7 @@ function Home() {
 			</div>
 
 			<div className="md:flex justify-center py-16 px-5 md:p-16 md:space-x-5 bg-stone-300 items-center space-y-5 md:space-y-0">
-				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-stone-100 md:px-16 pl-5 relative">
+				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-stone-100 md:px-16 sm:px-28 pl-5 relative">
 					<div className="h-[65vh] md:h-[70vh] flex justify-end">
 						<Image
 							src={model}

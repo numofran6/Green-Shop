@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useState } from 'react';
 import ReactLoading from 'react-loading';
+import Head from 'next/head';
 
 export default function LoginScreen() {
 	const [loading, setLoading] = useState(false);
@@ -56,12 +57,16 @@ export default function LoginScreen() {
 	};
 
 	return (
-		<Layout title={'Create Account'}>
+		<div className="flex flex-col h-[100vh] justify-center items-center bg-stone-200">
+			<Head>
+				<title>Register - Green Shop</title>
+			</Head>
+
 			<form
 				onSubmit={handleSubmit(submitHandler)}
-				className="max-w-screen-lg bg-[#363636]/50 sm:px-16 py-10 mt-10 flex flex-col items-center mx-auto"
+				className=" bg-emerald-900 text-green-50 sm:px-20 p-10 px-14 flex flex-col items-center"
 			>
-				<h1 className="mb-4 text-3xl text-center font-semibold uppercase text-green-200">
+				<h1 className="mb-4 text-2xl text-center font-semibold uppercase">
 					Create Account
 				</h1>
 
@@ -171,7 +176,7 @@ export default function LoginScreen() {
 						</button>
 					)}
 
-					<h1>
+					<h1 className="text-sm">
 						Already have an account?{' '}
 						<Link
 							href={'/login'}
@@ -182,6 +187,6 @@ export default function LoginScreen() {
 					</h1>
 				</div>
 			</form>
-		</Layout>
+		</div>
 	);
 }

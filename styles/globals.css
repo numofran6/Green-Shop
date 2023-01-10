@@ -44,8 +44,12 @@ body {
 	@apply bg-white text-black transition-all ease-out duration-300;
 }
 
-input[type='text'] {
-	@apply p-2 bg-inherit placeholder:text-green-100/50 border-b-2 border-green-100/20 focus:border-green-400 focus:bg-[#363636]/50 text-green-200 min-w-[300px] placeholder:uppercase outline-none rounded-sm;
+.inputBox {
+	@apply p-2 bg-stone-100 placeholder:text-gray-300 border-b-2 border-green-100/20 focus:border-green-400 focus:bg-stone-200 text-black outline-none;
+}
+
+input {
+	@apply p-2 bg-stone-50 placeholder:text-gray-500 border-b-4 border-green-100/20 focus:border-green-400 focus:bg-green-50 placeholder:uppercase text-black outline-none min-w-[300px];
 }
 
 input[type='radio'] {
@@ -57,7 +61,7 @@ input[type='checkbox'] {
 }
 
 select {
-	@apply p-2 text-green-400 outline-none bg-[#363636] ring-green-700 transition ease-out duration-150 rounded-sm focus:border-2 focus:border-green-300;
+	@apply p-2 text-green-400 outline-none bg-neutral-700 ring-green-700 transition ease-out duration-150 rounded-sm focus:border-2 focus:border-green-300;
 }
 
 a {

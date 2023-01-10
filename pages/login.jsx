@@ -5,9 +5,11 @@ import { useForm } from 'react-hook-form';
 import { getSession, signIn } from 'next-auth/react';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import { GiShoppingCart } from 'react-icons/gi';
+import { GiShoppingBag } from 'react-icons/gi';
 import { useState } from 'react';
 import ReactLoading from 'react-loading';
+import Image from 'next/image';
+import Head from 'next/head';
 
 export default function LoginScreen() {
 	const [loading, setLoading] = useState(false);
@@ -37,12 +39,29 @@ export default function LoginScreen() {
 
 	return (
 		<>
-			<Layout title={'Login'}>
-				<div className="flex justify-center mt-20">
-					<div className="flex flex-col items-center justify-center w-fit bg-[#363636]/50 p-8 sm:px-14">
-						<div className="flex flex-col items-center justify-center mb-5">
-							<GiShoppingCart className="w-20 h-20 text-[#fafcdced]" />
-						</div>
+			<div className="flex flex-col h-[100vh] justify-center items-center bg-stone-200">
+				<Head>
+					<title>Login - Green Shop</title>
+				</Head>
+
+				<div className="flex items-center">
+					<div>
+						<Image
+							src={'/images/loginbg.jpg'}
+							alt="WELCOME"
+							width={7000}
+							height={9852}
+							className="h-[450px] w-[350px] hidden md:flex"
+						/>
+					</div>
+
+					<div className="md:h-[450px] flex flex-col items-center justify-center w-fit bg-emerald-900 text-green-50 p-8 px-12 sm:px-14">
+						<Link
+							href={'/shop'}
+							className="flex flex-col items-center justify-center mb-5"
+						>
+							<GiShoppingBag className="w-20 h-20 text-green-100 hover:text-green-300" />
+						</Link>
 
 						<form
 							onSubmit={handleSubmit(submitHandler)}
@@ -112,7 +131,7 @@ export default function LoginScreen() {
 							</div>
 						</form>
 
-						<h1 className="text-center">
+						<h1 className="text-center text-sm">
 							Don't have an account?{' '}
 							<Link
 								href={`/register?redirect=${redirect || '/'}`}
@@ -123,7 +142,7 @@ export default function LoginScreen() {
 						</h1>
 					</div>
 				</div>
-			</Layout>
+			</div>
 		</>
 	);
 }

@@ -3,13 +3,13 @@ import { Store } from '../utils/Store';
 import Layout from '../components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
-import XCircleIcon from '@heroicons/react/20/solid/XCircleIcon';
+import { AiOutlineClose } from 'react-icons/ai';
 import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
-import { BsArrowLeft } from 'react-icons/bs';
+import { TbShoppingCartX } from 'react-icons/tb';
 
 function CartScreen() {
 	const { push } = useRouter();
@@ -41,109 +41,141 @@ function CartScreen() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					transition={{ duration: 0.5 }}
-					className="lg:px-16"
+					className="px-5"
 				>
 					{cartItems.length === 0 ? (
-						<h1 className="text-xl text-center mt-56">
-							No items in Cart.{' '}
-							<span>
+						<div className="flex flex-col justify-center items-center">
+							<h1 className="flex items-center text-lg">
+								No items in Cart <TbShoppingCartX className="ml-2 w-6 h-6" />{' '}
+							</h1>
+							<div>
 								<Link
 									href={'/'}
-									className="text-green-100 hover:text-green-300 active:text-green-100"
+									className="text-green-500 text-sm hover:text-green-300 active:text-green-500"
 								>
 									Go Shopping
 								</Link>
-							</span>
-						</h1>
-					) : (
-						<>
-							<div className="text-center mb-10 text-emerald-200">
-								<h1 className="uppercase text-4xl sm:text-6xl font-bold mt-5">
-									Your Cart
-								</h1>
-								<p className="italic">happy shopping</p>
 							</div>
+						</div>
+					) : (
+						<div className="pb-24">
+							<h1 className="py-12 text-gray-500 flex items-center justify-center text-sm">
+								thank you for shopping
+								<span className="text-green-600 ml-1 font-bold"> GREEN.</span>
+							</h1>
 
-							<table className="min-w-full">
-								<thead className="border-b uppercase">
-									<tr className="text-center">
-										<th className="px-10 text-left">Item</th>
-										<th>Qty</th>
-										<th>Price</th>
-										<th className="hidden sm:inline-table">Remove</th>
-									</tr>
-								</thead>
-								{cartItems.map((item) => (
-									<tbody key={item.slug} className="text-emerald-200">
-										<tr className="text-center border-b bg-[#363636]/50">
-											<td className="text-left">
-												<Link
-													href={`/product/${item.slug}`}
-													className="flex items-center text-emerald-200 "
-												>
-													<Image
-														src={item.image}
-														alt={item.name}
-														width={50}
-														height={50}
-														className="pr-3 hidden sm:inline-flex"
-													/>
+							<div className="md:grid md:grid-cols-4 gap-5">
+								<div className="col-span-3">
+									<h1 className="text-xl md:text-3xl text-gray-700 font-bold mb-5">
+										Shopping Bag
+									</h1>
 
-													{item.name}
-												</Link>
-											</td>
-											<td>
-												<select
-													value={item.quantity}
-													onChange={(e) =>
-														updateCartHandler(item, e.target.value)
-													}
-												>
-													{[...Array(item.countInStock).keys()].map((x) => (
-														<option key={x + 1} value={x + 1}>
-															{x + 1}
-														</option>
-													))}
-												</select>
-											</td>
-											<td>{item.price}</td>
-											<td>
-												<button
-													type="button"
-													onClick={() => removeItemHandler(item)}
-												>
-													<XCircleIcon className="h-5 w-5"></XCircleIcon>
-												</button>
-											</td>
-										</tr>
-									</tbody>
-								))}
-							</table>
+									<table className="min-w-full">
+										<thead className="border uppercase">
+											<tr className="text-center">
+												<th className="px-10 text-left">Item</th>
+												<th>Qty</th>
+												<th>Price</th>
+											</tr>
+										</thead>
+										{cartItems.map((item) => (
+											<tbody key={item.slug} className="">
+												<tr className="text-center border text-sm md:text-lg">
+													<td className="text-left">
+														<Link
+															href={`/product/${item.slug}`}
+															className="flex items-center text-emerald-600 p-5 "
+														>
+															<button
+																type="button"
+																onClick={() => removeItemHandler(item)}
+																className="text-gray-500 hover:text-red-600 mr-5 md:mr-0"
+															>
+																<AiOutlineClose className="h-5 w-5"></AiOutlineClose>
+															</button>
 
-							<div className="mt-12 text-emerald-200">
-								<div className="flex justify-end border-b sm:text-3xl text-2xl border-green-400/20 space-x-16 mb-5 items-center sm:mr-6">
-									<h1 className=" font-bold uppercase">Total</h1>
+															<Image
+																src={item.image}
+																alt={item.name}
+																width={150}
+																height={150}
+																className="px-5 hidden sm:inline-flex"
+															/>
 
-									<h3 className="font-bold sm:text-2xl">
-										$ {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-									</h3>
+															{item.name}
+														</Link>
+													</td>
+													<td>
+														<select
+															value={item.quantity}
+															onChange={(e) =>
+																updateCartHandler(item, e.target.value)
+															}
+														>
+															{[...Array(item.countInStock).keys()].map((x) => (
+																<option key={x + 1} value={x + 1}>
+																	{x + 1}
+																</option>
+															))}
+														</select>
+													</td>
+													<td>$ {item.price}</td>
+												</tr>
+											</tbody>
+										))}
+									</table>
+								</div>
+
+								<div className="mt-10 md:mt-0">
+									<h1 className="text-xl md:text-3xl text-gray-700 font-bold mb-5">
+										Cart Totals
+									</h1>
+
+									<div className="border p-5 flex items-center justify-between">
+										<h1>Quantity</h1>
+
+										<h3 className="font-semibold md:text-xl">
+											{cartItems.reduce((a, c) => a + c.quantity, 0)} items
+										</h3>
+									</div>
+
+									<div className="border p-5 space-y-5">
+										<div className="flex items-center justify-between">
+											<h1 className="uppercase font-semibold">Total</h1>
+											<h3 className="font-bold sm:text-2xl">
+												${' '}
+												{cartItems.reduce(
+													(a, c) => a + c.quantity * c.price,
+													0
+												)}
+											</h3>
+										</div>
+
+										<button
+											onClick={() => push('/login?redirect=/shipping')}
+											className="newprimarybtn w-full py-4 rounded-none"
+										>
+											Check Out
+										</button>
+									</div>
+
+									<div className="flex flex-col space-y-3 items-center mt-10">
+										<input
+											type="text"
+											placeholder="Enter coupon here"
+											className="inputBox w-full"
+										/>
+
+										<button
+											onClick={() => push('/login?redirect=/shipping')}
+											className="newprimarybtn py-4 rounded-none"
+										>
+											Apply Coupon
+										</button>
+									</div>
 								</div>
 							</div>
-
-							<div className="mt-5 sm:px-16 flex items-center justify-between">
-								<Link href={'/'} className="flex items-center space-x-2">
-									<BsArrowLeft />
-									<span>Continue Shopping</span>
-								</Link>
-
-								<button
-									onClick={() => push('/login?redirect=/shipping')}
-									className="primary-button"
-								>
-									Check Out
-								</button>
-							</div>
-						</>
+						</div>
 					)}
 				</motion.div>
 			</Layout>

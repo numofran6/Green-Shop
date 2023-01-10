@@ -36,7 +36,7 @@ function Layout({ children, title }) {
 	return (
 		<>
 			<Head>
-				<title>{title ? title + ' -Green Shop' : 'Green Shop'}</title>
+				<title>{title ? title + ' - Green Shop' : 'Green Shop'}</title>
 			</Head>
 
 			<ToastContainer
@@ -72,7 +72,7 @@ function Layout({ children, title }) {
 							<GiShoppingBag className="w-11 h-11" />
 						</Link>
 
-						<div className="space-x-3 text-sm md:space-x-12 flex uppercase font-semibold text-md items-center">
+						<div className="space-x-5 text-sm md:space-x-12 flex uppercase font-semibold text-md items-center">
 							{session?.user ? (
 								<ProfileMenu
 									name={session.user.name}
