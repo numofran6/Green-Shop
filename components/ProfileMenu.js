@@ -15,7 +15,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 
 			<Menu.Items
 				className={
-					'absolute left-0 mt-1 md:right-0 w-56 py-2 origin-top-right bg-emerald-700 shadow-lg'
+					'absolute left-0 mt-1 md:-left-0 w-56 py-2 origin-top-right bg-emerald-700 shadow-lg'
 				}
 			>
 				<Menu.Item>
