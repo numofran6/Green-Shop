@@ -106,7 +106,12 @@ function Home({ products }) {
 				</nav>
 
 				{active && (
-					<div className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 space-y-10 py-[7.1rem] text-center z-10">
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 space-y-10 py-[7.1rem] text-center z-10"
+					>
 						<Link href={'/'} className="font-bold text-2xl uppercase">
 							<GiShoppingBag className="w-11 h-11 mr-2" />
 						</Link>
@@ -125,7 +130,7 @@ function Home({ products }) {
 								Shop
 							</Link>
 						</div>
-					</div>
+					</motion.div>
 				)}
 
 				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-10 md:ml-60 space-y-4 text-green-50">
