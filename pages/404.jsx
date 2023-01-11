@@ -1,9 +1,14 @@
 import Link from 'next/link';
-import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function PageNotFound() {
 	return (
-		<div className="h-screen flex flex-col items-center justify-center space-y-3 text-center">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className="h-screen flex flex-col items-center justify-center space-y-3 text-center"
+		>
 			<h1 className="text-lg md:text-xl text-emerald-900">
 				404 | This page could not be found.
 			</h1>
@@ -14,6 +19,6 @@ export default function PageNotFound() {
 			>
 				Go Shopping
 			</Link>
-		</div>
+		</motion.div>
 	);
 }

@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import { useContext } from 'react';
 import { Order } from '../utils/Order';
 import ReactLoading from 'react-loading';
+import { motion } from 'framer-motion';
 
 export default function OrderTracking({ orderId }) {
 	const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
@@ -99,7 +100,12 @@ export default function OrderTracking({ orderId }) {
 	return (
 		<>
 			<Layout title={'Order'}>
-				<div className="p-5">
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					className="p-5"
+				>
 					<h1 className="tracking-wide text-2xl md:text-3xl text-emerald-900 uppercase text-center font-bold mt-14 mb-14">
 						Order Tracking
 					</h1>
@@ -269,7 +275,7 @@ export default function OrderTracking({ orderId }) {
 							</div>
 						</div>
 					)}
-				</div>
+				</motion.div>
 			</Layout>
 		</>
 	);

@@ -6,11 +6,11 @@ import { useEffect } from 'react';
 import Router from 'next/router';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { errorHandler } from '../utils/errorHandler';
 import axios from 'axios';
 import { AiFillEdit } from 'react-icons/ai';
 import ReactLoading from 'react-loading';
 import { TbShoppingCartX } from 'react-icons/tb';
+import { motion } from 'framer-motion';
 
 export const OrderSummary = () => {
 	const {
@@ -58,7 +58,12 @@ export const OrderSummary = () => {
 	};
 
 	return (
-		<div className="px-5">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className="px-5"
+		>
 			<h1 className="tracking-wide my-5 text-2xl md:text-3xl text-emerald-900 uppercase text-center font-bold mt-10">
 				Review Order
 			</h1>
@@ -230,6 +235,6 @@ export const OrderSummary = () => {
 					</div>
 				</div>
 			)}
-		</div>
+		</motion.div>
 	);
 };

@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
-import React from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Store } from '../utils/Store';
+import { motion } from 'framer-motion';
 
 export const PaymentForm = () => {
 	const { push } = useRouter();
@@ -37,7 +37,12 @@ export const PaymentForm = () => {
 	}, [paymentMethod, shippingAddress.address]);
 
 	return (
-		<div className="bg-stone-200 sm:px-16 py-10 my-16 mb-24 md:mb-0 max-w-screen-lg flex flex-col items-center justify-center mx-auto">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
+			className="bg-stone-200 sm:px-16 py-10 my-16 mb-24 md:mb-0 max-w-screen-lg flex flex-col items-center justify-center mx-auto"
+		>
 			<h1 className="my-5 text-xl sm:text-3xl text-emrald-900 uppercase tracking-wide text-center font-semibold">
 				Choose a payment method
 			</h1>
@@ -72,6 +77,6 @@ export const PaymentForm = () => {
 					<button className="primary-button mt-5">Next</button>
 				</div>
 			</form>
-		</div>
+		</motion.div>
 	);
 };

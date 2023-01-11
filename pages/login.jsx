@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
-import Layout from '../components/Layout';
 import { useForm } from 'react-hook-form';
 import { getSession, signIn } from 'next-auth/react';
 import { toast } from 'react-toastify';
@@ -10,6 +8,7 @@ import { useState } from 'react';
 import ReactLoading from 'react-loading';
 import Image from 'next/image';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 export default function LoginScreen() {
 	const [loading, setLoading] = useState(false);
@@ -39,7 +38,12 @@ export default function LoginScreen() {
 
 	return (
 		<>
-			<div className="flex flex-col h-[100vh] justify-center items-center bg-stone-200">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				className="flex flex-col h-[100vh] justify-center items-center bg-stone-200"
+			>
 				<Head>
 					<title>Login - Green Shop</title>
 				</Head>
@@ -145,7 +149,7 @@ export default function LoginScreen() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</>
 	);
 }

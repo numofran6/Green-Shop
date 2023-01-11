@@ -12,6 +12,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import ReactLoading from 'react-loading';
 import Head from 'next/head';
+import { motion } from 'framer-motion';
 
 export default function LoginScreen() {
 	const [loading, setLoading] = useState(false);
@@ -62,7 +63,10 @@ export default function LoginScreen() {
 				<title>Register - Green Shop</title>
 			</Head>
 
-			<form
+			<motion.form
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
 				onSubmit={handleSubmit(submitHandler)}
 				className=" bg-emerald-900 text-green-50 sm:px-20 p-10 px-14 flex flex-col items-center"
 			>
@@ -186,7 +190,7 @@ export default function LoginScreen() {
 						</Link>
 					</h1>
 				</div>
-			</form>
+			</motion.form>
 		</div>
 	);
 }

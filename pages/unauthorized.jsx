@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import React from 'react';
 import Layout from '../components/Layout';
+import { motion } from 'framer-motion';
 
 export default function Unauthorized() {
 	const {
@@ -8,14 +8,19 @@ export default function Unauthorized() {
 	} = useRouter();
 	return (
 		<Layout title={'Unauthorized Page'}>
-			<div className="text-center">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
+				className="text-center"
+			>
 				<h1 className="text-lg md:text-xl font-bold">Access Denied</h1>
 				{message && (
 					<h1 className=" text-red-500 font-bold uppercase text-lg md:text-xl">
 						{message}
 					</h1>
 				)}
-			</div>
+			</motion.div>
 		</Layout>
 	);
 }

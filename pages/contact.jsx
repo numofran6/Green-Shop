@@ -1,12 +1,18 @@
 import Layout from '../components/Layout';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { GrMail } from 'react-icons/gr';
+import { motion } from 'framer-motion';
 
 function Contact() {
 	return (
 		<>
 			<Layout title={'Contact'}>
-				<div className="lg:grid grid-cols-2 gap-5 space-y-16 lg:space-y-0 px-10 my-20 lg:my-40 justify-center flex flex-col items-center">
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					className="lg:grid grid-cols-2 gap-5 space-y-16 lg:space-y-0 px-10 my-20 lg:my-40 justify-center flex flex-col items-center"
+				>
 					<div className="lg:ml-20 space-y-10 lg:space-y-14">
 						<h1 className="text-4xl lg:text-5xl font-bold max-w-sm text-gray-800">
 							Got A Project or A Partnership in Mind?
@@ -64,7 +70,7 @@ function Contact() {
 							</button>
 						</div>
 					</div>
-				</div>
+				</motion.div>
 			</Layout>
 		</>
 	);

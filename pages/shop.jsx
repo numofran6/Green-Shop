@@ -13,7 +13,7 @@ export default function Home({ products }) {
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				transition={{ duration: 0.5 }}
+				exit={{ opacity: 0 }}
 			>
 				<Layout>
 					<div className="px-12 py-20 space-y-5 bg-emerald-900 text-emerald-50">

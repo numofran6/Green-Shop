@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Store } from '../utils/Store';
+import { motion } from 'framer-motion';
 
 export const AddressForm = () => {
 	const {
@@ -35,7 +36,10 @@ export const AddressForm = () => {
 	};
 
 	return (
-		<form
+		<motion.form
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			exit={{ opacity: 0 }}
 			onSubmit={handleSubmit(submitHandler)}
 			className="mx-auto max-w-screen-lg bg-stone-200 sm:px-16 py-5 mt-16 mb-24 md:mb-0 flex flex-col items-center"
 		>
@@ -124,6 +128,6 @@ export const AddressForm = () => {
 			<button className="primary-button mt-4 flex items-end justify-end">
 				Next
 			</button>
-		</form>
+		</motion.form>
 	);
 };
