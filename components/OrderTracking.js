@@ -110,7 +110,7 @@ export default function OrderTracking({ orderId }) {
 						Order Tracking
 					</h1>
 					{loading ? (
-						<div className="flex items-center justify-center">
+						<div className="flex flex-col h-[50vh] items-center justify-center">
 							<ReactLoading
 								type="spin"
 								color="#7abc7fee"

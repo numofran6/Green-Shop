@@ -8,7 +8,7 @@ export default function CheckoutWizard({ activeStep = 0 }) {
 					key={step}
 					className={`flex-1 border-b-2 text-center ${
 						i < activeStep
-							? 'border-green-500 text-green-500'
+							? 'border-green-600 text-green-600'
 							: 'border-gray-400 text-gray-400'
 					}`}
 				>
