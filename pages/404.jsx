@@ -4,7 +4,7 @@ import React from 'react';
 export default function PageNotFound() {
 	return (
 		<div className="h-screen flex flex-col items-center justify-center space-y-3 text-center">
-			<h1 className="text-xl text-emerald-900">
+			<h1 className="text-lg md:text-xl text-emerald-900">
 				404 | This page could not be found.
 			</h1>
 

@@ -9,9 +9,9 @@ export default function Unauthorized() {
 	return (
 		<Layout title={'Unauthorized Page'}>
 			<div className="text-center">
-				<h1 className="text-xl font-bold">Access Denied</h1>
+				<h1 className="text-lg md:text-xl font-bold">Access Denied</h1>
 				{message && (
-					<h1 className="mb-4 text-red-500 font-bold uppercase text-xl">
+					<h1 className=" text-red-500 font-bold uppercase text-lg md:text-xl">
 						{message}
 					</h1>
 				)}
