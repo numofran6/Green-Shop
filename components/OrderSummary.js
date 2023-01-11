@@ -70,7 +70,7 @@ export const OrderSummary = () => {
 			{cartItems.length === 0 ? (
 				<div>
 					{loading ? (
-						<div className="flex flex-col space-y-3 justify-center items-center font-bold text-sm">
+						<div className="flex flex-col space-y-3 justify-center items-center font-bold text-sm h-[50vh]">
 							<ReactLoading
 								type="spin"
 								color="#7abc7fee"
@@ -81,7 +81,7 @@ export const OrderSummary = () => {
 							<h1>Redirecting you to Order Tracking...</h1>
 						</div>
 					) : (
-						<div className="flex flex-col justify-center items-center">
+						<div className="flex flex-col justify-center h-[50vh] items-center">
 							<h1 className="flex items-center text-lg">
 								No items in Cart <TbShoppingCartX className="ml-2 w-6 h-6" />{' '}
 							</h1>

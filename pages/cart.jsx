@@ -44,7 +44,7 @@ function CartScreen() {
 					className="px-5"
 				>
 					{cartItems.length === 0 ? (
-						<div className="flex flex-col justify-center items-center">
+						<div className="flex flex-col justify-center items-center h-[50vh]">
 							<h1 className="flex items-center text-lg">
 								No items in Cart <TbShoppingCartX className="ml-2 w-6 h-6" />{' '}
 							</h1>
