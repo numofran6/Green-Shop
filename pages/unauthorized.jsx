@@ -12,7 +12,7 @@ export default function Unauthorized() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
-				className="text-center"
+				className="text-center h-[50vh] flex flex-col items-center justify-center"
 			>
 				<h1 className="text-lg md:text-xl font-bold">Access Denied</h1>
 				{message && (
