@@ -104,7 +104,7 @@ export default function OrderTracking({ orderId }) {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
-					className="p-5 min-h-[50vh]"
+					className="p-5"
 				>
 					<h1 className="tracking-wide text-2xl md:text-3xl text-emerald-900 uppercase text-center font-bold mt-14 mb-14">
 						Order Tracking
