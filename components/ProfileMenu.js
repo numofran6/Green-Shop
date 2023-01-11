@@ -1,6 +1,7 @@
 import { Menu } from '@headlessui/react';
 import Link from 'next/link';
 import { CgProfile } from 'react-icons/cg';
+import { AiOutlineDown } from 'react-icons/ai';
 
 export default function ProfileMenu({ logoutClickHandler, name }) {
 	return (
@@ -10,7 +11,8 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 					'flex items-center text-green-100 hover:text-green-400 active:text-green-100'
 				}
 			>
-				<CgProfile className="w-6 h-6 mr-1" /> {name}
+				<CgProfile className="w-6 h-6 mr-1" /> {name}{' '}
+				<AiOutlineDown className="ml-3 w-4 h-4" />
 			</Menu.Button>
 
 			<Menu.Items
