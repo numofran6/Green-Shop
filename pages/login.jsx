@@ -80,8 +80,7 @@ export default function LoginScreen() {
 										})}
 										type="email"
 										id="email"
-										placeholder="Email"
-										className="w-[300px]"
+										placeholder="danny@shop.com"
 									/>
 									{errors.email && (
 										<div>
@@ -101,8 +100,7 @@ export default function LoginScreen() {
 										})}
 										type="password"
 										id="password"
-										placeholder="Password"
-										className="w-[300px]"
+										placeholder="123456"
 									/>
 									{errors.password && (
 										<div>
@@ -140,6 +138,10 @@ export default function LoginScreen() {
 								Register
 							</Link>
 						</h1>
+
+						<div className="text-xs md:text-sm">
+							<em>please sign in with placeholder credentials</em>
+						</div>
 					</div>
 				</div>
 			</div>
