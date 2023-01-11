@@ -15,8 +15,8 @@ export const ShippingAuth = ({ children }) => {
 	if (status === 'loading') {
 		return (
 			<Layout>
-				<div className="text-center">
-					<ReactLoading type="spin" color="#7abc7fee" height={100} width={50} />
+				<div className="h-[50vh] flex flex-col justify-center items-center">
+					<ReactLoading type="spin" height={100} width={50} />
 				</div>
 			</Layout>
 		);
