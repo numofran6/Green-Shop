@@ -254,7 +254,7 @@ function Home({ products }) {
 			<div className="py-10 px-5">
 				<h1 className="font-bold text-3xl mb-5">Latest Items</h1>
 				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
-					{products.slice(0, 4).map((product) => (
+					{products.slice(2, 6).map((product) => (
 						<FeaturedItem product={product} key={product.slug} />
 					))}
 				</div>

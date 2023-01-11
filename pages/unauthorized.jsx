@@ -8,10 +8,10 @@ export default function Unauthorized() {
 	} = useRouter();
 	return (
 		<Layout title={'Unauthorized Page'}>
-			<div className="text-center mt-52">
+			<div className="text-center">
 				<h1 className="text-xl font-bold">Access Denied</h1>
 				{message && (
-					<h1 className="mb-4 text-red-500 font-bold uppercase text-2xl">
+					<h1 className="mb-4 text-red-500 font-bold uppercase text-xl">
 						{message}
 					</h1>
 				)}
