@@ -100,12 +100,12 @@ function Home({ products }) {
 				</nav>
 
 				{active && (
-					<div className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 space-y-10 py-[8.5rem] text-center z-10">
+					<div className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 space-y-10 py-[7.1rem] text-center z-10">
 						<Link href={'/'} className="font-bold text-2xl uppercase">
 							<GiShoppingBag className="w-11 h-11 mr-2" />
 						</Link>
 
-						<div className="space-y-3 flex flex-col uppercase font-semibold text-md">
+						<div className="space-y-7 flex flex-col uppercase font-semibold text-md">
 							<Link href="/" onClick={() => setActive(!active)}>
 								Home
 							</Link>

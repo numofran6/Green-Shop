@@ -13,7 +13,7 @@ function About() {
 					<div className="flex flex-col items-center space-y-3">
 						<h1 className="text-green-700 font-bold">Our team</h1>
 
-						<h1 className="font-bold text-3xl max-w-sm text-center">
+						<h1 className="font-bold text-2xl md:text-3xl max-w-sm text-center">
 							Meet The Minds Shaping An Industry
 						</h1>
 					</div>

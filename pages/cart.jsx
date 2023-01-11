@@ -86,7 +86,7 @@ function CartScreen() {
 															<button
 																type="button"
 																onClick={() => removeItemHandler(item)}
-																className="text-gray-500 hover:text-red-600 mr-5 md:mr-0"
+																className="text-gray-500 hover:text-red-600 md:mr-0"
 															>
 																<AiOutlineClose className="h-5 w-5"></AiOutlineClose>
 															</button>

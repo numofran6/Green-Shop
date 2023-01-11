@@ -15,13 +15,13 @@ function OrderHistory() {
 	return (
 		<>
 			<Layout title={'Order History'}>
-				<h1 className="text-3xl text-green-900 uppercase tracking-wide text-center font-bold mt-14 mb-14">
+				<h1 className="text-2xl md:text-3xl text-green-900 uppercase tracking-wide text-center font-bold mt-14 mb-14">
 					Order History
 				</h1>
 
 				{order ? (
 					<div className="overflow-x-auto px-5 mb-14">
-						<table className="min-w-full text-emerald-900 border">
+						<table className="min-w-full text-emerald-900 border text-sm md:text-md">
 							<thead>
 								<tr className="text-gray-700 text-left border-b">
 									<th className="px-5">ITEM</th>
@@ -76,11 +76,16 @@ function OrderHistory() {
 						</table>
 					</div>
 				) : (
-					<div className="text-center mt-16">
+					<div className="text-center">
 						<h1>
 							Please go shopping first to be able to view shopping history
 						</h1>
-						<Link href={'/'}>Go Shopping</Link>
+						<Link
+							href={'/shop'}
+							className="text-green-500 text-sm hover:text-green-300 active:text-green-500"
+						>
+							Go Shopping
+						</Link>
 					</div>
 				)}
 			</Layout>

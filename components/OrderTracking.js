@@ -100,7 +100,7 @@ export default function OrderTracking({ orderId }) {
 		<>
 			<Layout title={'Order'}>
 				<div className="p-5">
-					<h1 className="tracking-wide text-3xl text-emerald-900 uppercase text-center font-bold mt-14 mb-14">
+					<h1 className="tracking-wide text-2xl md:text-3xl text-emerald-900 uppercase text-center font-bold mt-14 mb-14">
 						Order Tracking
 					</h1>
 					{loading ? (
@@ -118,10 +118,10 @@ export default function OrderTracking({ orderId }) {
 						<div className="grid lg:grid-cols-4 lg:gap-5">
 							<div className="overflow-x-auto border lg:col-span-3 space-y-5">
 								<div className=" p-5 rounded-none">
-									<h2 className="mb-2 text-xl text-gray-800 uppercase font-bold border-b">
+									<h2 className="mb-2 md:text-xl text-gray-800 uppercase font-bold border-b">
 										Shipping Address
 									</h2>
-									<div className="text-emerald-900">
+									<div className="text-emerald-900 text-xs md:text-md">
 										{shippingAddress.fullName}, {shippingAddress.address},{' '}
 										{shippingAddress.city}, {shippingAddress.postalCode},{' '}
 										{shippingAddress.country},
@@ -138,10 +138,12 @@ export default function OrderTracking({ orderId }) {
 								</div>
 
 								<div className=" p-5 rounded-none">
-									<h2 className="mb-2 text-gray-800 text-xl uppercase font-bold border-b">
+									<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b">
 										Payment Method
 									</h2>
-									<div className="text-emerald-900">{paymentMethod} </div>
+									<div className="text-emerald-900 text-xs md:text-md">
+										{paymentMethod}{' '}
+									</div>
 									{isPaid ? (
 										<div className="alert-success">Paid at {paidAt} </div>
 									) : (
@@ -152,10 +154,10 @@ export default function OrderTracking({ orderId }) {
 								</div>
 
 								<div className=" p-5 overflow-x-auto">
-									<h2 className="mb-2 text-gray-800 text-xl uppercase font-bold border-b">
+									<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b">
 										Order Items
 									</h2>
-									<table className="min-w-full text-emerald-900">
+									<table className="min-w-full text-emerald-900 text-xs md:text-md">
 										<thead className="border-b">
 											<tr>
 												<th className="px-5 text-left">Item</th>

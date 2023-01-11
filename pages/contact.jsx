@@ -18,7 +18,7 @@ function Contact() {
 									<BsTelephoneFill className="text-emerald-700 h-6 w-6" />
 								</div>
 								<h1 className="font-bold text-lg">Phone:</h1>
-								<p>+233 {'(0)'} 50 238 5080</p>
+								<p className="text-sm">+233 {'(0)'} 50 238 5080</p>
 							</div>
 
 							<div className="space-y-2">
@@ -26,7 +26,7 @@ function Contact() {
 									<GrMail className="text-emerald-700  h-6 w-6" />
 								</div>
 								<h1 className="font-bold text-lg">Email:</h1>
-								<p>numfran6@gmail.com</p>
+								<p className="text-sm">numofran6@gmail.com</p>
 							</div>
 						</div>
 					</div>
@@ -60,7 +60,7 @@ function Contact() {
 
 						<div className="flex items-center justify-end">
 							<button type="button" className="newprimarybtn">
-								Send A Message
+								Send Message
 							</button>
 						</div>
 					</div>

@@ -45,7 +45,7 @@ body {
 }
 
 input {
-	@apply p-2 bg-stone-50 placeholder:text-gray-500 border-b-4 border-green-100/20 focus:border-green-400 focus:bg-green-50 placeholder:uppercase text-black outline-none min-w-[300px] placeholder:text-sm;
+	@apply p-2 bg-stone-50 placeholder:text-gray-500 border-b-4 border-green-100/20 focus:border-green-400 focus:bg-green-50 placeholder:uppercase text-black outline-none md:min-w-[300px] min-w-[200px] placeholder:text-sm;
 }
 
 input[type='radio'] {

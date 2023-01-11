@@ -37,9 +37,9 @@ export const AddressForm = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(submitHandler)}
-			className="mx-auto max-w-screen-lg bg-stone-200 sm:px-16 py-5 mt-16 flex flex-col items-center"
+			className="mx-auto max-w-screen-lg bg-stone-200 sm:px-16 py-5 mt-16 mb-24 md:mb-0 flex flex-col items-center"
 		>
-			<h1 className="my-5 text-3xl text-emerald-900 uppercase tracking-wide text-center font-bold">
+			<h1 className="my-5 text-xl md:text-3xl text-emerald-900 uppercase tracking-wide text-center font-bold">
 				Shipping Address
 			</h1>
 			<div className="mb-4">
