@@ -147,6 +147,17 @@ function Layout({ children, title }) {
 						</div>
 
 						<div className="space-y-7">
+							<h1 className="uppercase font-bold tracking-widest">
+								My Account
+							</h1>
+
+							<ul className="space-y-1">
+								<li>Profile</li>
+								<li>Order History</li>
+							</ul>
+						</div>
+
+						<div className="space-y-7">
 							<h1 className="uppercase font-bold tracking-widest">Contact</h1>
 
 							<ul className="space-y-1">
@@ -155,17 +166,6 @@ function Layout({ children, title }) {
 									76051
 								</li>
 								<li>info@greenshopping.com</li>
-							</ul>
-						</div>
-
-						<div className="space-y-7">
-							<h1 className="uppercase font-bold tracking-widest">
-								My Account
-							</h1>
-
-							<ul className="space-y-1">
-								<li>Profile</li>
-								<li>Order History</li>
 							</ul>
 						</div>
 					</div>

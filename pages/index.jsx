@@ -129,9 +129,9 @@ function Home({ products }) {
 						Wear eco-friendly
 					</h2>
 
-					<h3 className="text-sm text-gray-300">
-						This project is still under developement. I am continously working
-						on ways to make it better.
+					<h3 className="text-xs md:text-sm text-emerald-800">
+						I am continously working on ways to make this project better.
+						Collaborations and recommendations are welcomed.
 					</h3>
 
 					<Link
@@ -143,7 +143,7 @@ function Home({ products }) {
 				</div>
 			</header>
 
-			<div className="bg-white flex justify-around items-center py-12 px-2 md:p-12">
+			<div className="bg-white justify-around py-12 px-2 md:p-12 hidden md:flex">
 				<GoodiesCard
 					img={free}
 					heading={'Free Shipping'}
@@ -166,8 +166,8 @@ function Home({ products }) {
 				/>
 			</div>
 
-			<div className="md:flex justify-center py-16 px-5 md:p-16 md:space-x-5 bg-stone-200 items-center space-y-5 md:space-y-0">
-				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-stone-100 md:px-16 sm:px-28 pl-5 relative">
+			<div className="md:flex justify-center py-10 md:p-16 md:space-x-5 bg-stone-200 items-center space-y-5 md:space-y-0">
+				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-white mx-5 md:mx-0 md:px-16 sm:px-28 pl-5 pr-2 relative">
 					<div className="h-[65vh] md:h-[70vh] flex justify-end">
 						<Image
 							src={model}
@@ -198,7 +198,30 @@ function Home({ products }) {
 					</div>
 				</div>
 
-				<div className="grid grid-cols-2 h-[50vh] w-[90vw] md:h-[70vh] md:w-[40vw]">
+				<div className="bg-white flex justify-around py-12 px-2 md:p-12 md:hidden">
+					<GoodiesCard
+						img={free}
+						heading={'Free Shipping'}
+						text={'Delivered to your door'}
+					/>
+					<GoodiesCard
+						img={payment}
+						heading={'Securety Payments'}
+						text={'Up to 12 months installments'}
+					/>
+					<GoodiesCard
+						img={returnimg}
+						heading={'14-Day Returns'}
+						text={'Shop with confidence'}
+					/>
+					<GoodiesCard
+						img={support}
+						heading={'24/7 Dedicated Support'}
+						text={'Leave us a message'}
+					/>
+				</div>
+
+				<div className="grid grid-cols-2 h-[50vh] w-[90vw] mx-5 md:mx-0 md:h-[70vh] md:w-[40vw]">
 					<Image
 						src={necklace}
 						alt="Necklace"
@@ -274,6 +297,15 @@ function Home({ products }) {
 					</div>
 
 					<div className="space-y-7">
+						<h1 className="uppercase font-bold tracking-widest">My Account</h1>
+
+						<ul className="space-y-1">
+							<li>Profile</li>
+							<li>Order History</li>
+						</ul>
+					</div>
+
+					<div className="space-y-7">
 						<h1 className="uppercase font-bold tracking-widest">Contact</h1>
 
 						<ul className="space-y-1">
@@ -282,15 +314,6 @@ function Home({ products }) {
 								76051
 							</li>
 							<li>info@greenshopping.com</li>
-						</ul>
-					</div>
-
-					<div className="space-y-7">
-						<h1 className="uppercase font-bold tracking-widest">My Account</h1>
-
-						<ul className="space-y-1">
-							<li>Profile</li>
-							<li>Order History</li>
 						</ul>
 					</div>
 				</div>
