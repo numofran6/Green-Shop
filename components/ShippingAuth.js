@@ -16,7 +16,7 @@ export const ShippingAuth = ({ children }) => {
 		return (
 			<Layout>
 				<div className="h-[50vh] flex flex-col justify-center items-center">
-					<ReactLoading type="spin" height={100} width={50} />
+					<ReactLoading type="spin" color="#7abc7fee" height={100} width={50} />
 				</div>
 			</Layout>
 		);
