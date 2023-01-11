@@ -33,7 +33,7 @@ export default function LoginScreen() {
 		if (result.error) {
 			toast.error(result.error);
 		} else {
-			push(redirect ? redirect : '/');
+			push(redirect ? redirect : '/shop');
 		}
 	};
 
@@ -140,7 +140,7 @@ export default function LoginScreen() {
 							</Link>
 						</h1>
 
-						<div className="text-xs mt-5">
+						<div className="text-xs mt-3">
 							<em>please sign in with placeholder credentials</em>
 						</div>
 					</div>
