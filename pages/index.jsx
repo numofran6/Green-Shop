@@ -129,7 +129,7 @@ function Home({ products }) {
 						Wear eco-friendly
 					</h2>
 
-					<h3 className="text-xs md:text-sm text-emerald-800">
+					<h3 className="text-xs md:text-sm text-green-400">
 						I am continously working on ways to make this project better.
 						Collaborations and recommendations are welcomed.
 					</h3>
