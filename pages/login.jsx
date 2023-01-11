@@ -81,6 +81,7 @@ export default function LoginScreen() {
 										type="email"
 										id="email"
 										placeholder="danny@shop.com"
+										className="placeholder:lowercase"
 									/>
 									{errors.email && (
 										<div>
@@ -139,7 +140,7 @@ export default function LoginScreen() {
 							</Link>
 						</h1>
 
-						<div className="text-xs md:text-sm">
+						<div className="text-xs mt-5 md:text-sm">
 							<em>please sign in with placeholder credentials</em>
 						</div>
 					</div>
