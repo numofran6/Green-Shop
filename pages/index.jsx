@@ -16,12 +16,18 @@ import Head from 'next/head';
 import db from '../utils/db';
 import Product from '../models/Product';
 import FeaturedItem from '../components/FeaturedItem';
+import { motion } from 'framer-motion';
 
 function Home({ products }) {
 	const [active, setActive] = useState(false);
 
 	return (
-		<div className="">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 0.5 }}
+			className=""
+		>
 			<Head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -131,7 +137,7 @@ function Home({ products }) {
 
 					<h3 className="text-xs sm:text-sm text-gray-400">
 						I am continously working on ways to make this project better.
-						Collaborations and recommendations are welcomed.
+						Collaborations and recommendations are welcome.
 					</h3>
 
 					<Link
@@ -283,12 +289,14 @@ function Home({ products }) {
 				</div>
 			</div>
 
-			<footer className="text-xs md:text-sm bg-emerald-900 text-green-50">
-				<div className="flex p-16 justify-around space-x-10 md:space-x-0">
-					<div className="space-y-7">
-						<h1 className="uppercase font-bold tracking-widest">Information</h1>
+			<footer className="text-sm bg-emerald-900 text-green-50">
+				<div className="flex flex-col md:flex-row p-16 justify-around space-y-10 md:space-y-0 md:space-x-0">
+					<div className="space-y-5 md:space-y-7">
+						<h1 className="uppercase font-bold tracking-widest  text-lg">
+							Information
+						</h1>
 
-						<ul className="space-y-1">
+						<ul className="space-y-3 md:space-y-1">
 							<li>About Shop</li>
 							<li>Our Location</li>
 							<li>Delivery Information</li>
@@ -296,19 +304,23 @@ function Home({ products }) {
 						</ul>
 					</div>
 
-					<div className="space-y-7">
-						<h1 className="uppercase font-bold tracking-widest">My Account</h1>
+					<div className="space-y-5 md:space-y-7">
+						<h1 className="uppercase font-bold tracking-widest  text-lg">
+							My Account
+						</h1>
 
-						<ul className="space-y-1">
+						<ul className="space-y-3 md:space-y-1">
 							<li>Profile</li>
 							<li>Order History</li>
 						</ul>
 					</div>
 
-					<div className="space-y-7">
-						<h1 className="uppercase font-bold tracking-widest">Contact</h1>
+					<div className="space-y-5 md:space-y-7">
+						<h1 className="uppercase font-bold tracking-widest text-lg">
+							Contact
+						</h1>
 
-						<ul className="space-y-1">
+						<ul className="space-y-3 md:space-y-1">
 							<li>
 								Lebanon Zone 2 2300 The Young Shall Grow Street Ashaiman, AS
 								76051
@@ -318,11 +330,11 @@ function Home({ products }) {
 					</div>
 				</div>
 
-				<h1 className="text-center bg-black text-white p-3 text-xs md:text-sm">
-					This project is not complete. Watch out for more added features
+				<h1 className="text-center bg-[#363636] text-white p-3 text-xs md:text-sm">
+					This project is not fully complete. More added features on the way.
 				</h1>
 			</footer>
-		</div>
+		</motion.div>
 	);
 }
 

@@ -32,7 +32,7 @@ export default function Home({ products }) {
 									<Accordion>
 										<AccordionSummary
 											expandIcon={<AiOutlineDown />}
-											className="font-bold text-lg md:text-xl text-gray-600"
+											className="font-bold text-gray-600"
 										>
 											Price
 										</AccordionSummary>
@@ -63,7 +63,7 @@ export default function Home({ products }) {
 									<Accordion>
 										<AccordionSummary
 											expandIcon={<AiOutlineDown />}
-											className="font-bold text-lg md:text-xl text-gray-600"
+											className="font-bold text-gray-600"
 										>
 											Brand
 										</AccordionSummary>

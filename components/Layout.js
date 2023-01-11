@@ -12,9 +12,11 @@ import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
 import { CiLogin } from 'react-icons/ci';
 import { BsBasket3 } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 
 function Layout({ children, title }) {
 	const [active, setActive] = useState(false);
+	const { asPath } = useRouter();
 	const { data: session } = useSession();
 	const { state, dispatch } = useContext(Store);
 	const {
@@ -59,10 +61,30 @@ function Layout({ children, title }) {
 							</Link>
 							<span className="h-5 w-[0.1rem] bg-green-100 hidden md:flex"></span>
 
-							<Link href="/">Home</Link>
-							<Link href="/about">About</Link>
-							<Link href="/contact">Contact</Link>
-							<Link href="/shop">Shop</Link>
+							<Link
+								href="/"
+								className={`${asPath === '/' && 'text-green-500'}`}
+							>
+								Home
+							</Link>
+							<Link
+								href="/about"
+								className={`${asPath === '/about' && 'text-green-500'}`}
+							>
+								About
+							</Link>
+							<Link
+								href="/contact"
+								className={`${asPath === '/contact' && 'text-green-500'}`}
+							>
+								Contact
+							</Link>
+							<Link
+								href="/shop"
+								className={`${asPath === '/shop' && 'text-green-500'}`}
+							>
+								Shop
+							</Link>
 						</div>
 
 						<Link
@@ -89,7 +111,9 @@ function Layout({ children, title }) {
 
 							<Link
 								href="/cart"
-								className="flex relative space-x-3 items-center"
+								className={`flex relative space-x-3 items-center ${
+									asPath === '/cart' && 'text-green-500'
+								}`}
 							>
 								<BsBasket3 className="w-6 h-6" />
 								{
@@ -131,14 +155,14 @@ function Layout({ children, title }) {
 
 				<main className="container m-auto">{children}</main>
 
-				<footer className="text-xs md:text-sm text-green-50 bg-neutral-900">
-					<div className="flex p-16 justify-around space-x-10 md:space-x-0">
-						<div className="space-y-7">
-							<h1 className="uppercase font-bold tracking-widest">
+				<footer className="text-sm bg-neutral-900 text-green-50">
+					<div className="flex flex-col md:flex-row p-16 justify-around space-y-10 md:space-y-0 md:space-x-0">
+						<div className="space-y-5 md:space-y-7">
+							<h1 className="uppercase font-bold tracking-widest  text-lg">
 								Information
 							</h1>
 
-							<ul className="space-y-1">
+							<ul className="space-y-3 md:space-y-1">
 								<li>About Shop</li>
 								<li>Our Location</li>
 								<li>Delivery Information</li>
@@ -146,21 +170,23 @@ function Layout({ children, title }) {
 							</ul>
 						</div>
 
-						<div className="space-y-7">
-							<h1 className="uppercase font-bold tracking-widest">
+						<div className="space-y-5 md:space-y-7">
+							<h1 className="uppercase font-bold tracking-widest  text-lg">
 								My Account
 							</h1>
 
-							<ul className="space-y-1">
+							<ul className="space-y-3 md:space-y-1">
 								<li>Profile</li>
 								<li>Order History</li>
 							</ul>
 						</div>
 
-						<div className="space-y-7">
-							<h1 className="uppercase font-bold tracking-widest">Contact</h1>
+						<div className="space-y-5 md:space-y-7">
+							<h1 className="uppercase font-bold tracking-widest text-lg">
+								Contact
+							</h1>
 
-							<ul className="space-y-1">
+							<ul className="space-y-3 md:space-y-1">
 								<li>
 									Lebanon Zone 2 2300 The Young Shall Grow Street Ashaiman, AS
 									76051
@@ -170,8 +196,8 @@ function Layout({ children, title }) {
 						</div>
 					</div>
 
-					<h1 className="text-center bg-black p-3 text-xs md:text-sm">
-						This project is not complete. Watch out for more added features
+					<h1 className="text-center bg-[#363636] text-white p-3 text-xs md:text-sm">
+						This project is not fully complete. More added features on the way.
 					</h1>
 				</footer>
 			</div>
