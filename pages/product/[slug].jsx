@@ -17,7 +17,7 @@ export default function ProductScreen({ products, product }) {
 	if (!product) {
 		return (
 			<Layout title={'Product Not Found'}>
-				<h1 className="text-2xl flex items-center justify-center">
+				<h1 className="text-2xl min-h-[50vh] flex items-center justify-center">
 					Product Not Found
 				</h1>
 			</Layout>
