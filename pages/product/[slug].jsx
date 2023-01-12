@@ -11,7 +11,7 @@ import { motion } from 'framer-motion';
 import { BsSuitHeart, BsShare } from 'react-icons/bs';
 import FeaturedItem from '../../components/FeaturedItem';
 
-export default function ProductScreen({ product, products }) {
+export default function ProductScreen({ products, product }) {
 	const { state, dispatch } = useContext(Store);
 
 	if (!product) {
@@ -32,7 +32,7 @@ export default function ProductScreen({ product, products }) {
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 				>
-					<div className="mt-12 pb-7 flex ml-5 md:ml-0 border-b">
+					<div className="mt-12 pb-7 flex ml-5 lg:ml-0 border-b">
 						<Link
 							href={'/shop'}
 							className="font-semibold flex items-center text-green-800"
@@ -48,7 +48,7 @@ export default function ProductScreen({ product, products }) {
 						transition={{ duration: 0.5 }}
 						className="flex justify-center my-10"
 					>
-						<div className="flex flex-col md:flex-row items-center md:space-x-10">
+						<div className="flex flex-col lg:flex-row items-center lg:space-x-10">
 							<div className="">
 								<Image
 									src={product.image}
@@ -56,11 +56,11 @@ export default function ProductScreen({ product, products }) {
 									width={1080}
 									height={1080}
 									priority
-									className="w-[400px] h-[450px] sm:h-[500px] object-cover"
+									className="w-[90vw] lg:w-[35vw] h-[60vh] sm:h-[70vh] object-cover"
 								/>
 							</div>
 
-							<div className="text-center md:text-left max-w-lg flex flex-col space-y-5 col-span-2 px-8 mx-2 md:mx-0 md:px-5 bg-stone-100 md:bg-stone-100 my-5 py-5 md:my-0 md:py-10 md:h-[500px] md:w-[500px]">
+							<div className="text-center lg:text-left max-w-lg flex flex-col space-y-5 col-span-2 px-8 mx-2 lg:mx-0 lg:px-5 bg-stone-100 md:bg-stone-100 my-5 py-5 lg:my-0 lg:py-10 w-[90vw] lg:min-w-[35vw] min-h-[60vh] sm:min-h-[70vh] ">
 								<ul className="space-y-3 text-sm my-5">
 									<li className="text-md font-semibold">{product.brand}</li>
 

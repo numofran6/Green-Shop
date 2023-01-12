@@ -13,6 +13,7 @@ import { TfiClose } from 'react-icons/tfi';
 import { CiLogin } from 'react-icons/ci';
 import { BsBasket3 } from 'react-icons/bs';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 function Layout({ children, title }) {
 	const [active, setActive] = useState(false);
@@ -94,14 +95,14 @@ function Layout({ children, title }) {
 							<GiShoppingBag className="w-11 h-11" />
 						</Link>
 
-						<div className="space-x-5 text-sm md:space-x-12 flex uppercase font-semibold text-md items-center">
+						<div className="space-x-5 text-xs sm:text-sm md:space-x-6 flex uppercase font-bold md:font-normal text-md items-center">
 							{session?.user ? (
 								<ProfileMenu
 									name={session.user.name}
 									logoutClickHandler={logoutClickHandler}
 								/>
 							) : (
-								<Link href="/login" className=" flex space-x-3 items-center">
+								<Link href="/login" className=" flex space-x-2 items-center">
 									<CiLogin className="w-6 h-6" />
 									<span>Log In</span>
 								</Link>
@@ -111,7 +112,7 @@ function Layout({ children, title }) {
 
 							<Link
 								href="/cart"
-								className={`flex relative space-x-3 items-center ${
+								className={`flex relative space-x-2 items-center ${
 									asPath === '/cart' && 'text-green-500'
 								}`}
 							>
@@ -126,13 +127,12 @@ function Layout({ children, title }) {
 						</div>
 
 						<div className="md:hidden">
-							{!active && (
+							{!active ? (
 								<RiMenu4Line
 									onClick={() => setActive(!active)}
 									className="w-8 h-8"
 								/>
-							)}
-							{active && (
+							) : (
 								<TfiClose
 									onClick={() => setActive(!active)}
 									className="w-8 h-8"
@@ -142,21 +142,26 @@ function Layout({ children, title }) {
 					</nav>
 
 					{active && (
-						<div className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 py-10 text-center z-10">
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 min-h-[37vh] py-5 text-center z-10"
+						>
 							<div className="space-y-7 flex flex-col uppercase font-semibold text-md">
 								<Link href="/">Home</Link>
 								<Link href="/about">About</Link>
 								<Link href="/contact">Contact</Link>
 								<Link href="/shop">Shop</Link>
 							</div>
-						</div>
+						</motion.div>
 					)}
 				</header>
 
 				<main className="container m-auto">{children}</main>
 
 				<footer className="text-sm bg-neutral-900 text-green-50">
-					<div className="flex flex-col md:flex-row p-16 justify-around space-y-10 md:space-y-0 md:space-x-0">
+					<div className="flex flex-col md:flex-row p-16 justify-around space-y-10 md:space-y-0 md:space-x-10">
 						<div className="space-y-5 md:space-y-7">
 							<h1 className="uppercase font-bold tracking-widest  text-lg">
 								Information

@@ -13,15 +13,13 @@ import { useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
 import Head from 'next/head';
-// import db from '../utils/db';
-// import Product from '../models/Product';
+import db from '../utils/db';
+import Product from '../models/Product';
 import FeaturedItem from '../components/FeaturedItem';
 import { motion } from 'framer-motion';
-import { data } from '../utils/data';
 
-function Home({}) {
+function Home({ products }) {
 	const [active, setActive] = useState(false);
-	const { products } = data;
 
 	return (
 		<motion.div
@@ -177,7 +175,7 @@ function Home({}) {
 			</div>
 
 			<div className="lg:flex justify-center py-10 lg:p-16 lg:space-x-5 bg-stone-200 items-center space-y-5 lg:space-y-0">
-				<div className="h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[35vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
+				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[35vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
 					<div className="flex flex-col text-black space-y-5">
 						<h1 className="text-gray-400 text-sm font-bold">
 							Spring Collection
@@ -346,13 +344,13 @@ function Home({}) {
 
 export default Home;
 
-// export async function getServerSideProps() {
-// 	await db.connect();
-// 	const products = await Product.find().lean();
+export async function getServerSideProps() {
+	await db.connect();
+	const products = await Product.find().lean();
 
-// 	return {
-// 		props: {
-// 			products: products.map(db.convertDocToObj),
-// 		},
-// 	};
-// }
+	return {
+		props: {
+			products: products.map(db.convertDocToObj),
+		},
+	};
+}
