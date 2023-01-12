@@ -13,13 +13,15 @@ import { useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
 import Head from 'next/head';
-import db from '../utils/db';
-import Product from '../models/Product';
+// import db from '../utils/db';
+// import Product from '../models/Product';
 import FeaturedItem from '../components/FeaturedItem';
 import { motion } from 'framer-motion';
+import { data } from '../utils/data';
 
-function Home({ products }) {
+function Home({}) {
 	const [active, setActive] = useState(false);
+	const { products } = data;
 
 	return (
 		<motion.div
@@ -90,17 +92,14 @@ function Home({ products }) {
 					</div>
 
 					<div className="md:hidden text-green-50">
-						{!active && (
-							<RiMenu4Line
-								onClick={() => setActive(!active)}
-								className="w-8 h-8"
-							/>
-						)}
-						{active && (
-							<TfiClose
-								onClick={() => setActive(!active)}
-								className="w-8 h-8"
-							/>
+						{!active ? (
+							<div onClick={() => setActive(!active)}>
+								<RiMenu4Line className="w-8 h-8" />
+							</div>
+						) : (
+							<div onClick={() => setActive(!active)}>
+								<TfiClose className="w-8 h-8" />
+							</div>
 						)}
 					</div>
 				</nav>
@@ -110,7 +109,7 @@ function Home({ products }) {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 space-y-10 py-[7.1rem] text-center z-10"
+						className="absolute top-16 w-full min-h-[60vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
 						<Link href={'/'} className="font-bold text-2xl uppercase">
 							<GiShoppingBag className="w-11 h-11 mr-2" />
@@ -133,10 +132,10 @@ function Home({ products }) {
 					</motion.div>
 				)}
 
-				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-10 md:ml-60 space-y-4 text-green-50">
+				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-7 px-3 lg:ml-60 space-y-4 text-green-50">
 					<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
-					<h2 className="text-6xl md:text-8xl font-semibold">
+					<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
 						Wear eco-friendly
 					</h2>
 
@@ -154,7 +153,7 @@ function Home({ products }) {
 				</div>
 			</header>
 
-			<div className="bg-white justify-around py-12 px-2 md:p-12 hidden md:flex">
+			<div className="bg-white justify-around py-12 px-2 md:p-12 hidden lg:flex">
 				<GoodiesCard
 					img={free}
 					heading={'Free Shipping'}
@@ -177,27 +176,19 @@ function Home({ products }) {
 				/>
 			</div>
 
-			<div className="md:flex justify-center py-10 md:p-16 md:space-x-5 bg-stone-200 items-center space-y-5 md:space-y-0">
-				<div className="h-[65vh] md:h-[70vh] w-[90vw] md:w-[35vw] bg-white mx-5 md:mx-0 md:px-16 sm:px-28 pl-5 pr-2 relative">
-					<div className="h-[65vh] md:h-[70vh] flex justify-end">
-						<Image
-							src={model}
-							alt="model"
-							width={1469}
-							height={4135}
-							className="h-full w-fit"
-						/>
-					</div>
-
-					<div className="h-full absolute top-0 flex flex-col justify-center text-black space-y-5">
+			<div className="lg:flex justify-center py-10 lg:p-16 lg:space-x-5 bg-stone-200 items-center space-y-5 lg:space-y-0">
+				<div className="h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[35vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
+					<div className="flex flex-col text-black space-y-5">
 						<h1 className="text-gray-400 text-sm font-bold">
 							Spring Collection
 						</h1>
 						<div className="bg-gray-400 h-1 w-[30%]"></div>
 
 						<div>
-							<h2 className="uppercase text-3xl font-bold">New </h2>
-							<h2 className="uppercase text-3xl font-bold">Arrivals</h2>
+							<h2 className="uppercase text-2xl md:text-3xl font-bold">New </h2>
+							<h2 className="uppercase text-2xl md:text-3xl font-bold">
+								Arrivals
+							</h2>
 						</div>
 
 						<Link
@@ -207,9 +198,19 @@ function Home({ products }) {
 							View More
 						</Link>
 					</div>
+
+					<div className="h-[65vh] lg:h-[70vh] flex-shrink-0">
+						<Image
+							src={model}
+							alt="model"
+							width={1469}
+							height={4135}
+							className="h-full w-fit"
+						/>
+					</div>
 				</div>
 
-				<div className="bg-white flex justify-around py-12 px-2 md:p-12 md:hidden">
+				<div className="bg-white flex justify-around py-12 px-2 lg:p-12 lg:hidden">
 					<GoodiesCard
 						img={free}
 						heading={'Free Shipping'}
@@ -232,22 +233,22 @@ function Home({ products }) {
 					/>
 				</div>
 
-				<div className="grid grid-cols-2 h-[50vh] w-[90vw] mx-5 md:mx-0 md:h-[70vh] md:w-[40vw]">
+				<div className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto">
 					<Image
 						src={necklace}
 						alt="Necklace"
 						width={3888}
 						height={4860}
-						className="h-[25vh] md:h-[35vh] object-cover"
+						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
 
-					<div className="h-[25vh] md:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 md:space-y-5">
-						<h1 className="text-gray-400 text-xs md:text-sm font-bold">
+					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5">
+						<h1 className="text-gray-400 text-center text-xs md:text-sm font-bold">
 							The Accessories Collection
 						</h1>
 						<div className="bg-gray-400 h-1 w-[20%]"></div>
 
-						<h2 className="uppercase text-lg md:text-3xl font-bold text-center text-black">
+						<h2 className="uppercase text-lg lg:text-3xl font-bold text-center text-black">
 							Women's Accessories{' '}
 						</h2>
 
@@ -259,11 +260,11 @@ function Home({ products }) {
 						</Link>
 					</div>
 
-					<div className="h-[25vh] md:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 md:space-y-5">
+					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5">
 						<h1 className="text-gray-400 text-sm font-bold">Best Offer</h1>
 						<div className="bg-gray-400 h-1 w-[20%]"></div>
 
-						<h2 className="uppercase text-lg md:text-3xl font-bold text-center text-black">
+						<h2 className="uppercase text-lg lg:text-3xl font-bold text-center text-black">
 							Men Watches
 						</h2>
 
@@ -280,7 +281,7 @@ function Home({ products }) {
 						alt="Necklace"
 						width={3442}
 						height={5073}
-						className="h-[25vh] md:h-[35vh] object-cover"
+						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
 				</div>
 			</div>
@@ -295,7 +296,7 @@ function Home({ products }) {
 			</div>
 
 			<footer className="text-sm bg-emerald-900 text-green-50">
-				<div className="flex flex-col md:flex-row p-16 justify-around space-y-10 md:space-y-0 md:space-x-0">
+				<div className="flex flex-col lg:flex-row p-16 justify-around space-y-10 lg:space-y-0 lg:space-x-0">
 					<div className="space-y-5 md:space-y-7">
 						<h1 className="uppercase font-bold tracking-widest  text-lg">
 							Information
@@ -345,13 +346,13 @@ function Home({ products }) {
 
 export default Home;
 
-export async function getServerSideProps() {
-	await db.connect();
-	const products = await Product.find().lean();
+// export async function getServerSideProps() {
+// 	await db.connect();
+// 	const products = await Product.find().lean();
 
-	return {
-		props: {
-			products: products.map(db.convertDocToObj),
-		},
-	};
-}
+// 	return {
+// 		props: {
+// 			products: products.map(db.convertDocToObj),
+// 		},
+// 	};
+// }
