@@ -8,7 +8,7 @@ export const GoodiesCard = ({ img, heading, text }) => {
 				alt=""
 				width={512}
 				height={512}
-				className="md:w-20 md:h-20 w-10 h-10"
+				className="md:w-16 md:h-16 lg:w-20 lg:h-20 w-10 h-10"
 			/>
 
 			<div className="md:space-y-2">

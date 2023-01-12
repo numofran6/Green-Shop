@@ -76,7 +76,7 @@ function Home({}) {
 					className="h-full w-full object-cover"
 				/>
 
-				<nav className="absolute top-0 w-full flex justify-end md:justify-between items-center px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50">
+				<nav className="absolute top-0 w-full flex justify-end md:justify-between items-center sm:px-24 h-16 bg-opacity-10 bg-green-50">
 					<Link
 						href={'/'}
 						className="hidden md:flex font-bold text-2xl uppercase"
@@ -91,7 +91,7 @@ function Home({}) {
 						<Link href="/shop">Shop</Link>
 					</div>
 
-					<div className="md:hidden text-green-50">
+					<div className="md:hidden text-green-50 mx-5 z-30">
 						{!active ? (
 							<div onClick={() => setActive(!active)}>
 								<RiMenu4Line className="w-8 h-8" />
@@ -193,7 +193,7 @@ function Home({}) {
 
 						<Link
 							href={'/shop'}
-							className="bg-black p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black"
+							className="bg-black p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black"
 						>
 							View More
 						</Link>
