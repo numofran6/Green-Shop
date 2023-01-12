@@ -9,7 +9,7 @@ function FeaturedItem({ product }) {
 
 	return (
 		<div className="flex-shrink-0">
-			<Link href={`/product/${product.slug}`}>
+			<Link href={`/product/${product.slug}`} className="bg-emerald-700">
 				<Image
 					src={product.image}
 					alt={product.name}

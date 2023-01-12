@@ -9,7 +9,7 @@ function ProductItem({ product }) {
 
 	return (
 		<div className="">
-			<Link href={`/product/${product.slug}`}>
+			<Link href={`/product/${product.slug}`} className="bg-emerald-700">
 				<Image
 					src={product.image}
 					alt={product.name}
