@@ -99,7 +99,7 @@ export const OrderSummary = () => {
 					)}
 				</div>
 			) : (
-				<div className="grid lg:grid-cols-4 gap-5">
+				<div className="grid lg:grid-cols-4 gap-5 mb-10">
 					<div className="overflow-x-auto border border-gray-500 lg:col-span-3 space-y-5">
 						<div className="p-5 rounded-none">
 							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-gray-400">
