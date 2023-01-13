@@ -116,7 +116,7 @@ function Layout({ children, title }) {
 									asPath === '/cart' && 'text-green-500'
 								}`}
 							>
-								<BsBasket3 className="w-6 h-6" />
+								<BsBasket3 className="w-5 h-5" />
 								{
 									<span className="inline-flex absolute -top-2 -right-3 justify-center items-center w-5 h-4 text-xs font-bold text-emerald-900 bg-green-50 rounded-full">
 										{cartItemsCount}
