@@ -2,7 +2,6 @@ import Layout from '../components/Layout';
 import Link from 'next/link';
 import { useContext, useEffect } from 'react';
 import { Order } from '../utils/Order';
-import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
@@ -10,7 +9,6 @@ function OrderHistory() {
 	const {
 		state: { order },
 	} = useContext(Order);
-	const [check, setCheck] = useState(true);
 
 	return (
 		<>

@@ -64,7 +64,7 @@ function CartScreen() {
 								<span className="text-green-600 ml-1 font-bold"> GREEN.</span>
 							</h1>
 
-							<div className="md:grid md:grid-cols-4 gap-5">
+							<div className="lg:grid lg:grid-cols-4 gap-5">
 								<div className="col-span-3">
 									<h1 className="text-xl md:text-3xl text-gray-700 font-bold mb-5">
 										Shopping Bag
@@ -107,7 +107,7 @@ function CartScreen() {
 															</Link>
 														</div>
 													</td>
-													<td>
+													<td className="">
 														<select
 															value={item.quantity}
 															onChange={(e) =>
@@ -121,7 +121,7 @@ function CartScreen() {
 															))}
 														</select>
 													</td>
-													<td>$ {item.price}</td>
+													<td className="p-2 md:p-5">$ {item.price}</td>
 												</tr>
 											</tbody>
 										))}

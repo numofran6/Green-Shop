@@ -53,7 +53,9 @@ export const OrderSummary = () => {
 			Router.push(`/order/${data._id}`);
 		} catch (err) {
 			setLoading(false);
-			toast.error('Something went wrong');
+			toast.error(
+				'Something went wrong. Make sure you are logged in and try again'
+			);
 		}
 	};
 
@@ -98,9 +100,9 @@ export const OrderSummary = () => {
 				</div>
 			) : (
 				<div className="grid lg:grid-cols-4 gap-5">
-					<div className="overflow-x-auto border lg:col-span-3 space-y-5">
+					<div className="overflow-x-auto border border-gray-500 lg:col-span-3 space-y-5">
 						<div className="p-5 rounded-none">
-							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b">
+							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-gray-400">
 								Shipping Address
 							</h2>
 							<div>
@@ -121,7 +123,7 @@ export const OrderSummary = () => {
 						</div>
 
 						<div className=" p-5 rounded-none">
-							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b">
+							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-gray-400">
 								Payment Method
 							</h2>
 
@@ -140,7 +142,7 @@ export const OrderSummary = () => {
 						</div>
 
 						<div className=" overflow-x-auto p-5 ">
-							<h2 className="mb-2 text-gray-800 md:text-xl uppercase border-b font-bold">
+							<h2 className="mb-2 text-gray-800 md:text-xl uppercase border-b font-bold border-gray-400">
 								Your Items
 							</h2>
 							<table className="min-w-full text-emerald-900 text-xs md:text-md">
