@@ -121,7 +121,7 @@ export default function OrderTracking({ orderId }) {
 					) : error ? (
 						<div className="alert-error">{error}</div>
 					) : (
-						<div className="grid lg:grid-cols-4 lg:gap-5">
+						<div className="grid lg:grid-cols-4 gap-5">
 							<div className="overflow-x-auto border border-gray-500 lg:col-span-3 space-y-5">
 								<div className=" p-5 rounded-none">
 									<h2 className="mb-2 md:text-xl text-gray-800 uppercase font-bold border-b border-gray-400">

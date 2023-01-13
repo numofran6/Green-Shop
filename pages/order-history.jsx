@@ -23,7 +23,7 @@ function OrderHistory() {
 					</h1>
 
 					{order ? (
-						<div className="overflow-x-auto px-5 mb-14">
+						<div className="overflow-x-auto mx-5 mb-14">
 							<table className="min-w-full text-emerald-900 border text-sm md:text-md">
 								<thead>
 									<tr className="text-gray-700 text-left border-b">
