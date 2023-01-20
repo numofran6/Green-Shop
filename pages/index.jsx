@@ -9,7 +9,7 @@ import support from '../public/images/support.png';
 import model from '../public/images/model.png';
 import necklace from '../public/images/necklace.jpg';
 import watch from '../public/images/watch.jpg';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
 import Head from 'next/head';
@@ -20,6 +20,7 @@ import { motion } from 'framer-motion';
 
 function Home({ products }) {
 	const [active, setActive] = useState(false);
+	const wrapperRef = useRef(null);
 
 	const list = {
 		visible: {
@@ -41,6 +42,23 @@ function Home({ products }) {
 		visible: { opacity: 1, y: 0 },
 		hidden: { opacity: 0, y: 100 },
 	};
+
+	useEffect(() => {
+		/**
+		 * Alert if clicked on outside of element
+		 */
+		function handleClickOutside(event) {
+			if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+				setActive(false);
+			}
+		}
+		// Bind the event listener
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			// Unbind the event listener on clean up
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [wrapperRef]);
 
 	return (
 		<motion.div
@@ -128,6 +146,7 @@ function Home({ products }) {
 						initial="hidden"
 						animate="visible"
 						variants={list}
+						ref={wrapperRef}
 						className="absolute top-16 w-full min-h-[62vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
 						<Link href={'/'} className="font-bold text-2xl uppercase">

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Head from 'next/head';
 import { Store } from '../utils/Store';
 import { ToastContainer } from 'react-toastify';
@@ -38,6 +38,7 @@ const item = {
 
 function Layout({ children, title }) {
 	const [active, setActive] = useState(false);
+	const wrapperRef = useRef(null);
 	const { asPath } = useRouter();
 	const { data: session } = useSession();
 	const { state, dispatch } = useContext(Store);
@@ -49,6 +50,23 @@ function Layout({ children, title }) {
 	useEffect(() => {
 		setCartItemsCount(cartItems.reduce((a, c) => a + c.quantity, 0));
 	}, [cartItems]);
+
+	useEffect(() => {
+		/**
+		 * Alert if clicked on outside of element
+		 */
+		function handleClickOutside(event) {
+			if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+				setActive(false);
+			}
+		}
+		// Bind the event listener
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			// Unbind the event listener on clean up
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [wrapperRef]);
 
 	const logoutClickHandler = () => {
 		Cookies.remove('cart');
@@ -167,6 +185,7 @@ function Layout({ children, title }) {
 							initial="hidden"
 							animate="visible"
 							variants={list}
+							ref={wrapperRef}
 							className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 min-h-[45vh] py-5 text-center z-10"
 						>
 							<div className="space-y-7 flex flex-col uppercase font-semibold text-md">

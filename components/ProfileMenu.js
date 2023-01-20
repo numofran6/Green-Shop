@@ -3,10 +3,28 @@ import Link from 'next/link';
 import { CgProfile } from 'react-icons/cg';
 import { AiOutlineDown } from 'react-icons/ai';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function ProfileMenu({ logoutClickHandler, name }) {
 	const [dropdownMenu, setDropdownMenu] = useState(false);
+	const wrapperRef = useRef(null);
+
+	useEffect(() => {
+		/**
+		 * Alert if clicked on outside of element
+		 */
+		function handleClickOutside(event) {
+			if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+				setDropdownMenu(false);
+			}
+		}
+		// Bind the event listener
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			// Unbind the event listener on clean up
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, [wrapperRef]);
 
 	const list = {
 		visible: {
@@ -30,7 +48,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 	};
 
 	return (
-		<div className={'relative inline-block z-50'}>
+		<div className={'relative inline-block z-50'} ref={wrapperRef}>
 			<div
 				className={
 					'flex cursor-pointer items-center text-green-100 hover:text-green-400 active:text-green-100'
@@ -52,7 +70,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 							<Link className="dropdown-link" href={'/cart'}>
 								<motion.span
 									variants={item}
-									className="tracking-wide font-bold md:font-normal"
+									className="tracking-wide font-bold"
 								>
 									My Cart
 								</motion.span>
@@ -63,7 +81,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 							<Link className="dropdown-link" href={'/order-history'}>
 								<motion.span
 									variants={item}
-									className="tracking-wide font-bold md:font-normal"
+									className="tracking-wide font-bold"
 								>
 									Order History
 								</motion.span>
@@ -78,7 +96,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 							>
 								<motion.span
 									variants={item}
-									className="tracking-wide font-bold md:font-normal"
+									className="tracking-wide font-bold"
 								>
 									Logout
 								</motion.span>
