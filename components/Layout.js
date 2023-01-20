@@ -15,6 +15,27 @@ import { BsBasket3 } from 'react-icons/bs';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 
+const list = {
+	visible: {
+		opacity: 1,
+		transition: {
+			when: 'beforeChildren',
+			staggerChildren: 0.3,
+		},
+	},
+	hidden: {
+		opacity: 0,
+		transition: {
+			when: 'afterChildren',
+		},
+	},
+};
+
+const item = {
+	visible: { opacity: 1, y: 0 },
+	hidden: { opacity: 0, y: 100 },
+};
+
 function Layout({ children, title }) {
 	const [active, setActive] = useState(false);
 	const { asPath } = useRouter();
@@ -143,16 +164,35 @@ function Layout({ children, title }) {
 
 					{active && (
 						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 min-h-[37vh] py-5 text-center z-10"
+							initial="hidden"
+							animate="visible"
+							variants={list}
+							className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 min-h-[45vh] py-5 text-center z-10"
 						>
 							<div className="space-y-7 flex flex-col uppercase font-semibold text-md">
-								<Link href="/">Home</Link>
-								<Link href="/about">About</Link>
-								<Link href="/contact">Contact</Link>
-								<Link href="/shop">Shop</Link>
+								<motion.div variants={item}>
+									<Link href="/" onClick={() => setActive(!active)}>
+										Home
+									</Link>
+								</motion.div>
+
+								<motion.div variants={item}>
+									<Link href="/about" onClick={() => setActive(!active)}>
+										About
+									</Link>
+								</motion.div>
+
+								<motion.div variants={item}>
+									<Link href="/contact" onClick={() => setActive(!active)}>
+										Contact
+									</Link>
+								</motion.div>
+
+								<motion.div variants={item}>
+									<Link href="/shop" onClick={() => setActive(!active)}>
+										Shop
+									</Link>
+								</motion.div>
 							</div>
 						</motion.div>
 					)}

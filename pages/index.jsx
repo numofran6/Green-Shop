@@ -128,7 +128,7 @@ function Home({ products }) {
 						initial="hidden"
 						animate="visible"
 						variants={list}
-						className="absolute top-16 w-full min-h-[61vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
+						className="absolute top-16 w-full min-h-[63vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
 						<Link href={'/'} className="font-bold text-2xl uppercase">
 							<GiShoppingBag className="w-11 h-11 mr-2" />
