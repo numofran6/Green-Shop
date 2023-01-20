@@ -213,7 +213,7 @@ export default function OrderTracking({ orderId }) {
 									Order Summary
 								</h2>
 
-								<ul className="my-10 font-semibold text-emerald-200 px-10">
+								<ul className="my-10 font-semibold text-emerald-100 px-10">
 									<li>
 										<div className="mb-2 flex justify-between">
 											<div>Items</div>
