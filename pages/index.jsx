@@ -347,11 +347,18 @@ function Home({ products }) {
 
 			<div className="py-10 px-5">
 				<h1 className="font-bold text-3xl mb-5">Latest Items</h1>
-				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
+				<motion.div
+					initial="hidden"
+					animate="visible"
+					variants={list}
+					className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto"
+				>
 					{products.slice(2, 6).map((product) => (
-						<FeaturedItem product={product} key={product.slug} />
+						<motion.div variants={item} key={product.slug}>
+							<FeaturedItem product={product} />
+						</motion.div>
 					))}
-				</div>
+				</motion.div>
 			</div>
 
 			<footer className="text-sm bg-emerald-900 text-green-50">
