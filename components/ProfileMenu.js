@@ -49,6 +49,17 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 						}
 					>
 						<div onClick={() => setDropdownMenu(!dropdownMenu)}>
+							<Link className="dropdown-link" href={'/cart'}>
+								<motion.span
+									variants={item}
+									className="tracking-wide font-bold md:font-normal"
+								>
+									My Cart
+								</motion.span>
+							</Link>
+						</div>
+
+						<div onClick={() => setDropdownMenu(!dropdownMenu)}>
 							<Link className="dropdown-link" href={'/order-history'}>
 								<motion.span
 									variants={item}

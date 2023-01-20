@@ -17,6 +17,7 @@ function OrderHistory() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
+					className="min-h-[60vh]"
 				>
 					<h1 className="text-2xl md:text-3xl text-green-900 uppercase tracking-wide text-center font-bold mt-14 mb-20">
 						Order History
