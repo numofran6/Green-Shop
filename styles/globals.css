@@ -45,15 +45,15 @@ body {
 }
 
 input {
-	@apply p-2 bg-stone-50 placeholder:text-gray-500 border-b-4 border-green-100/20 focus:border-green-400 focus:bg-green-50 placeholder:uppercase text-black outline-none md:min-w-[300px] min-w-[200px] placeholder:text-sm;
+	@apply p-2 bg-stone-50 placeholder:text-gray-500 border-b-4 border-green-100/20 focus:border-green-400 focus:bg-green-50 placeholder:uppercase text-black outline-none focus:outline-none md:min-w-[300px] min-w-[200px] placeholder:text-sm;
 }
 
 input[type='radio'] {
-	@apply min-w-0;
+	@apply min-w-0 outline-none;
 }
 
 input[type='checkbox'] {
-	@apply min-w-[1.2rem] min-h-[1.2rem] lg:min-w-[1.5rem] lg:min-h-[1.5rem];
+	@apply min-w-[1.2rem] min-h-[1.2rem] lg:min-w-[1.5rem] lg:min-h-[1.5rem] outline-none;
 }
 
 select {
