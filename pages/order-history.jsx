@@ -25,9 +25,9 @@ function OrderHistory() {
 
 					{order ? (
 						<div className="overflow-x-auto mx-5 mb-14">
-							<table className="min-w-full text-emerald-900 border-gray-500 border text-sm md:text-md">
+							<table className="min-w-full text-emerald-900 border-emerald-900 border text-sm md:text-md">
 								<thead>
-									<tr className="text-gray-700 text-left border-gray-500 border-b">
+									<tr className=" text-left border-emerald-700 border-b">
 										<th className="px-5">ITEM</th>
 										<th className="p-5">ORDER DATE</th>
 										<th className="p-5">PRICE ($)</th>
@@ -40,7 +40,7 @@ function OrderHistory() {
 								<tbody>
 									{order.orderItems?.map((item) => (
 										<tr
-											className="border-b border-gray-500 text-left"
+											className="border-b border-emerald-700 text-left"
 											key={item._id}
 										>
 											<td className="p-5">
