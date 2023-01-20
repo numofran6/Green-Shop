@@ -257,7 +257,7 @@ function Home({ products }) {
 						initial={{ opacity: 0, x: -120 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 1 }}
-						className="h-[65vh] lg:h-[70vh] flex-shrink-0"
+						className="h-[55vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
 					>
 						<Image
 							src={model}
