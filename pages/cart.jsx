@@ -64,7 +64,7 @@ function CartScreen() {
 								<span className="text-green-600 ml-1 font-bold"> GREEN.</span>
 							</h1>
 
-							<div className="lg:grid lg:grid-cols-4 gap-5">
+							<div className="lg:grid lg:grid-cols-4 gap-5 text-emerald-900">
 								<div className="col-span-3">
 									<h1 className="text-xl md:text-3xl text-gray-700 font-bold mb-5">
 										Shopping Bag
