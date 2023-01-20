@@ -30,7 +30,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 	};
 
 	return (
-		<div as="div" className={'relative inline-block z-10'}>
+		<div className={'relative inline-block z-50'}>
 			<div
 				className={
 					'flex cursor-pointer items-center text-green-100 hover:text-green-400 active:text-green-100'
@@ -50,7 +50,12 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 					>
 						<div onClick={() => setDropdownMenu(!dropdownMenu)}>
 							<Link className="dropdown-link" href={'/order-history'}>
-								<motion.span variants={item}>Order History</motion.span>
+								<motion.span
+									variants={item}
+									className="tracking-wide font-bold md:font-normal"
+								>
+									Order History
+								</motion.span>
 							</Link>
 						</div>
 
@@ -60,7 +65,12 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 								href={'#'}
 								onClick={logoutClickHandler}
 							>
-								<motion.span variants={item}>Logout</motion.span>
+								<motion.span
+									variants={item}
+									className="tracking-wide font-bold md:font-normal"
+								>
+									Logout
+								</motion.span>
 							</Link>
 						</div>
 					</div>
