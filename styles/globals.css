@@ -12,11 +12,11 @@
 	}
 
 	.newprimarybtn {
-		@apply bg-green-600 p-2 px-3 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 hover:text-emerald-600 active:bg-green-600 active:text-white;
+		@apply bg-green-600 p-3 px-5 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 hover:text-emerald-600 active:bg-green-600 active:text-white;
 	}
 
 	.default-button {
-		@apply hover:bg-green-600 p-2 px-3 rounded-full hover:text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out bg-green-200 text-emerald-600 active:bg-green-200 active:text-emerald-600;
+		@apply hover:bg-green-600 p-3 px-5 rounded-full hover:text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out bg-green-50 text-emerald-600 active:bg-green-50 active:text-emerald-600;
 	}
 
 	.alert-error {
