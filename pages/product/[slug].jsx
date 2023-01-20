@@ -32,7 +32,7 @@ export default function ProductScreen({ products, product }) {
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 				>
-					<div className="mt-12 pb-7 flex ml-5 lg:ml-0 border-b">
+					<div className="mt-12 pb-7 flex ml-5 lg:ml-0 border-b border-gray-300">
 						<Link
 							href={'/shop'}
 							className="font-semibold flex items-center text-green-800"
@@ -105,7 +105,7 @@ export default function ProductScreen({ products, product }) {
 						</div>
 					</motion.div>
 
-					<div className="py-10 px-5 border-t">
+					<div className="py-10 px-5 border-t  border-gray-300">
 						<h1 className="font-bold text-3xl mb-5">Related Items</h1>
 						<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
 							{products?.slice(0, 4).map((product) => (
