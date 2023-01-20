@@ -70,11 +70,11 @@ export const PaymentForm = () => {
 					<button
 						type="button"
 						onClick={() => push('/shipping')}
-						className="default-button mt-5"
+						className="default-button  p-3 px-5 mt-5"
 					>
 						Back
 					</button>
-					<button className="newprimarybtn mt-5">Next</button>
+					<button className="newprimarybtn  p-3 px-5 mt-5">Next</button>
 				</div>
 			</form>
 		</motion.div>

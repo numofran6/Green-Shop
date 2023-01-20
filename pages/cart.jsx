@@ -133,7 +133,7 @@ function CartScreen() {
 										Cart Totals
 									</h1>
 
-									<div className="border border-emerald-800 p-5 flex items-center justify-between">
+									<div className="border-r border-l border-t border-emerald-800 p-5 flex items-center justify-between">
 										<h1>Quantity</h1>
 
 										<h3 className="font-semibold md:text-xl">

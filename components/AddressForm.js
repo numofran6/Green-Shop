@@ -125,7 +125,7 @@ export const AddressForm = () => {
 				)}
 			</div>
 
-			<button className="newprimarybtn mt-4 flex items-end justify-end">
+			<button className="newprimarybtn  p-3 px-5 mt-4 flex items-end justify-end">
 				Next
 			</button>
 		</motion.form>
