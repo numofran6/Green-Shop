@@ -58,7 +58,7 @@ function CartScreen() {
 							</div>
 						</div>
 					) : (
-						<div className="pb-24">
+						<div className="pb-24 border-emerald-800">
 							<h1 className="py-12 text-gray-500 flex items-center justify-center text-sm">
 								thank you for shopping
 								<span className="text-green-600 ml-1 font-bold"> GREEN.</span>
