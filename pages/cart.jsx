@@ -58,7 +58,7 @@ function CartScreen() {
 							</div>
 						</div>
 					) : (
-						<div className="pb-24 border-emerald-800">
+						<div className="pb-24">
 							<h1 className="py-12 text-gray-500 flex items-center justify-center text-sm">
 								thank you for shopping
 								<span className="text-green-600 ml-1 font-bold"> GREEN.</span>
@@ -71,7 +71,7 @@ function CartScreen() {
 									</h1>
 
 									<table className="min-w-full">
-										<thead className="border uppercase">
+										<thead className="border border-emerald-800 uppercase">
 											<tr className="text-center">
 												<th className="px-10 text-left">Item</th>
 												<th>Qty</th>
@@ -80,7 +80,7 @@ function CartScreen() {
 										</thead>
 										{cartItems.map((item) => (
 											<tbody key={item.slug} className="">
-												<tr className="text-center border text-sm md:text-lg">
+												<tr className="text-center border border-emerald-800 text-sm md:text-lg">
 													<td className="text-left">
 														<div className="flex items-center text-emerald-600 p-5 ">
 															<button
@@ -133,7 +133,7 @@ function CartScreen() {
 										Cart Totals
 									</h1>
 
-									<div className="border p-5 flex items-center justify-between">
+									<div className="border border-emerald-800 p-5 flex items-center justify-between">
 										<h1>Quantity</h1>
 
 										<h3 className="font-semibold md:text-xl">
@@ -141,7 +141,7 @@ function CartScreen() {
 										</h3>
 									</div>
 
-									<div className="border p-5 space-y-5">
+									<div className="border border-emerald-800 p-5 space-y-5">
 										<div className="flex items-center justify-between">
 											<h1 className="uppercase font-semibold">Total</h1>
 											<h3 className="font-bold sm:text-2xl">
