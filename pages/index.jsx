@@ -113,7 +113,7 @@ function Home({ products }) {
 					className="h-full w-full object-cover"
 				/>
 
-				<nav className="absolute top-0 w-full flex justify-end md:justify-between items-center sm:px-24 h-16 bg-opacity-10 bg-green-50  z-30">
+				<nav className="absolute top-0 w-full flex justify-end md:justify-between items-center sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
 					<Link
 						href={'/'}
 						className="hidden md:flex font-bold text-2xl uppercase"
