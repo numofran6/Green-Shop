@@ -208,8 +208,8 @@ export default function OrderTracking({ orderId }) {
 								</div>
 							</div>
 
-							<div className=" py-5 flex flex-col justify-between h-fit border-2 border-emerald-900 rounded-none bg-stone-300 text-emerald-900">
-								<h2 className="mb-2 border-b-2 border-emerald-900 text-2xl font-semibold text-center uppercase">
+							<div className=" py-5 flex flex-col justify-between h-fit border-2 border-emerald-900 rounded-none bg-emerald-900 text-emerald-100">
+								<h2 className="mb-2 border-b-2 border-emerald-50 text-2xl font-semibold text-center uppercase">
 									Order Summary
 								</h2>
 
@@ -226,14 +226,14 @@ export default function OrderTracking({ orderId }) {
 											<div>$ {taxPrice}</div>
 										</div>
 									</li>
-									<li className="border-b border-green-900">
+									<li className="border-b border-green-50">
 										<div className="mb-2 flex justify-between">
 											<div>Shipping</div>
 											<div>$ {shippingPrice}</div>
 										</div>
 									</li>
 									<li className="uppercase text-xl font-bold mb-10">
-										<div className="mb-2 flex justify-between text-emerald-900">
+										<div className="mb-2 flex justify-between text-white">
 											<div>Total</div>
 											<div>$ {totalPrice}</div>
 										</div>
