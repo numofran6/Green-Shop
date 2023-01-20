@@ -121,7 +121,7 @@ export default function ProductScreen({ products, product }) {
 							{products?.slice(0, 4).map((product, i) => (
 								<motion.div
 									custom={i}
-									animate="visible"
+									whileInView="visible"
 									key={product.slug}
 									variants={variants}
 								>
