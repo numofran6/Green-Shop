@@ -122,9 +122,9 @@ export default function OrderTracking({ orderId }) {
 						<div className="alert-error">{error}</div>
 					) : (
 						<div className="grid lg:grid-cols-4 gap-5 mb-14">
-							<div className="overflow-x-auto border border-gray-500 lg:col-span-3 space-y-5">
+							<div className="overflow-x-auto border text-emerald-900 border-emerald-800  lg:col-span-3 space-y-5">
 								<div className=" p-5 rounded-none">
-									<h2 className="mb-2 md:text-xl text-gray-800 uppercase font-bold border-b border-gray-400">
+									<h2 className="mb-2 md:text-xl  uppercase font-bold border-b border-emerald-600">
 										Shipping Address
 									</h2>
 									<div className="text-emerald-900 text-xs md:text-md">
@@ -144,7 +144,7 @@ export default function OrderTracking({ orderId }) {
 								</div>
 
 								<div className=" p-5 rounded-none">
-									<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-gray-400">
+									<h2 className="mb-2  md:text-xl uppercase font-bold border-b border-emerald-800">
 										Payment Method
 									</h2>
 									<div className="text-emerald-900 text-xs md:text-md">
@@ -160,7 +160,7 @@ export default function OrderTracking({ orderId }) {
 								</div>
 
 								<div className=" p-5 overflow-x-auto">
-									<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-gray-400">
+									<h2 className="mb-2 md:text-xl uppercase font-bold border-b border-emerald-800">
 										Order Items
 									</h2>
 									<table className="min-w-full text-emerald-900 text-xs md:text-md">

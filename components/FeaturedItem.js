@@ -10,8 +10,8 @@ function FeaturedItem({ product }) {
 
 	return (
 		<motion.div
-			initial={{ x: 50, opacity: 0 }}
-			whileFocus={{ x: 0, opacity: 1 }}
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1 }}
 			className="flex-shrink-0"
 		>

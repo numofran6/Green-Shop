@@ -102,7 +102,7 @@ export const OrderSummary = () => {
 				<div className="grid lg:grid-cols-4 gap-5 mb-10">
 					<div className="overflow-x-auto border text-emerald-900 border-emerald-800 lg:col-span-3 space-y-5">
 						<div className="p-5 rounded-none">
-							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-emerald-600">
+							<h2 className="mb-2 md:text-xl uppercase font-bold border-b border-emerald-600">
 								Shipping Address
 							</h2>
 							<div>
@@ -123,7 +123,7 @@ export const OrderSummary = () => {
 						</div>
 
 						<div className=" p-5 rounded-none">
-							<h2 className="mb-2 text-gray-800 md:text-xl uppercase font-bold border-b border-emerald-600">
+							<h2 className="mb-2  md:text-xl uppercase font-bold border-b border-emerald-600">
 								Payment Method
 							</h2>
 
@@ -142,7 +142,7 @@ export const OrderSummary = () => {
 						</div>
 
 						<div className=" overflow-x-auto p-5 ">
-							<h2 className="mb-2 text-gray-800 md:text-xl uppercase border-b font-bold border-emerald-600">
+							<h2 className="mb-2  md:text-xl uppercase border-b font-bold border-emerald-600">
 								Your Items
 							</h2>
 							<table className="min-w-full text-emerald-900 text-xs md:text-md">
