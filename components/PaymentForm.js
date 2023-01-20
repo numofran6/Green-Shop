@@ -74,7 +74,7 @@ export const PaymentForm = () => {
 					>
 						Back
 					</button>
-					<button className="primary-button mt-5">Next</button>
+					<button className="newprimarybtn mt-5">Next</button>
 				</div>
 			</form>
 		</motion.div>

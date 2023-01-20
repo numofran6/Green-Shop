@@ -16,7 +16,7 @@
 	}
 
 	.default-button {
-		@apply rounded bg-white text-black py-2 px-4 shadow outline-none hover:bg-gray-200 active:bg-gray-100 uppercase;
+		@apply hover:bg-green-600 p-2 px-3 rounded-full hover:text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out bg-green-200 text-emerald-600 active:bg-green-200 active:text-emerald-600;
 	}
 
 	.alert-error {
