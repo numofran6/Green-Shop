@@ -32,7 +32,7 @@ export default function ProductScreen({ products, product }) {
 					animate={{ opacity: 1 }}
 					exit={{ opacity: 0 }}
 				>
-					<div className="mt-12 pb-7 flex ml-5 lg:ml-0 border-b border-emerald-800">
+					<div className="mt-12 pb-7 flex pl-5 lg:pl-0 border-b border-emerald-800">
 						<Link
 							href={'/shop'}
 							className="font-semibold flex items-center text-green-800"
