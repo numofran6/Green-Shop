@@ -72,8 +72,8 @@ function CartScreen() {
 
 									<table className="min-w-full">
 										<thead className="border border-emerald-800 uppercase">
-											<tr className="text-center  py-5">
-												<th className="px-10 text-left">Item</th>
+											<tr className="text-center ">
+												<th className="px-10 text-left  py-5">Item</th>
 												<th>Qty</th>
 												<th>Price</th>
 											</tr>

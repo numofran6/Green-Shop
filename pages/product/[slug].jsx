@@ -14,6 +14,16 @@ import FeaturedItem from '../../components/FeaturedItem';
 export default function ProductScreen({ products, product }) {
 	const { state, dispatch } = useContext(Store);
 
+	const variants = {
+		visible: (i) => ({
+			opacity: 1,
+			transition: {
+				delay: i * 0.3,
+			},
+		}),
+		hidden: { opacity: 0 },
+	};
+
 	if (!product) {
 		return (
 			<Layout title={'Product Not Found'}>
@@ -108,8 +118,15 @@ export default function ProductScreen({ products, product }) {
 					<div className="py-10 px-5 border-t  border-emerald-800">
 						<h1 className="font-bold text-3xl mb-5">Related Items</h1>
 						<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
-							{products?.slice(0, 4).map((product) => (
-								<FeaturedItem product={product} key={product.slug} />
+							{products?.slice(0, 4).map((product, i) => (
+								<motion.div
+									custom={i}
+									animate="visible"
+									key={product.slug}
+									variants={variants}
+								>
+									<FeaturedItem product={product} />
+								</motion.div>
 							))}
 						</div>
 					</div>
