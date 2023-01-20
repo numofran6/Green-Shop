@@ -21,6 +21,27 @@ import { motion } from 'framer-motion';
 function Home({ products }) {
 	const [active, setActive] = useState(false);
 
+	const list = {
+		visible: {
+			opacity: 1,
+			transition: {
+				when: 'beforeChildren',
+				staggerChildren: 0.3,
+			},
+		},
+		hidden: {
+			opacity: 0,
+			transition: {
+				when: 'afterChildren',
+			},
+		},
+	};
+
+	const item = {
+		visible: { opacity: 1, y: 0 },
+		hidden: { opacity: 0, y: 100 },
+	};
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -104,28 +125,39 @@ function Home({ products }) {
 
 				{active && (
 					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						className="absolute top-16 w-full min-h-[60vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
+						initial="hidden"
+						animate="visible"
+						variants={list}
+						className="absolute top-16 w-full min-h-[61vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
 						<Link href={'/'} className="font-bold text-2xl uppercase">
 							<GiShoppingBag className="w-11 h-11 mr-2" />
 						</Link>
 
 						<div className="space-y-7 flex flex-col uppercase font-semibold text-md">
-							<Link href="/" onClick={() => setActive(!active)}>
-								Home
-							</Link>
-							<Link href="/about" onClick={() => setActive(!active)}>
-								About
-							</Link>
-							<Link href="/contact" onClick={() => setActive(!active)}>
-								Contact
-							</Link>
-							<Link href="/shop" onClick={() => setActive(!active)}>
-								Shop
-							</Link>
+							<motion.div variants={item}>
+								<Link href="/" onClick={() => setActive(!active)}>
+									Home
+								</Link>
+							</motion.div>
+
+							<motion.div variants={item}>
+								<Link href="/about" onClick={() => setActive(!active)}>
+									About
+								</Link>
+							</motion.div>
+
+							<motion.div variants={item}>
+								<Link href="/contact" onClick={() => setActive(!active)}>
+									Contact
+								</Link>
+							</motion.div>
+
+							<motion.div variants={item}>
+								<Link href="/shop" onClick={() => setActive(!active)}>
+									Shop
+								</Link>
+							</motion.div>
 						</div>
 					</motion.div>
 				)}
@@ -144,7 +176,7 @@ function Home({ products }) {
 
 					<Link
 						href={'/shop'}
-						className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 hover:text-emerald-600"
+						className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
 					>
 						Shop Now
 					</Link>
@@ -176,7 +208,12 @@ function Home({ products }) {
 
 			<div className="lg:flex justify-center py-10 lg:p-16 lg:space-x-5 bg-stone-200 items-center space-y-5 lg:space-y-0">
 				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[35vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
-					<div className="flex flex-col text-black space-y-5">
+					<motion.div
+						initial={{ opacity: 0, x: 80 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 1 }}
+						className="flex flex-col text-black space-y-5"
+					>
 						<h1 className="text-gray-400 text-sm font-bold">
 							Spring Collection
 						</h1>
@@ -195,9 +232,14 @@ function Home({ products }) {
 						>
 							View More
 						</Link>
-					</div>
+					</motion.div>
 
-					<div className="h-[65vh] lg:h-[70vh] flex-shrink-0">
+					<motion.div
+						initial={{ opacity: 0, x: -120 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						transition={{ duration: 1 }}
+						className="h-[65vh] lg:h-[70vh] flex-shrink-0"
+					>
 						<Image
 							src={model}
 							alt="model"
@@ -205,7 +247,7 @@ function Home({ products }) {
 							height={4135}
 							className="h-full w-fit"
 						/>
-					</div>
+					</motion.div>
 				</div>
 
 				<div className="bg-white flex justify-around py-12 px-2 lg:p-12 lg:hidden">
