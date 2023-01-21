@@ -312,12 +312,7 @@ function Home({ products }) {
 					/>
 				</div>
 
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1 }}
-					className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto"
-				>
+				<div className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto">
 					<Image
 						src={necklace}
 						alt="Necklace"
@@ -327,7 +322,12 @@ function Home({ products }) {
 						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
 
-					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5">
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1 }}
+						className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5"
+					>
 						<h1 className="text-gray-400 text-center text-xs md:text-sm font-bold">
 							The Accessories Collection
 						</h1>
@@ -343,9 +343,14 @@ function Home({ products }) {
 						>
 							View More
 						</Link>
-					</div>
+					</motion.div>
 
-					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5">
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1 }}
+						className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5"
+					>
 						<h1 className="text-gray-400 text-sm font-bold">Best Offer</h1>
 						<div className="bg-gray-400 h-1 w-[20%]"></div>
 
@@ -359,7 +364,7 @@ function Home({ products }) {
 						>
 							View More
 						</Link>
-					</div>
+					</motion.div>
 
 					<Image
 						src={watch}
@@ -369,7 +374,7 @@ function Home({ products }) {
 						priority
 						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
-				</motion.div>
+				</div>
 			</div>
 
 			<div className="py-16 px-5">
@@ -381,12 +386,7 @@ function Home({ products }) {
 				</div>
 			</div>
 
-			<motion.div
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-				transition={{ duration: 1 }}
-				className="h-[100vh] lg:h-[60vh] bg-stone-200 relative"
-			>
+			<div className="h-[100vh] lg:h-[60vh] bg-stone-200 relative">
 				<Image
 					src={'/images/bgleaf1.jpg'}
 					alt="bg_leaf"
@@ -396,7 +396,12 @@ function Home({ products }) {
 					className="h-full w-full object-cover"
 				/>
 
-				<div className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0">
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1 }}
+					className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0"
+				>
 					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[85vw] lg:w-[40%] md:w-[80vw] relative">
 						<Image
 							src={'/images/custom.jpg'}
@@ -445,8 +450,8 @@ function Home({ products }) {
 							</Link>
 						</div>
 					</div>
-				</div>
-			</motion.div>
+				</motion.div>
+			</div>
 
 			<footer className="text-sm bg-emerald-900 text-green-50">
 				<div className="flex flex-col lg:flex-row p-16 justify-around space-y-10 lg:space-y-0 lg:space-x-0">
