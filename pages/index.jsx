@@ -374,7 +374,7 @@ function Home({ products }) {
 				</div>
 			</div>
 
-			<div className="h-[80vh] lg:h-[50vh] bg-stone-200 relative">
+			<div className="h-[100vh] lg:h-[60vh] bg-stone-200 relative">
 				<Image
 					src={'/images/bgleaf1.jpg'}
 					alt="bg_leaf"
@@ -385,7 +385,7 @@ function Home({ products }) {
 				/>
 
 				<div className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0">
-					<div className="h-[40vh] overflow-hidden bg-stone-400 rounded-md w-[90vw] lg:w-[40%] relative">
+					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[90vw] lg:w-[40%] relative">
 						<Image
 							src={'/images/custom.jpg'}
 							alt="Custom"
@@ -398,7 +398,7 @@ function Home({ products }) {
 							<div>
 								<h1>Create</h1>
 								<h2 className="text-3xl">Custom </h2>
-								<h2 className="text-3xl"> Pieces</h2>
+								<h2 className="text-3xl "> Pieces</h2>
 							</div>
 
 							<Link
@@ -410,7 +410,7 @@ function Home({ products }) {
 						</div>
 					</div>
 
-					<div className="h-[40vh] bg-stone-400 overflow-hidden rounded-md w-[90vw] lg:w-[40%] relative">
+					<div className="h-[45vh] bg-stone-400 overflow-hidden rounded-md w-[90vw] lg:w-[40%] relative">
 						<Image
 							src={'/images/shoes.jpg'}
 							alt="Shoes"

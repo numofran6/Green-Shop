@@ -13,7 +13,7 @@ function FeaturedItem({ product }) {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1 }}
-			className="flex-shrink-0"
+			className="flex-shrink-0 rounded-md overflow-hidden"
 		>
 			<Link href={`/product/${product.slug}`} className="bg-emerald-700">
 				<Image
