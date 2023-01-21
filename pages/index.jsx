@@ -187,7 +187,7 @@ function Home({ products }) {
 				)}
 
 				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-40">
-					<div className="flex justify-center space-x-20 items-center w-full">
+					<div className="flex justify-center xl:space-x-20 items-center w-full">
 						<div className="flex flex-col max-w-xs md:max-w-lg space-y-4 text-white">
 							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
@@ -222,7 +222,7 @@ function Home({ products }) {
 				</div>
 			</header>
 
-			<div className="bg-white justify-around py-12 px-2 md:p-12 hidden lg:flex">
+			<div className="bg-white justify-around space-x-12 p-12 hidden lg:flex">
 				<GoodiesCard
 					img={free}
 					heading={'Free Shipping'}
@@ -246,7 +246,7 @@ function Home({ products }) {
 			</div>
 
 			<div className="lg:flex justify-center py-10 lg:p-16 lg:space-x-5 bg-stone-200 items-center space-y-5 lg:space-y-0">
-				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[35vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
+				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[40vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
 					<motion.div
 						initial={{ opacity: 0, x: 80 }}
 						whileInView={{ opacity: 1, x: 0 }}
@@ -365,7 +365,7 @@ function Home({ products }) {
 				</div>
 			</div>
 
-			<div className="py-10 px-5">
+			<div className="py-16 px-5">
 				<h1 className="font-bold text-3xl mb-5">Latest Items</h1>
 				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
 					{products.slice(2, 6).map((product) => (
@@ -374,7 +374,12 @@ function Home({ products }) {
 				</div>
 			</div>
 
-			<div className="h-[100vh] lg:h-[60vh] bg-stone-200 relative">
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 1 }}
+				className="h-[100vh] lg:h-[60vh] bg-stone-200 relative"
+			>
 				<Image
 					src={'/images/bgleaf1.jpg'}
 					alt="bg_leaf"
@@ -385,7 +390,7 @@ function Home({ products }) {
 				/>
 
 				<div className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0">
-					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[90vw] lg:w-[40%] relative">
+					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[85vw] lg:w-[40%] md:w-[80vw] relative">
 						<Image
 							src={'/images/custom.jpg'}
 							alt="Custom"
@@ -410,7 +415,7 @@ function Home({ products }) {
 						</div>
 					</div>
 
-					<div className="h-[45vh] bg-stone-400 overflow-hidden rounded-md w-[90vw] lg:w-[40%] relative">
+					<div className="h-[45vh] bg-stone-400 overflow-hidden rounded-md w-[85vw] md:w-[80vw] lg:w-[40%] relative">
 						<Image
 							src={'/images/shoes.jpg'}
 							alt="Shoes"
@@ -434,7 +439,7 @@ function Home({ products }) {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 
 			<footer className="text-sm bg-emerald-900 text-green-50">
 				<div className="flex flex-col lg:flex-row p-16 justify-around space-y-10 lg:space-y-0 lg:space-x-0">

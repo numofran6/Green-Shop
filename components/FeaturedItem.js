@@ -13,7 +13,7 @@ function FeaturedItem({ product }) {
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			transition={{ duration: 1 }}
-			className="flex-shrink-0 rounded-md overflow-hidden"
+			className="flex-shrink-0"
 		>
 			<Link href={`/product/${product.slug}`} className="bg-emerald-700">
 				<Image
@@ -22,7 +22,7 @@ function FeaturedItem({ product }) {
 					width={1080}
 					height={1080}
 					priority
-					className="w-full h-[250px] sm:h-[300px] object-cover hover:opacity-80 active:opacity-50 transition ease-out duration-300"
+					className="w-full h-[250px] sm:h-[300px] object-cover hover:opacity-80 active:opacity-50 transition ease-out duration-300 rounded-md"
 				/>
 			</Link>
 
