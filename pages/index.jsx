@@ -325,7 +325,7 @@ function Home({ products }) {
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
-						transition={{ duration: 1 }}
+						exit={{ opacity: 0 }}
 						className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5"
 					>
 						<h1 className="text-gray-400 text-center text-xs md:text-sm font-bold">
@@ -348,7 +348,7 @@ function Home({ products }) {
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
-						transition={{ duration: 1 }}
+						exit={{ opacity: 0 }}
 						className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5"
 					>
 						<h1 className="text-gray-400 text-sm font-bold">Best Offer</h1>
@@ -399,7 +399,7 @@ function Home({ products }) {
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1 }}
+					exit={{ opacity: 0 }}
 					className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0"
 				>
 					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[85vw] lg:w-[40%] md:w-[80vw] relative">
