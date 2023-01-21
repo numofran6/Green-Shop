@@ -121,7 +121,7 @@ function CartScreen() {
 															))}
 														</select>
 													</td>
-													<td className="p-2 md:p-5">$ {item.price}</td>
+													<td className="p-5 md:p-5">$ {item.price}</td>
 												</tr>
 											</tbody>
 										))}
