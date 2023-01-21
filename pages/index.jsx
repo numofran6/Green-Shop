@@ -315,6 +315,7 @@ function Home({ products }) {
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
+					animate={{ opacity: 1 }}
 					transition={{ duration: 1 }}
 					className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto"
 				>
@@ -382,6 +383,7 @@ function Home({ products }) {
 			<motion.div
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
+				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
 				className="h-[100vh] lg:h-[60vh] bg-stone-200 relative"
 			>
