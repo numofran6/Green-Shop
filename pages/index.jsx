@@ -312,7 +312,12 @@ function Home({ products }) {
 					/>
 				</div>
 
-				<div className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto">
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 1 }}
+					className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto"
+				>
 					<Image
 						src={necklace}
 						alt="Necklace"
@@ -362,7 +367,7 @@ function Home({ products }) {
 						height={5073}
 						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
-				</div>
+				</motion.div>
 			</div>
 
 			<div className="py-16 px-5">
