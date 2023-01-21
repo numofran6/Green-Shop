@@ -374,6 +374,68 @@ function Home({ products }) {
 				</div>
 			</div>
 
+			<div className="h-[80vh] lg:h-[50vh] bg-stone-200 relative">
+				<Image
+					src={'/images/bgleaf1.jpg'}
+					alt="bg_leaf"
+					width={4765}
+					height={3177}
+					priority
+					className="h-full w-full object-cover"
+				/>
+
+				<div className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0">
+					<div className="h-[40vh] overflow-hidden bg-stone-400 rounded-md w-[90vw] lg:w-[40%] relative">
+						<Image
+							src={'/images/custom.jpg'}
+							alt="Custom"
+							width={1038}
+							height={1280}
+							className="h-full w-full object-cover"
+						/>
+
+						<div className="absolute top-0 right-0 h-full px-5 w-full flex flex-col justify-center font-bold text-lg space-y-7 uppercase text-green-800">
+							<div>
+								<h1>Create</h1>
+								<h2 className="text-3xl">Custom </h2>
+								<h2 className="text-3xl"> Pieces</h2>
+							</div>
+
+							<Link
+								href={'/shop'}
+								className="bg-green-800 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-green-800"
+							>
+								Browse
+							</Link>
+						</div>
+					</div>
+
+					<div className="h-[40vh] bg-stone-400 overflow-hidden rounded-md w-[90vw] lg:w-[40%] relative">
+						<Image
+							src={'/images/shoes.jpg'}
+							alt="Shoes"
+							width={720}
+							height={480}
+							className="h-full w-full object-cover"
+						/>
+
+						<div className="absolute top-0 h-full w-full px-5 flex flex-col justify-center font-bold text-lg space-y-7 uppercase text-gray-800">
+							<div>
+								<h1>Vintage</h1>
+								<h2 className="text-4xl">Shoes</h2>
+							</div>
+
+							<Link
+								href={'/shop'}
+								className="bg-gray-600 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black"
+							>
+								Browse
+							</Link>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<footer className="text-sm bg-emerald-900 text-green-50">
 				<div className="flex flex-col lg:flex-row p-16 justify-around space-y-10 lg:space-y-0 lg:space-x-0">
 					<div className="space-y-5 md:space-y-7">
