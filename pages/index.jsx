@@ -103,7 +103,7 @@ function Home({ products }) {
 				<title>Home - Green Shop</title>
 			</Head>
 
-			<header className="h-[70vh] relative bg-emerald-900">
+			<header className="h-[65vh] md:h-[70vh] relative bg-emerald-900">
 				<Image
 					src={'/images/bgleaf.jpg'}
 					alt="bg_leaf"
@@ -147,13 +147,13 @@ function Home({ products }) {
 						animate="visible"
 						variants={list}
 						ref={wrapperRef}
-						className="absolute top-16 w-full min-h-[62vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
+						className="absolute top-16 w-full min-h-[56vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
 						<Link href={'/'} className="font-bold text-2xl uppercase">
 							<GiShoppingBag className="w-11 h-11 mr-2" />
 						</Link>
 
-						<div className="space-y-7 flex flex-col uppercase font-semibold text-md">
+						<div className="space-y-5 flex flex-col uppercase font-semibold text-md">
 							<motion.div variants={item}>
 								<Link href="/" onClick={() => setActive(!active)}>
 									Home
@@ -257,7 +257,7 @@ function Home({ products }) {
 						initial={{ opacity: 0, x: -120 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 1 }}
-						className="h-[55vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
+						className="h-[60vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
 					>
 						<Image
 							src={model}
