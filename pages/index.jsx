@@ -315,7 +315,6 @@ function Home({ products }) {
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					animate={{ opacity: 1 }}
 					transition={{ duration: 1 }}
 					className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto"
 				>
@@ -324,6 +323,7 @@ function Home({ products }) {
 						alt="Necklace"
 						width={3888}
 						height={4860}
+						priority
 						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
 
@@ -366,6 +366,7 @@ function Home({ products }) {
 						alt="Necklace"
 						width={3442}
 						height={5073}
+						priority
 						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
 				</motion.div>
@@ -383,7 +384,6 @@ function Home({ products }) {
 			<motion.div
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
-				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
 				className="h-[100vh] lg:h-[60vh] bg-stone-200 relative"
 			>
