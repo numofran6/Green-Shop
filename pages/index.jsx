@@ -322,12 +322,7 @@ function Home({ products }) {
 						className="h-[25vh] lg:h-[35vh] object-cover"
 					/>
 
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5"
-					>
+					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5">
 						<h1 className="text-gray-400 text-center text-xs md:text-sm font-bold">
 							The Accessories Collection
 						</h1>
@@ -343,14 +338,9 @@ function Home({ products }) {
 						>
 							View More
 						</Link>
-					</motion.div>
+					</div>
 
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5"
-					>
+					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5">
 						<h1 className="text-gray-400 text-sm font-bold">Best Offer</h1>
 						<div className="bg-gray-400 h-1 w-[20%]"></div>
 
@@ -364,7 +354,7 @@ function Home({ products }) {
 						>
 							View More
 						</Link>
-					</motion.div>
+					</div>
 
 					<Image
 						src={watch}
