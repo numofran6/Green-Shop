@@ -103,7 +103,7 @@ function Home({ products }) {
 				<title>Home - Green Shop</title>
 			</Head>
 
-			<header className="h-[65vh] md:h-[70vh] relative bg-emerald-900">
+			<header className="h-[65vh] md:h-[70vh] relative bg-emerald-900 overflow-hidden">
 				<Image
 					src={'/images/bgleaf.jpg'}
 					alt="bg_leaf"
@@ -113,22 +113,27 @@ function Home({ products }) {
 					className="h-full w-full object-cover"
 				/>
 
-				<nav className="absolute top-0 w-full flex justify-end md:justify-between items-center sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
-					<Link
-						href={'/'}
-						className="hidden md:flex font-bold text-2xl uppercase"
-					>
-						<GiShoppingBag className="w-11 h-11 mr-2" />
+				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
+					<Link href={'/'} className=" font-bold text-2xl uppercase">
+						<GiShoppingBag className="w-11 h-11 mr-2 text-white" />
 					</Link>
 
 					<div className="hidden space-x-5 md:space-x-7 md:flex uppercase font-semibold text-md">
-						<Link href="/">Home</Link>
-						<Link href="/about">About</Link>
-						<Link href="/contact">Contact</Link>
-						<Link href="/shop">Shop</Link>
+						<Link href="/" className="text-white">
+							Home
+						</Link>
+						<Link href="/about" className="text-white">
+							About
+						</Link>
+						<Link href="/contact" className="text-white">
+							Contact
+						</Link>
+						<Link href="/shop" className="text-white">
+							Shop
+						</Link>
 					</div>
 
-					<div className="md:hidden text-green-50 mx-5">
+					<div className="md:hidden text-green-50">
 						{!active ? (
 							<div onClick={() => setActive(!active)}>
 								<RiMenu4Line className="w-8 h-8" />
@@ -149,9 +154,9 @@ function Home({ products }) {
 						ref={wrapperRef}
 						className="absolute top-16 w-full min-h-[56vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
-						<Link href={'/'} className="font-bold text-2xl uppercase">
-							<GiShoppingBag className="w-11 h-11 mr-2" />
-						</Link>
+						<h1 className="font-bold text-2xl text-emerald-500 uppercase">
+							Stay fresh
+						</h1>
 
 						<div className="space-y-5 flex flex-col uppercase font-semibold text-md">
 							<motion.div variants={item}>
@@ -181,24 +186,39 @@ function Home({ products }) {
 					</motion.div>
 				)}
 
-				<div className="absolute top-0 flex flex-col justify-center h-full max-w-xs md:max-w-lg ml-7 px-3 lg:ml-60 space-y-4 text-green-50">
-					<h1 className="font-bold text-lg uppercase">Green Shop</h1>
+				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-40">
+					<div className="flex justify-center space-x-20 items-center w-full">
+						<div className="flex flex-col max-w-xs md:max-w-lg space-y-4 text-white">
+							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
-					<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
-						Wear eco-friendly
-					</h2>
+							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
+								Wear eco-friendly
+							</h2>
 
-					<h3 className="text-xs sm:text-sm text-gray-300">
-						I am continously working on ways to make this project better.
-						Collaborations and recommendations are welcome.
-					</h3>
+							<h3 className="text-xs sm:text-sm text-gray-300">
+								I am continously working on ways to make this project better.
+								Collaborations and recommendations are welcome.
+							</h3>
 
-					<Link
-						href={'/shop'}
-						className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
-					>
-						Shop Now
-					</Link>
+							<Link
+								href={'/shop'}
+								className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
+							>
+								Shop Now
+							</Link>
+						</div>
+
+						<div className="h-[70vh] hidden lg:block">
+							<Image
+								src={'/images/heromodel1.png'}
+								alt="Hero Model"
+								width={929}
+								height={929}
+								priority
+								className="h-full w-full"
+							/>
+						</div>
+					</div>
 				</div>
 			</header>
 
@@ -257,7 +277,7 @@ function Home({ products }) {
 						initial={{ opacity: 0, x: -120 }}
 						whileInView={{ opacity: 1, x: 0 }}
 						transition={{ duration: 1 }}
-						className="h-[55vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
+						className="h-[60vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
 					>
 						<Image
 							src={model}
