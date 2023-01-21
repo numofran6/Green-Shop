@@ -12,7 +12,7 @@ function FeaturedItem({ product }) {
 		<motion.div
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
+			transition={{ duration: 1 }}
 			className="flex-shrink-0"
 		>
 			<Link href={`/product/${product.slug}`} className="bg-emerald-700">

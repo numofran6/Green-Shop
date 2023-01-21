@@ -389,7 +389,7 @@ function Home({ products }) {
 				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
-					exit={{ opacity: 0 }}
+					transition={{ duration: 1 }}
 					className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0"
 				>
 					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[85vw] lg:w-[40%] md:w-[80vw] relative">
