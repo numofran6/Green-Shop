@@ -386,13 +386,13 @@ function Home({ products }) {
 					className="h-full w-full object-cover"
 				/>
 
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 1 }}
-					className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0"
-				>
-					<div className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[85vw] lg:w-[40%] md:w-[80vw] relative">
+				<div className="flex absolute top-0 h-full w-full flex-col lg:flex-row items-center justify-center py-5 lg:space-x-10 space-y-5 lg:space-y-0">
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1 }}
+						className="h-[45vh] overflow-hidden bg-stone-400 rounded-md w-[85vw] lg:w-[40%] md:w-[80vw] relative"
+					>
 						<Image
 							src={'/images/custom.jpg'}
 							alt="Custom"
@@ -415,9 +415,14 @@ function Home({ products }) {
 								Browse
 							</Link>
 						</div>
-					</div>
+					</motion.div>
 
-					<div className="h-[45vh] bg-stone-400 overflow-hidden rounded-md w-[85vw] md:w-[80vw] lg:w-[40%] relative">
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1 }}
+						className="h-[45vh] bg-stone-400 overflow-hidden rounded-md w-[85vw] md:w-[80vw] lg:w-[40%] relative"
+					>
 						<Image
 							src={'/images/shoes.jpg'}
 							alt="Shoes"
@@ -439,8 +444,8 @@ function Home({ products }) {
 								Browse
 							</Link>
 						</div>
-					</div>
-				</motion.div>
+					</motion.div>
+				</div>
 			</div>
 
 			<footer className="text-sm bg-emerald-900 text-green-50">
