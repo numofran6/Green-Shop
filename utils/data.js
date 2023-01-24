@@ -120,7 +120,7 @@ export const data = {
 		{
 			name: '404 Error T',
 			slug: '404-error-t',
-			category: 'Shirt',
+			category: 'T-Shirts',
 			image: '/images/errorT.jpg',
 			price: 99,
 			brand: 'Subwae',
