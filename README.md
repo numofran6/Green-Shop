@@ -9,10 +9,11 @@ E-Commerce App
 ### :writing_hand: Tech Stack :
 Next.JS | MongoDB | Context API | Next-Auth | JS-Cookie | Bcrypt | React Hooks | TailwindCSS
 
-- :zap: Built with Next.JS
-- :zap: MongoDB used as the Database
-- :zap: Context API was complemented with JS-Cookie for state mangement
-- :zap: Credential Authentication built using Next-Auth
-- :zap: Paypal API was integrated as the payment service
-- :zap: Bcrypt for password hashing• TailwindCSS for styling
-- :zap: React Toastify to enhance user experience
+- Built with Next.JS
+- MongoDB used as the Database
+- Context API was complemented with JS-Cookie for state management
+- Credential Authentication built using Next-Auth
+- Paypal API was integrated as the payment service
+- Bcrypt for password hashing
+- TailwindCSS for styling
+- React Toastify to enhance user experience
