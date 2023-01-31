@@ -104,14 +104,14 @@ function Home({ products }) {
 			</Head>
 
 			<header className="h-[65vh] md:h-[70vh] relative bg-emerald-900 overflow-hidden">
-				<Image
+				{/* <Image
 					src={'/images/bgleaf.jpg'}
 					alt="bg_leaf"
 					width={4765}
 					height={3177}
 					priority
 					className="h-full w-full object-cover"
-				/>
+				/> */}
 
 				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
 					<Link href={'/'} className=" font-bold text-2xl uppercase">
