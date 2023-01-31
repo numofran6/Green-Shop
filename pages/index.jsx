@@ -489,7 +489,7 @@ function Home({ products }) {
 					</div>
 				</div>
 
-				<h1 className="text-center bg-[#363636] text-white p-3 text-xs md:text-sm">
+				<h1 className="text-center bg-emerald-800 text-green-200 p-3 text-xs md:text-sm">
 					This project is not fully complete. More added features on the way.
 				</h1>
 			</footer>
