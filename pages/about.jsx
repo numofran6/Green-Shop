@@ -25,10 +25,10 @@ function About() {
 					</div>
 
 					<div className="flex flex-col md:flex-row md:space-x-8 lg:space-x-24 space-y-10 md:space-y-0">
-						<AboutCard name={'John Doe'} img={john} />
-						<AboutCard name={'Rose Bud'} img={chung} />
-						<AboutCard name={'Ishaan Navi'} img={ishaan} />
-						<AboutCard name={'Paige Anna'} img={paige} />
+						<AboutCard name={'Kofi Grant'} img={john} />
+						<AboutCard name={'Akua Rose'} img={chung} />
+						<AboutCard name={'Yaw Yofi'} img={ishaan} />
+						<AboutCard name={'Ama Foriwaa'} img={paige} />
 					</div>
 				</motion.div>
 			</Layout>
