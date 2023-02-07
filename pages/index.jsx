@@ -386,9 +386,9 @@ function Home({ products }) {
 				</div>
 			</div>
 
-			<div className="py-16 px-5">
+			<div className="py-16 px-5 md:px-8">
 				<h1 className="font-bold text-3xl mb-5">Latest Items</h1>
-				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
+				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto mt-3">
 					{products.slice(2, 6).map((product) => (
 						<FeaturedItem product={product} key={product.slug} />
 					))}
