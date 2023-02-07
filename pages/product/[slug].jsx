@@ -105,9 +105,9 @@ export default function ProductScreen({ products, product }) {
 						</div>
 					</motion.div>
 
-					<div className="py-10 px-5 border-t  border-emerald-800">
+					<div className="py-10 px-5 px-8 border-t border-emerald-800">
 						<h1 className="font-bold text-3xl mb-5">Related Items</h1>
-						<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto">
+						<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto mt-3">
 							{products?.slice(0, 4).map((product, i) => (
 								<FeaturedItem product={product} key={product.slug} />
 							))}
