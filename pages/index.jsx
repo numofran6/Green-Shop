@@ -65,7 +65,7 @@ function Home({ products }) {
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
 			exit={{ opacity: 0 }}
-			className=""
+			className="overflow-hidden"
 		>
 			<Head>
 				<meta charSet="utf-8" />
@@ -110,7 +110,7 @@ function Home({ products }) {
 					width={4765}
 					height={3177}
 					priority
-					className="h-full w-full object-cover md:hidden"
+					className="h-full w-full object-cover lg:hidden"
 				/>
 
 				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
@@ -188,16 +188,16 @@ function Home({ products }) {
 
 				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-40">
 					<div className="flex justify-center xl:space-x-20 items-center w-full">
-						<div className="flex flex-col max-w-xs md:max-w-lg space-y-4 text-white">
+						<div className="flex flex-col items-center lg:items-start max-w-xs md:max-w-lg space-y-4 text-white text-center lg:text-left">
 							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
 							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
 								Wear eco-friendly
 							</h2>
 
-							<h3 className="text-xs sm:text-sm text-gray-300">
-								I am continously working on ways to make this project better.
-								Collaborations and recommendations are welcome.
+							<h3 className="text-xs sm:text-sm text-emerald-100">
+								Get super-fly with environmentally friendly fabrics, carefully
+								creatively sewed by the best talents in fashion right now.
 							</h3>
 
 							<Link
@@ -245,37 +245,46 @@ function Home({ products }) {
 				/>
 			</div>
 
-			<div className="lg:flex justify-center py-10 lg:p-16 lg:space-x-5 bg-stone-200 items-center space-y-5 lg:space-y-0">
+			<div className="lg:flex justify-center py-10 lg:py-[5.5rem] lg:space-x-5 bg-neutral-200 items-center space-y-5 lg:space-y-0">
 				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[40vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
 					<motion.div
-						initial={{ opacity: 0, x: 80 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						transition={{ duration: 1 }}
+						initial="hidden"
+						whileInView="visible"
+						variants={list}
 						className="flex flex-col text-black space-y-5"
 					>
-						<h1 className="text-gray-400 text-sm font-bold">
+						<motion.h1
+							variants={item}
+							className="text-gray-400 text-sm font-bold"
+						>
 							Spring Collection
-						</h1>
-						<div className="bg-gray-400 h-1 w-[30%]"></div>
+						</motion.h1>
 
-						<div>
+						<motion.div
+							variants={item}
+							className="bg-gray-400 h-1 w-[30%]"
+						></motion.div>
+
+						<motion.div variants={item}>
 							<h2 className="uppercase text-2xl md:text-3xl font-bold">New </h2>
 							<h2 className="uppercase text-2xl md:text-3xl font-bold">
 								Arrivals
 							</h2>
-						</div>
+						</motion.div>
 
-						<Link
-							href={'/shop'}
-							className="bg-black p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black"
-						>
-							View More
-						</Link>
+						<motion.div variants={item}>
+							<Link
+								href={'/shop'}
+								className="bg-black p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black border-2 border-black"
+							>
+								View More
+							</Link>
+						</motion.div>
 					</motion.div>
 
 					<motion.div
-						initial={{ opacity: 0, x: -120 }}
-						whileInView={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
 						transition={{ duration: 1 }}
 						className="h-[60vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
 					>
@@ -312,17 +321,22 @@ function Home({ products }) {
 					/>
 				</div>
 
-				<div className="grid grid-cols-2 h-[50vh] w-[90vw] lg:mx-0 lg:h-[70vh] lg:w-[40vw] mx-auto">
+				<div className="grid grid-cols-2 min-h-[50vh] w-[90vw] lg:mx-0 lg:min-h-[70vh] lg:w-[40vw] mx-auto">
 					<Image
 						src={necklace}
 						alt="Necklace"
 						width={3888}
 						height={4860}
 						priority
-						className="h-[25vh] lg:h-[35vh] object-cover"
+						className="h-[30vh] lg:h-[35vh] object-cover"
 					/>
 
-					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5">
+					<motion.div
+						initial={{ x: 80, y: -40, opacity: 0 }}
+						whileInView={{ x: 0, y: 0, opacity: 1 }}
+						transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
+						className="h-[30vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center space-y-2 lg:space-y-5"
+					>
 						<h1 className="text-gray-400 text-center text-xs md:text-sm font-bold">
 							The Accessories Collection
 						</h1>
@@ -334,13 +348,18 @@ function Home({ products }) {
 
 						<Link
 							href={'/shop'}
-							className="bg-blue-300 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-blue-300"
+							className="bg-blue-300 p-2 px-3 sm:p-3 sm:px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-blue-300 border-2 border-blue-300"
 						>
 							View More
 						</Link>
-					</div>
+					</motion.div>
 
-					<div className="h-[25vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5">
+					<motion.div
+						initial={{ x: -80, y: 40, opacity: 0 }}
+						whileInView={{ x: 0, y: 0, opacity: 1 }}
+						transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
+						className="h-[30vh] lg:h-[35vh] bg-white flex flex-col justify-center items-center  space-y-2 lg:space-y-5"
+					>
 						<h1 className="text-gray-400 text-sm font-bold">Best Offer</h1>
 						<div className="bg-gray-400 h-1 w-[20%]"></div>
 
@@ -350,11 +369,11 @@ function Home({ products }) {
 
 						<Link
 							href={'/shop'}
-							className="bg-blue-300 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-blue-300"
+							className="bg-blue-300  p-2 px-3 sm:p-3 sm:px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-blue-300 border-2 border-blue-300"
 						>
 							View More
 						</Link>
-					</div>
+					</motion.div>
 
 					<Image
 						src={watch}
@@ -362,7 +381,7 @@ function Home({ products }) {
 						width={3442}
 						height={5073}
 						priority
-						className="h-[25vh] lg:h-[35vh] object-cover"
+						className="h-[30vh] lg:h-[35vh] object-cover"
 					/>
 				</div>
 			</div>
@@ -410,7 +429,7 @@ function Home({ products }) {
 
 							<Link
 								href={'/shop'}
-								className="bg-green-800 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-green-800"
+								className="bg-green-800 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out border-2 border-green-800 hover:bg-stone-300 hover:text-green-800"
 							>
 								Browse
 							</Link>
@@ -439,7 +458,7 @@ function Home({ products }) {
 
 							<Link
 								href={'/shop'}
-								className="bg-gray-600 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black"
+								className="bg-gray-600 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-gray-600 border-2 border-gray-600"
 							>
 								Browse
 							</Link>
@@ -488,10 +507,6 @@ function Home({ products }) {
 						</ul>
 					</div>
 				</div>
-
-				<h1 className="text-center bg-emerald-800 text-green-200 p-3 text-xs md:text-sm">
-					This project is not fully complete. More added features on the way.
-				</h1>
 			</footer>
 		</motion.div>
 	);

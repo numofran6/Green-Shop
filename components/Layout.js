@@ -259,10 +259,6 @@ function Layout({ children, title }) {
 							</ul>
 						</div>
 					</div>
-
-					<h1 className="text-center bg-[#363636] text-white p-3 text-xs md:text-sm">
-						This project is not fully complete. More added features on the way.
-					</h1>
 				</footer>
 			</div>
 		</>

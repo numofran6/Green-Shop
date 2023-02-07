@@ -22,7 +22,7 @@ function FeaturedItem({ product }) {
 					width={1080}
 					height={1080}
 					priority
-					className="w-full h-[250px] sm:h-[300px] object-cover hover:opacity-80 active:opacity-50 transition ease-out duration-300 rounded-md"
+					className="w-full h-[250px] sm:h-[300px] object-cover hover:opacity-80 active:opacity-50 transition ease-out duration-300 rounded-t-md"
 				/>
 			</Link>
 
