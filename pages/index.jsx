@@ -294,6 +294,7 @@ function Home({ products }) {
 							width={1469}
 							height={4135}
 							className="h-full w-fit"
+							priority
 						/>
 					</motion.div>
 				</div>
@@ -418,6 +419,7 @@ function Home({ products }) {
 							width={1038}
 							height={1280}
 							className="h-full w-full object-cover"
+							priority
 						/>
 
 						<div className="absolute top-0 right-0 h-full px-5 w-full flex flex-col justify-center font-bold text-lg space-y-7 uppercase text-green-800">
@@ -448,6 +450,7 @@ function Home({ products }) {
 							width={720}
 							height={480}
 							className="h-full w-full object-cover"
+							priority
 						/>
 
 						<div className="absolute top-0 h-full w-full px-5 flex flex-col justify-center font-bold text-lg space-y-7 uppercase text-gray-800">
