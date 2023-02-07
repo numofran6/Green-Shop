@@ -429,7 +429,7 @@ function Home({ products }) {
 
 							<Link
 								href={'/shop'}
-								className="bg-green-800 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out border-2 border-green-800 hover:bg-stone-300 hover:text-green-800"
+								className="bg-green-800 p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out border-2 border-green-800 hover:bg-stone-100 hover:text-green-800"
 							>
 								Browse
 							</Link>
