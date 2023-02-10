@@ -294,6 +294,7 @@ function Home({ products }) {
 							width={1469}
 							height={4135}
 							className="h-full w-fit"
+							priority
 						/>
 					</motion.div>
 				</div>
@@ -328,6 +329,7 @@ function Home({ products }) {
 						width={3888}
 						height={4860}
 						className="h-[30vh] lg:h-[35vh] object-cover"
+						priority
 					/>
 
 					<motion.div
@@ -380,6 +382,7 @@ function Home({ products }) {
 						width={3442}
 						height={5073}
 						className="h-[30vh] lg:h-[35vh] object-cover"
+						priority
 					/>
 				</div>
 			</div>
@@ -415,7 +418,6 @@ function Home({ products }) {
 							alt="Custom"
 							width={1038}
 							height={1280}
-							priority
 							className="h-full w-full object-cover"
 						/>
 
@@ -447,7 +449,6 @@ function Home({ products }) {
 							width={720}
 							height={480}
 							className="h-full w-full object-cover"
-							priority
 						/>
 
 						<div className="absolute top-0 h-full w-full px-5 flex flex-col justify-center font-bold text-lg space-y-7 uppercase text-gray-800">
