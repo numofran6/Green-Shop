@@ -415,6 +415,7 @@ function Home({ products }) {
 							alt="Custom"
 							width={1038}
 							height={1280}
+							priority
 							className="h-full w-full object-cover"
 						/>
 
@@ -446,6 +447,7 @@ function Home({ products }) {
 							width={720}
 							height={480}
 							className="h-full w-full object-cover"
+							priority
 						/>
 
 						<div className="absolute top-0 h-full w-full px-5 flex flex-col justify-center font-bold text-lg space-y-7 uppercase text-gray-800">
