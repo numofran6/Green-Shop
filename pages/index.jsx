@@ -247,40 +247,37 @@ function Home({ products }) {
 
 			<div className="lg:flex justify-center py-10 lg:py-[5.5rem] lg:space-x-5 bg-neutral-200 items-center space-y-5 lg:space-y-0">
 				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[40vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
-					<motion.div
-						initial="hidden"
-						whileInView="visible"
-						variants={list}
-						className="flex flex-col text-black space-y-5"
-					>
-						<motion.h1
-							variants={item}
-							className="text-gray-400 text-sm font-bold"
-						>
+					<div className="flex flex-col text-black space-y-5">
+						<h1 className="text-gray-400 text-sm font-bold">
 							Spring Collection
-						</motion.h1>
+						</h1>
 
-						<motion.div
-							variants={item}
-							className="bg-gray-400 h-1 w-[30%]"
-						></motion.div>
+						<div className="bg-gray-400 h-1 w-[30%]"></div>
 
-						<motion.div variants={item}>
-							<h2 className="uppercase text-2xl md:text-3xl font-bold">New </h2>
-							<h2 className="uppercase text-2xl md:text-3xl font-bold">
+						<motion.div initial="hidden" whileInView="visible" variants={list}>
+							<motion.h2
+								variants={item}
+								className="uppercase text-2xl md:text-3xl font-bold"
+							>
+								New{' '}
+							</motion.h2>
+							<motion.h2
+								variants={item}
+								className="uppercase text-2xl md:text-3xl font-bold"
+							>
 								Arrivals
-							</h2>
+							</motion.h2>
 						</motion.div>
 
-						<motion.div variants={item}>
+						<div>
 							<Link
 								href={'/shop'}
 								className="bg-black p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black border-2 border-black"
 							>
 								View More
 							</Link>
-						</motion.div>
-					</motion.div>
+						</div>
+					</div>
 
 					<motion.div
 						initial={{ opacity: 0 }}
