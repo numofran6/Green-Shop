@@ -2,6 +2,10 @@
 <h1>
 E-Commerce App
 </h1>
+
+<p>
+The aim of this project was to build a centralized area where local fashion designers in Ghana can congregate and showcase their products. While making it easy for customers to shop for locally designed apparel.
+</p>
 </div>
 
 ---
