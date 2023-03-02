@@ -110,7 +110,7 @@ function Home({ products }) {
 					width={4765}
 					height={3177}
 					priority
-					className="h-full w-full object-cover lg:hidden"
+					className="h-full w-full object-cover"
 				/>
 
 				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
