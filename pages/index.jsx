@@ -186,7 +186,7 @@ function Home({ products }) {
 					</motion.div>
 				)}
 
-				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-40 lg:bg-opacity-70">
+				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-40 lg:bg-opacity-80">
 					<div className="flex justify-center xl:space-x-20 items-center w-full">
 						<div className="flex flex-col items-center lg:items-start max-w-xs md:max-w-lg space-y-4 text-white text-center lg:text-left">
 							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
@@ -254,20 +254,12 @@ function Home({ products }) {
 
 						<div className="bg-gray-400 h-1 w-[30%]"></div>
 
-						<motion.div initial="hidden" whileInView="visible" variants={list}>
-							<motion.h2
-								variants={item}
-								className="uppercase text-2xl md:text-3xl font-bold"
-							>
-								New{' '}
-							</motion.h2>
-							<motion.h2
-								variants={item}
-								className="uppercase text-2xl md:text-3xl font-bold"
-							>
+						<div>
+							<h2 className="uppercase text-2xl md:text-3xl font-bold">New </h2>
+							<h2 className="uppercase text-2xl md:text-3xl font-bold">
 								Arrivals
-							</motion.h2>
-						</motion.div>
+							</h2>
+						</div>
 
 						<div>
 							<Link
