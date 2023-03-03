@@ -210,7 +210,7 @@ function Home({ products }) {
 				</div>
 
 				<div className="hidden lg:flex absolute top-0 flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-80">
-					<div className="justify-center xl:space-x-20 items-center w-full">
+					<div className="flex justify-center xl:space-x-20 items-center w-full">
 						<div className="flex flex-col items-center lg:items-start max-w-xs md:max-w-lg space-y-4 text-white text-center lg:text-left">
 							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
