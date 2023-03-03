@@ -152,7 +152,7 @@ function Home({ products }) {
 						animate="visible"
 						variants={list}
 						ref={wrapperRef}
-						className="absolute top-16 w-full min-h-[46vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
+						className="absolute top-16 w-full min-h-[49vh] flex flex-col justify-center items-center py-5 bg-emerald-900 space-y-10 text-center z-10"
 					>
 						<h1 className="font-bold text-2xl text-green-500 uppercase">
 							Stay fresh
