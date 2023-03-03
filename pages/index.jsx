@@ -103,7 +103,7 @@ function Home({ products }) {
 				<title>Home - Green Shop</title>
 			</Head>
 
-			<header className="h-[55vh] md:h-[70vh] relative bg-emerald-900 overflow-hidden">
+			<header className="h-[55vh] md:h-[60vh] lg:h-[70vh] relative bg-emerald-900 overflow-hidden">
 				<Image
 					src={'/images/bgleaf.jpg'}
 					alt="bg_leaf"
@@ -188,7 +188,7 @@ function Home({ products }) {
 
 				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-80 lg:bg-opacity-80">
 					<div className="flex justify-center xl:space-x-20 items-center w-full">
-						<div className="absolute top-16 lg:top-0 h-full w-full flex flex-col items-center justify-center max-w-xs md:max-w-lg space-y-4 text-white text-center lg:hidden">
+						<div className="absolute top-16 h-full w-full flex flex-col items-center justify-center max-w-xs md:max-w-lg space-y-4 text-white text-center lg:hidden">
 							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
 							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
