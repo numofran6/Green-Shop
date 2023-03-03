@@ -113,7 +113,7 @@ function Home({ products }) {
 					className="h-full w-full object-cover"
 				/>
 
-				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 sm:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
+				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 md:px-10 lg:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
 					<Link href={'/'} className=" font-bold text-2xl uppercase">
 						<GiShoppingBag className="w-11 h-11 mr-2 text-white" />
 					</Link>
@@ -207,8 +207,8 @@ function Home({ products }) {
 						</Link>
 					</div>
 
-					<div className="flex justify-center xl:space-x-20 items-center w-full">
-						<div className="hidden lg:flex flex-col items-center lg:items-start max-w-xs md:max-w-lg space-y-4 text-white text-center lg:text-left">
+					<div className="hidden lg:flex justify-center xl:space-x-20 items-center w-full">
+						<div className="flex flex-col items-center lg:items-start max-w-xs md:max-w-lg space-y-4 text-white text-center lg:text-left">
 							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
 							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
@@ -228,7 +228,7 @@ function Home({ products }) {
 							</Link>
 						</div>
 
-						<div className="h-[70vh] hidden lg:block">
+						<div className="h-[70vh]">
 							<Image
 								src={'/images/heromodel1.png'}
 								alt="Hero Model"
