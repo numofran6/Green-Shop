@@ -93,7 +93,7 @@ export default function Home({
 				animate={{ opacity: 1 }}
 				exit={{ opacity: 0 }}
 			>
-				<div className="px-12 py-10 space-y-5 bg-emerald-900 text-emerald-50">
+				<div className="px-12 py-20 lg:py-10 space-y-5 bg-emerald-900 text-emerald-50">
 					<div className="text-xs md:text-sm space-x-3">
 						<Link href={'/'}>Home</Link>
 						<span>{'>'} </span>
