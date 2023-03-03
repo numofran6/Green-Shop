@@ -190,7 +190,7 @@ function Home({ products }) {
 					<div className="h-10" />
 					<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
-					<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
+					<h2 className="text-xl sm:text-5xl font-semibold max-w-xs md:max-w-lg">
 						Wear eco-friendly
 					</h2>
 
