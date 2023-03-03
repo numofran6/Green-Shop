@@ -186,28 +186,24 @@ function Home({ products }) {
 					</motion.div>
 				)}
 
-				<div className="lg:hidden absolute top-0 h-full w-full bg-emerald-800 bg-opacity-80">
-					<div className="relative">
-						<div className="flex absolute top-16 w-full flex-col h-full items-center justify-center space-y-4 text-white text-center">
-							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
+				<div className="lg:hidden absolute top-0 h-full w-full flex flex-col space-y-4  items-center justify-center text-white text-center bg-emerald-800 bg-opacity-80">
+					<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
-							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
-								Wear eco-friendly
-							</h2>
+					<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
+						Wear eco-friendly
+					</h2>
 
-							<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
-								Get super-fly with environmentally friendly fabrics, carefully
-								creatively sewed by the best talents in fashion right now.
-							</h3>
+					<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
+						Get super-fly with environmentally friendly fabrics, carefully
+						creatively sewed by the best talents in fashion right now.
+					</h3>
 
-							<Link
-								href={'/shop'}
-								className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
-							>
-								Shop Now
-							</Link>
-						</div>
-					</div>
+					<Link
+						href={'/shop'}
+						className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
+					>
+						Shop Now
+					</Link>
 				</div>
 
 				<div className="hidden lg:flex absolute top-0 flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-80">
