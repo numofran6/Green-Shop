@@ -187,14 +187,14 @@ function Home({ products }) {
 				)}
 
 				<div className="absolute top-0 flex flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-80 lg:bg-opacity-80">
-					<div className="absolute top-16 h-full w-full flex flex-col  justify-center space-y-4 text-white text-center lg:hidden">
+					<div className="absolute top-16 h-full w-full flex flex-col items-center justify-center space-y-4 text-white text-center lg:hidden">
 						<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
-						<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
+						<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
 							Wear eco-friendly
 						</h2>
 
-						<h3 className="text-xs sm:text-sm text-emerald-100">
+						<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
 							Get super-fly with environmentally friendly fabrics, carefully
 							creatively sewed by the best talents in fashion right now.
 						</h3>
