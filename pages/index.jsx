@@ -186,7 +186,7 @@ function Home({ products }) {
 					</motion.div>
 				)}
 
-				<div className="lg:hidden flex absolute top-0 h-full w-full bg-emerald-800 bg-opacity-80">
+				<div className="lg:hidden absolute top-0 h-full w-full bg-emerald-800 bg-opacity-80">
 					<div className="h-16"></div>
 					<div className="flex flex-col items-center justify-center space-y-4 text-white text-center">
 						<h1 className="font-bold text-lg uppercase">Green Shop</h1>
