@@ -188,7 +188,7 @@ function Home({ products }) {
 
 				<div className="lg:hidden absolute top-0 h-full w-full bg-emerald-800 bg-opacity-80">
 					<div className="h-16"></div>
-					<div className="flex flex-col items-center justify-center space-y-4 text-white text-center">
+					<div className="flex flex-col h-full max-h-full items-center justify-center space-y-4 text-white text-center">
 						<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
 						<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
