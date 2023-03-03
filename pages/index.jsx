@@ -192,14 +192,16 @@ function Home({ products }) {
 						Green Shop
 					</h1>
 
-					<h2 className="text-3xl sm:text-5xl font-bold max-w-xs md:max-w-lg">
-						Wear eco-friendly
-					</h2>
+					<div>
+						<h2 className="text-3xl sm:text-5xl font-bold max-w-xs md:max-w-lg">
+							Wear eco-friendly
+						</h2>
 
-					<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
-						Get super-fly with environmentally friendly fabrics, carefully
-						creatively sewed by the best talents in fashion right now.
-					</h3>
+						<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
+							Get super-fly with environmentally friendly fabrics, carefully
+							creatively sewed by the best talents in fashion right now.
+						</h3>
+					</div>
 
 					<Link
 						href={'/shop'}
