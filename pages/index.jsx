@@ -152,13 +152,13 @@ function Home({ products }) {
 						animate="visible"
 						variants={list}
 						ref={wrapperRef}
-						className="absolute top-16 w-full min-h-[49vh] flex flex-col justify-center items-center bg-emerald-900 space-y-3 text-center z-10"
+						className="absolute top-16 w-full min-h-[49vh] flex flex-col items-center bg-emerald-900 space-y-5 text-center z-10"
 					>
-						<h1 className="font-bold text-2xl text-green-500 uppercase">
+						<h1 className="font-bold text-xl text-green-500 uppercase">
 							Stay fresh
 						</h1>
 
-						<div className="space-y-5 flex flex-col uppercase font-semibold text-md">
+						<div className="space-y-3 flex flex-col uppercase font-semibold text-md">
 							<motion.div variants={item}>
 								<Link href="/" onClick={() => setActive(!active)}>
 									Home
@@ -188,7 +188,9 @@ function Home({ products }) {
 
 				<div className="lg:hidden absolute top-0 h-full w-full flex flex-col space-y-4 items-center justify-center text-white text-center bg-emerald-800 bg-opacity-80">
 					<div className="h-7" />
-					<h1 className="font-bold text-xl uppercase">Green Shop</h1>
+					<h1 className="font-bold text-xl uppercase text-green-400">
+						Green Shop
+					</h1>
 
 					<h2 className="text-3xl sm:text-5xl font-bold max-w-xs md:max-w-lg">
 						Wear eco-friendly
