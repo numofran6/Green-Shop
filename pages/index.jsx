@@ -188,9 +188,7 @@ function Home({ products }) {
 
 				<div className="lg:hidden absolute top-0 h-full w-full flex flex-col space-y-4 items-center justify-center text-white text-center bg-emerald-800 bg-opacity-80">
 					<div className="h-7" />
-					<h1 className="font-bold text-xl uppercase text-green-600">
-						Green Shop
-					</h1>
+					<h1 className="font-bold text-xl uppercase">Green Shop</h1>
 
 					<h2 className="text-3xl sm:text-5xl font-bold max-w-xs md:max-w-lg">
 						Wear eco-friendly
