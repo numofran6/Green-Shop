@@ -187,25 +187,27 @@ function Home({ products }) {
 				)}
 
 				<div className="lg:hidden absolute top-0 h-full w-full bg-emerald-800 bg-opacity-80">
-					<div className="h-16"></div>
-					<div className="flex flex-col h-full max-h-full items-center justify-center space-y-4 text-white text-center">
-						<h1 className="font-bold text-lg uppercase">Green Shop</h1>
+					<div className="h-[55vh] md:h-[60vh]">
+						<div className="h-16"></div>
+						<div className="flex flex-col h-full items-center justify-center space-y-4 text-white text-center">
+							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
 
-						<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
-							Wear eco-friendly
-						</h2>
+							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold max-w-xs md:max-w-lg">
+								Wear eco-friendly
+							</h2>
 
-						<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
-							Get super-fly with environmentally friendly fabrics, carefully
-							creatively sewed by the best talents in fashion right now.
-						</h3>
+							<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
+								Get super-fly with environmentally friendly fabrics, carefully
+								creatively sewed by the best talents in fashion right now.
+							</h3>
 
-						<Link
-							href={'/shop'}
-							className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
-						>
-							Shop Now
-						</Link>
+							<Link
+								href={'/shop'}
+								className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
+							>
+								Shop Now
+							</Link>
+						</div>
 					</div>
 				</div>
 
