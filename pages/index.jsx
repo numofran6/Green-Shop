@@ -16,7 +16,7 @@ import FeaturedItem from '../components/FeaturedItem';
 import { motion } from 'framer-motion';
 import { data } from '../utils/data';
 
-function Home({ products }) {
+function Home() {
 	const [active, setActive] = useState(false);
 	const wrapperRef = useRef(null);
 
@@ -60,68 +60,73 @@ function Home({ products }) {
 
 	return (
 		<div className="overflow-hidden">
-			<header className="relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[70vh] bg-emerald-900">
-				<nav className="flex justify-between items-center px-5 md:px-10 lg:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
-					<Link href={'/'} className=" font-bold text-2xl uppercase">
-						<GiShoppingBag className="w-11 h-11 mr-2 text-white hover:text-green-400 transition duration-300 ease-in-out" />
-					</Link>
-
-					<div className="hidden md:flex space-x-5 md:space-x-7  uppercase font-semibold text-md">
-						<Link href="/" className="text-white">
-							Home
+			<header
+				className="relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[70vh] bg-cover"
+				style={{ backgroundImage: 'url(/images/headercover.jpg)' }}
+			>
+				<div className="bg-emerald-900 bg-opacity-90">
+					<nav className="flex justify-between items-center px-5 md:px-10 lg:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
+						<Link href={'/'} className=" font-bold text-2xl uppercase">
+							<GiShoppingBag className="w-11 h-11 mr-2 text-white hover:text-green-400 transition duration-300 ease-in-out" />
 						</Link>
-						<Link href="/about" className="text-white">
-							About
-						</Link>
-						<Link href="/contact" className="text-white">
-							Contact
-						</Link>
-						<Link href="/shop" className="text-white">
-							Shop
-						</Link>
-					</div>
 
-					<div className="md:hidden text-green-50">
-						<div onClick={() => setActive(!active)}>
-							<RiMenu4Line className="w-8 h-8" />
-						</div>
-					</div>
-				</nav>
-
-				<div className="flex flex-col space-y-2 lg:space-y-0 lg:flex-row justify-center items-center xl:space-x-20 w-full h-full lg:px-5 pt-10 lg:pt-0">
-					<div className="flex flex-col items-start px-7 lg:px-0 md:max-w-2xl lg:max-w-lg space-y-5 lg:space-y-4 text-white">
-						<h1 className="font-bold text-2xl lg:text-lg uppercase">
-							Green Shop
-						</h1>
-
-						<h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold lg:font-semibold">
-							Wear eco-friendly
-						</h2>
-
-						<h3 className=" lg:text-sm text-emerald-50 lg:text-emerald-100">
-							Get super-fly with environmentally friendly fabrics, creatively
-							sewed by the best talents in fashion right now.
-						</h3>
-
-						<div className="flex justify-center lg:justify-start w-full">
-							<Link
-								href={'/shop'}
-								className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-50 active:bg-green-600 hover:text-emerald-600 active:text-white"
-							>
-								Shop Now
+						<div className="hidden md:flex space-x-5 md:space-x-7  uppercase font-semibold text-md">
+							<Link href="/" className="text-white">
+								Home
+							</Link>
+							<Link href="/about" className="text-white">
+								About
+							</Link>
+							<Link href="/contact" className="text-white">
+								Contact
+							</Link>
+							<Link href="/shop" className="text-white">
+								Shop
 							</Link>
 						</div>
-					</div>
 
-					<div className="lg:h-[70vh]">
-						<Image
-							src={'/images/heromodel1.png'}
-							alt="Hero Model"
-							width={929}
-							height={929}
-							priority
-							className="h-full w-full"
-						/>
+						<div className="md:hidden text-green-50">
+							<div onClick={() => setActive(!active)}>
+								<RiMenu4Line className="w-8 h-8" />
+							</div>
+						</div>
+					</nav>
+
+					<div className="flex flex-col space-y-2 lg:space-y-0 lg:flex-row justify-center items-center xl:space-x-20 w-full h-full lg:px-5 pt-10 lg:pt-0">
+						<div className="flex flex-col items-start px-7 lg:px-0 md:max-w-2xl lg:max-w-lg space-y-5 lg:space-y-4 text-white">
+							<h1 className="font-bold text-2xl lg:text-lg uppercase">
+								Green Shop
+							</h1>
+
+							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold lg:font-semibold">
+								Wear eco-friendly
+							</h2>
+
+							<h3 className=" lg:text-sm text-emerald-50 lg:text-emerald-100">
+								Get super-fly with environmentally friendly fabrics, creatively
+								sewed by the best talents in fashion right now.
+							</h3>
+
+							<div className="flex justify-center lg:justify-start w-full">
+								<Link
+									href={'/shop'}
+									className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-50 active:bg-green-600 hover:text-emerald-600 active:text-white"
+								>
+									Shop Now
+								</Link>
+							</div>
+						</div>
+
+						<div className="lg:h-[70vh]">
+							<Image
+								src={'/images/heromodel1.png'}
+								alt="Hero Model"
+								width={929}
+								height={929}
+								priority
+								className="h-full w-full"
+							/>
+						</div>
 					</div>
 				</div>
 
@@ -215,7 +220,7 @@ function Home({ products }) {
 						<div>
 							<Link
 								href={'/shop'}
-								className="bg-black p-3 px-6 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black border-2 border-black"
+								className="bg-black p-3 px-5 text-center rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-white hover:text-black border-2 border-black"
 							>
 								View More
 							</Link>
