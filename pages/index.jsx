@@ -15,6 +15,8 @@ import { TfiClose } from 'react-icons/tfi';
 import FeaturedItem from '../components/FeaturedItem';
 import { motion } from 'framer-motion';
 import { data } from '../utils/data';
+import Product from '../models/Product';
+import db from '../utils/db';
 
 function Home() {
 	const [active, setActive] = useState(false);
@@ -431,3 +433,14 @@ function Home() {
 }
 
 export default Home;
+
+export async function getServerSideProps(context) {
+	await db.connect();
+	const products = await Product.find().lean();
+
+	return {
+		props: {
+			products: products.map(db.convertDocToObj),
+		},
+	};
+}
