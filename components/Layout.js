@@ -151,9 +151,8 @@ function Layout({ children, title }) {
 
 							<Link
 								href="/cart"
-								className={`flex relative space-x-2 items-center ${
-									asPath === '/cart' && 'text-green-500'
-								}`}
+								className={`flex relative space-x-2 items-center ${asPath === '/cart' && 'text-green-500'
+									}`}
 							>
 								<BsBasket3 className="w-5 h-5" />
 								{
@@ -186,9 +185,13 @@ function Layout({ children, title }) {
 							animate="visible"
 							variants={list}
 							ref={wrapperRef}
-							className="absolute top-16 w-full h-fit flex flex-col justify-center items-center bg-emerald-900 min-h-[45vh] py-5 text-center z-10"
+							className="absolute top-16 bottom-0 w-full  flex flex-col justify-center items-center bg-emerald-900 py-5 text-center z-10"
 						>
 							<div className="space-y-7 flex flex-col uppercase font-semibold text-md">
+								<h1 className="font-bold text-xl text-green-500 uppercase">
+									Stay fresh
+								</h1>
+
 								<motion.div variants={item}>
 									<Link href="/" onClick={() => setActive(!active)}>
 										Home

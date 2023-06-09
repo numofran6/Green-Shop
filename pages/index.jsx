@@ -82,15 +82,9 @@ function Home({ products }) {
 					</div>
 
 					<div className="md:hidden text-green-50">
-						{!active ? (
-							<div onClick={() => setActive(!active)}>
-								<RiMenu4Line className="w-8 h-8" />
-							</div>
-						) : (
-							<div onClick={() => setActive(!active)}>
-								<TfiClose className="w-8 h-8" />
-							</div>
-						)}
+						<div onClick={() => setActive(!active)}>
+							<RiMenu4Line className="w-8 h-8" />
+						</div>
 					</div>
 				</nav>
 
@@ -137,13 +131,20 @@ function Home({ products }) {
 						animate="visible"
 						variants={list}
 						ref={wrapperRef}
-						className="absolute top-16 bottom-0 w-full flex flex-col justify-center items-center bg-emerald-900 space-y-5 text-center z-10"
+						className="absolute top-0 bottom-0 w-full max-h-[100vh] flex flex-col justify-center items-center bg-emerald-900 space-y-5 text-center z-10"
 					>
+						<div
+							onClick={() => setActive(!active)}
+							className="text-white absolute top-5 right-5"
+						>
+							<TfiClose className="w-8 h-8" />
+						</div>
+
 						<h1 className="font-bold text-xl text-green-500 uppercase">
 							Stay fresh
 						</h1>
 
-						<div className="space-y-3 flex flex-col uppercase font-semibold text-md">
+						<div className="space-y-4 flex flex-col uppercase font-semibold text-md">
 							<motion.div variants={item}>
 								<Link href="/" onClick={() => setActive(!active)}>
 									Home

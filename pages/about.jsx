@@ -22,13 +22,18 @@ function About() {
 						<h1 className="font-bold text-2xl md:text-3xl max-w-sm text-center">
 							Meet The Minds Shaping An Industry
 						</h1>
+
+						<h2 className="font-medium px-2">
+							Our goal is to bridge the gap between local fashion designers in
+							Ghana and their potential customers.
+						</h2>
 					</div>
 
 					<div className="flex flex-col md:flex-row md:space-x-8 lg:space-x-24 space-y-10 md:space-y-0">
-						<AboutCard name={'Kofi Grant'} img={john} />
-						<AboutCard name={'Akua Rose'} img={chung} />
-						<AboutCard name={'Yaw Yofi'} img={ishaan} />
-						<AboutCard name={'Ama Foriwaa'} img={paige} />
+						<AboutCard name={'Kofi Grant'} img={john} role="Founder" />
+						<AboutCard name={'Akua Rose'} img={chung} role="Co-Founder" />
+						<AboutCard name={'Yaw Yofi'} img={ishaan} role="CTO" />
+						<AboutCard name={'Ama Foriwaa'} img={paige} role="COO" />
 					</div>
 				</motion.div>
 			</Layout>
