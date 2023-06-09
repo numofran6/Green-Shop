@@ -71,3 +71,7 @@ select {
 a {
 	@apply text-green-100 hover:text-green-400 active:text-green-100 transition duration-300 ease-in-out;
 }
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}

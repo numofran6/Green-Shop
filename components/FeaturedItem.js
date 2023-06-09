@@ -3,16 +3,12 @@ import Image from 'next/image';
 import { useContext } from 'react';
 import { Store } from '../utils/Store';
 import { addToCart } from '../utils/addToCart';
-import { motion } from 'framer-motion';
 
 function FeaturedItem({ product }) {
 	const { state, dispatch } = useContext(Store);
 
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			whileInView={{ opacity: 1 }}
-			transition={{ duration: 1 }}
+		<div
 			className="flex-shrink-0"
 		>
 			<Link href={`/product/${product.slug}`} className="bg-emerald-700">
@@ -42,7 +38,7 @@ function FeaturedItem({ product }) {
 					</button>
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	);
 }
 

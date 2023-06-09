@@ -12,11 +12,9 @@ import watch from '../public/images/watch.jpg';
 import { useEffect, useRef, useState } from 'react';
 import { RiMenu4Line } from 'react-icons/ri';
 import { TfiClose } from 'react-icons/tfi';
-import Head from 'next/head';
-import db from '../utils/db';
-import Product from '../models/Product';
 import FeaturedItem from '../components/FeaturedItem';
 import { motion } from 'framer-motion';
+import { data } from '../utils/data';
 
 function Home({ products }) {
 	const [active, setActive] = useState(false);
@@ -61,64 +59,14 @@ function Home({ products }) {
 	}, [wrapperRef]);
 
 	return (
-		<motion.div
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			exit={{ opacity: 0 }}
-			className="overflow-hidden"
-		>
-			<Head>
-				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="theme-color" content="#000000" />
-				<meta
-					name="description"
-					content="E-Commerce App. Project of Francis Numo. A Front-End Developer who specializes in building elegant user interface with the aim to create an exceptional digital experience"
-				/>
-				<meta
-					name="keywords"
-					content="Frontend Developer, Mobile Developer, Open Source, Freelance Web Developer, Freelance Mobile Developer, React Native Developer, Developer Portfolio, React Developer, Web Developer, React Frontend Developer"
-				/>
-
-				<meta name="description" content="Page description" />
-				<meta property="og:title" content="Green Shop" />
-				<meta
-					property="og:description"
-					content="E-Commerce App. Project of Francis Numo. A Front-End Developer who specializes in building elegant user interface with the aim to create exceptional digital experience"
-				/>
-				<meta property="og:image" content="../public/images/shirt1.jpg" />
-
-				<meta property="og:image:alt" content="Green Shop" />
-				<meta property="og:locale" content="en_GB" />
-				<meta property="og:type" content="website" />
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta
-					property="og:url"
-					content="https://www.greenshopping.vercel.app/"
-				/>
-				<meta name="twitter:card" content="summary" />
-				<meta name="theme-color" content="#000000" />
-				<meta name="robots" content="index, follow" />
-
-				<title>Home - Green Shop</title>
-			</Head>
-
-			<header className="h-[55vh] md:h-[60vh] lg:h-[70vh] relative bg-emerald-900 overflow-hidden">
-				<Image
-					src={'/images/bgleaf.jpg'}
-					alt="bg_leaf"
-					width={4765}
-					height={3177}
-					priority
-					className="h-full w-full object-cover"
-				/>
-
-				<nav className="absolute top-0 w-full flex justify-between md:justify-between items-center  px-5 md:px-10 lg:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
+		<div className="overflow-hidden">
+			<header className="relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[70vh] bg-emerald-900">
+				<nav className="flex justify-between items-center px-5 md:px-10 lg:px-24 h-16 bg-opacity-10 bg-green-50 z-30">
 					<Link href={'/'} className=" font-bold text-2xl uppercase">
 						<GiShoppingBag className="w-11 h-11 mr-2 text-white hover:text-green-400 transition duration-300 ease-in-out" />
 					</Link>
 
-					<div className="hidden space-x-5 md:space-x-7 md:flex uppercase font-semibold text-md">
+					<div className="hidden md:flex space-x-5 md:space-x-7  uppercase font-semibold text-md">
 						<Link href="/" className="text-white">
 							Home
 						</Link>
@@ -146,13 +94,50 @@ function Home({ products }) {
 					</div>
 				</nav>
 
+				<div className="flex flex-col space-y-2 lg:space-y-0 lg:flex-row justify-center items-center xl:space-x-20 w-full h-full lg:px-5 pt-10 lg:pt-0">
+					<div className="flex flex-col items-start px-7 lg:px-0 md:max-w-2xl lg:max-w-lg space-y-5 lg:space-y-4 text-white">
+						<h1 className="font-bold text-2xl lg:text-lg uppercase">
+							Green Shop
+						</h1>
+
+						<h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold lg:font-semibold">
+							Wear eco-friendly
+						</h2>
+
+						<h3 className=" lg:text-sm text-emerald-50 lg:text-emerald-100">
+							Get super-fly with environmentally friendly fabrics, creatively
+							sewed by the best talents in fashion right now.
+						</h3>
+
+						<div className="flex justify-center lg:justify-start w-full">
+							<Link
+								href={'/shop'}
+								className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-50 active:bg-green-600 hover:text-emerald-600 active:text-white"
+							>
+								Shop Now
+							</Link>
+						</div>
+					</div>
+
+					<div className="lg:h-[70vh]">
+						<Image
+							src={'/images/heromodel1.png'}
+							alt="Hero Model"
+							width={929}
+							height={929}
+							priority
+							className="h-full w-full"
+						/>
+					</div>
+				</div>
+
 				{active && (
 					<motion.div
 						initial="hidden"
 						animate="visible"
 						variants={list}
 						ref={wrapperRef}
-						className="absolute top-16 w-full min-h-[49vh] flex flex-col justify-center items-center bg-emerald-900 space-y-5 text-center z-10"
+						className="absolute top-16 bottom-0 w-full flex flex-col justify-center items-center bg-emerald-900 space-y-5 text-center z-10"
 					>
 						<h1 className="font-bold text-xl text-green-500 uppercase">
 							Stay fresh
@@ -185,69 +170,9 @@ function Home({ products }) {
 						</div>
 					</motion.div>
 				)}
-
-				<div className="lg:hidden absolute top-0 h-full w-full flex flex-col space-y-4 items-center justify-center text-white text-center bg-emerald-800 bg-opacity-80">
-					<div className="h-7" />
-					<h1 className="font-bold text-xl uppercase text-green-500">
-						Green Shop
-					</h1>
-
-					<div>
-						<h2 className="text-3xl sm:text-5xl font-bold max-w-xs md:max-w-lg">
-							Wear eco-friendly
-						</h2>
-
-						<h3 className="text-xs sm:text-sm text-emerald-100 max-w-xs md:max-w-lg">
-							Get super-fly with environmentally friendly fabrics, carefully
-							creatively sewed by the best talents in fashion right now.
-						</h3>
-					</div>
-
-					<Link
-						href={'/shop'}
-						className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
-					>
-						Shop Now
-					</Link>
-				</div>
-
-				<div className="hidden lg:flex absolute top-0 flex-col justify-center h-full w-full px-5 bg-emerald-800 bg-opacity-80">
-					<div className="flex justify-center xl:space-x-20 items-center w-full">
-						<div className="flex flex-col items-center lg:items-start max-w-xs md:max-w-lg space-y-4 text-white text-center lg:text-left">
-							<h1 className="font-bold text-lg uppercase">Green Shop</h1>
-
-							<h2 className="text-5xl sm:text-6xl lg:text-8xl font-semibold">
-								Wear eco-friendly
-							</h2>
-
-							<h3 className="text-xs sm:text-sm text-emerald-100">
-								Get super-fly with environmentally friendly fabrics, carefully
-								creatively sewed by the best talents in fashion right now.
-							</h3>
-
-							<Link
-								href={'/shop'}
-								className="bg-green-600 p-3 px-6 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 active:bg-green-600 hover:text-emerald-600 active:text-white"
-							>
-								Shop Now
-							</Link>
-						</div>
-
-						<div className="h-[70vh]">
-							<Image
-								src={'/images/heromodel1.png'}
-								alt="Hero Model"
-								width={929}
-								height={929}
-								priority
-								className="h-full w-full"
-							/>
-						</div>
-					</div>
-				</div>
 			</header>
 
-			<div className="bg-white justify-around space-x-12 p-12 hidden lg:flex">
+			<section className="bg-white justify-between space-x-12 py-12 px-2 md:px-10 lg:p-12 flex overflow-x-auto">
 				<GoodiesCard
 					img={free}
 					heading={'Free Shipping'}
@@ -268,9 +193,9 @@ function Home({ products }) {
 					heading={'24/7 Dedicated Support'}
 					text={'Leave us a message'}
 				/>
-			</div>
+			</section>
 
-			<div className="lg:flex justify-center py-10 lg:py-[5.5rem] lg:space-x-5 bg-neutral-200 items-center space-y-5 lg:space-y-0">
+			<section className="lg:flex justify-center py-10 lg:py-[5.5rem] lg:space-x-5 bg-neutral-900 items-center space-y-5 lg:space-y-0">
 				<div className="min-h-[65vh] lg:h-[70vh] w-[90vw] lg:w-[40vw] bg-white lg:mx-0 px-2 mx-auto lg:px-16 flex items-center justify-center space-x-5 sm:space-x-16">
 					<div className="flex flex-col text-black space-y-5">
 						<h1 className="text-gray-400 text-sm font-bold">
@@ -296,12 +221,7 @@ function Home({ products }) {
 						</div>
 					</div>
 
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						transition={{ duration: 1 }}
-						className="h-[60vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0"
-					>
+					<div className="h-[60vh] sm:h-[65vh] lg:h-[70vh] flex-shrink-0">
 						<Image
 							src={model}
 							alt="model"
@@ -310,30 +230,7 @@ function Home({ products }) {
 							className="h-full w-fit"
 							priority
 						/>
-					</motion.div>
-				</div>
-
-				<div className="bg-white flex justify-around py-12 px-2 lg:p-12 lg:hidden">
-					<GoodiesCard
-						img={free}
-						heading={'Free Shipping'}
-						text={'Delivered to your door'}
-					/>
-					<GoodiesCard
-						img={payment}
-						heading={'Securety Payments'}
-						text={'Up to 12 months installments'}
-					/>
-					<GoodiesCard
-						img={returnimg}
-						heading={'14-Day Returns'}
-						text={'Shop with confidence'}
-					/>
-					<GoodiesCard
-						img={support}
-						heading={'24/7 Dedicated Support'}
-						text={'Leave us a message'}
-					/>
+					</div>
 				</div>
 
 				<div className="grid grid-cols-2 min-h-[50vh] w-[90vw] lg:mx-0 lg:min-h-[70vh] lg:w-[40vw] mx-auto">
@@ -399,18 +296,18 @@ function Home({ products }) {
 						priority
 					/>
 				</div>
-			</div>
+			</section>
 
-			<div className="py-16 px-5 md:px-8">
+			<section className="py-16 px-5 md:px-8">
 				<h1 className="font-bold text-3xl mb-5">Latest Items</h1>
 				<div className="flex items-center space-x-7 lg:space-x-10 overflow-x-auto mt-3">
-					{products.slice(2, 6).map((product) => (
+					{data.products.slice(2, 6).map((product) => (
 						<FeaturedItem product={product} key={product.slug} />
 					))}
 				</div>
-			</div>
+			</section>
 
-			<div className="h-[100vh] lg:h-[60vh] bg-stone-200 relative">
+			<section className="h-[100vh] lg:h-[60vh] bg-stone-200 relative">
 				<Image
 					src={'/images/bgleaf1.jpg'}
 					alt="bg_leaf"
@@ -480,7 +377,7 @@ function Home({ products }) {
 						</div>
 					</motion.div>
 				</div>
-			</div>
+			</section>
 
 			<footer className="text-sm bg-emerald-900 text-green-50">
 				<div className="flex flex-col lg:flex-row p-16 justify-around space-y-10 lg:space-y-0 lg:space-x-0">
@@ -523,19 +420,8 @@ function Home({ products }) {
 					</div>
 				</div>
 			</footer>
-		</motion.div>
+		</div>
 	);
 }
 
 export default Home;
-
-export async function getServerSideProps() {
-	await db.connect();
-	const products = await Product.find().lean();
-
-	return {
-		props: {
-			products: products.map(db.convertDocToObj),
-		},
-	};
-}
