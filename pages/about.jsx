@@ -16,8 +16,8 @@ function About() {
 					exit={{ opacity: 0 }}
 					className="flex flex-col justify-center items-center my-14 md:my-20 space-y-14"
 				>
-					<div className="flex px-2 flex-col items-center space-y-3">
-						<h1 className="text-green-700 font-bold">Our team</h1>
+					<div className="flex px-2 flex-col w-full items-center space-y-3">
+						<h1 className="text-green-700 font-bold text-center">Our team</h1>
 
 						<h1 className="font-bold text-2xl md:text-3xl max-w-sm text-center">
 							Meet The Minds Shaping An Industry

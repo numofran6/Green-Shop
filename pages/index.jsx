@@ -61,7 +61,7 @@ function Home() {
 	return (
 		<div className="overflow-hidden">
 			<header
-				className="relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[70vh] bg-cover"
+				className="relative min-h-[55vh] md:min-h-[60vh] lg:min-h-[70vh] bg-emerald-900 bg-cover"
 				style={{ backgroundImage: 'url(/images/headercover.jpg)' }}
 			>
 				<div className="bg-emerald-900 bg-opacity-90">
